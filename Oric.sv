@@ -204,6 +204,7 @@ video_freak video_freak
 `include "build_id.v"
 localparam CONF_STR = {
 	"Oric;;",
+	"F1,TAP,Load TAP file;",	
 	"S0,DSK,Mount Drive A:;",
 	"-;",
 	"O3,ROM,Oric Atmos,Oric 1;",
@@ -340,16 +341,50 @@ wire [15:0] ram_ad;
 wire  [7:0] ram_d;
 wire        ram_we,ram_cs;
 
-reg   [7:0] ram[65536];
-always @(posedge clk_sys) begin
-	if(reset) ram[clr_addr[15:0]] <= '1;
-	else if(ram_we & ram_cs) ram[ram_ad] <= ram_d;
-end
+reg [7:0] ram_q;
 
-wire  [7:0] ram_q;
-always @(posedge clk_sys) ram_q <= ram[ram_ad];
+ram ram (
+	.clk_sys(clk_sys), 
+	.reset(reset),
+
+    .ram_d(ram_d),
+    .ram_ad(ram_ad),	
+    .ram_cs(ram_cs), 
+	.ram_we(ram_we), 
+
+    .ram_d_b(tape_dout),
+    .ram_ad_b(tape_addr),	
+    .ram_cs_b(1'b1), 
+	.ram_we_b(tape_wr), 
+
+    .clr_addr(clr_addr[15:0]),
+	.ram_q(ram_q)
+);
 
 wire        led_disk;
+
+reg [15:0]  tape_addr;
+reg         tape_wr;
+reg [7:0]   tape_dout;
+reg         tape_complete;
+
+cassette cassette(
+  .clk(clk_sys),
+
+  .ioctl_download(ioctl_download),
+  .ioctl_wr(ioctl_wr),
+  .ioctl_addr(ioctl_addr),
+  .ioctl_dout(ioctl_dout),
+
+  .reset_n(~reset),
+
+  .autostart_basic(),
+
+  .tape_addr(tape_addr),
+  .tape_wr(tape_wr),
+  .tape_dout(tape_dout),
+  .tape_complete(tape_complete)
+);
 
 oricatmos oricatmos
 (
