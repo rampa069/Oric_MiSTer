@@ -9,8 +9,9 @@ module cassette(
 
   input              reset_n,
 
-  input              autostart_basic,
+  output reg         autostart,
 
+  output reg [15:0]  loadpoint,
   output reg [15:0]  tape_addr,
   output reg         tape_wr,
   output reg [7:0]   tape_dout,
@@ -82,7 +83,8 @@ always @(posedge clk)
                         state <= SM_ENDADDRESSHIGH;                        
                     end                
                     else if(autorun=='hC7) begin
-                        //$display( "(state SM_AUTORUN %x) autorun ON: %x", state, autorun);   
+                        //$display( "(state SM_AUTORUN %x) autorun ON: %x", state, autorun);  
+                        autostart <= 1'b1; 
                         endAddressHIGH <= ioctl_dout;
                         state <= SM_ENDADDRESSHIGH;
                     end
@@ -122,6 +124,7 @@ always @(posedge clk)
                 begin
                     programlength <= (end_addr-start_addr);                     
                     if(ioctl_dout=='h00) begin
+                        loadpoint <= start_addr;                   
                         state <= SM_PROGRAMCODE;
                     end
                     $display( "(state SM_UNUSED %x) start_addr: %x programlength %x", state, start_addr, programlength);                         
@@ -136,23 +139,17 @@ always @(posedge clk)
                     start_addr <= start_addr + 1;
                     //$display( "(state SM_PROGRAMCODE %x) programlength %x", state, programlength);                       
                     $display( "(state SM_PROGRAMCODE %x) ioctl_dout: %x ioctl_download %x ioctl_wr %x", state, ioctl_dout, ioctl_download, ioctl_wr);   
-                    $display( "(state SM_PROGRAMCODE %x) tape_dout %x tape_addr %x", state, tape_dout, tape_addr);                       
+                    $display( "(state SM_PROGRAMCODE %x) tape_dout %x tape_addr %x", state, tape_dout, tape_addr);    
+                    if(start_addr == (end_addr))
+                    begin
+                        tape_complete <= 1'b1;                          
+                        $display( "(state SM_PROGRAMCODE %x) start_addr %x end_addr %x", state, start_addr, end_addr);                           
+                    end
                 end
-                /*
-                SM_COMPLETED:
-                begin
-                    $display( "(state SM_COMPLETED %x) ioctl_dout: %x", state, ioctl_dout);                       
-		            tape_wr <= 'b0;  
-                    tape_complete <= 1'b0;
-		            state <= SM_INIT;
-                end
-                */
             endcase
         end
-    else begin
-	    tape_wr <= 'b0;  
-        tape_complete <= 1'b1;   
-    end
-
+    else if(tape_complete) 
+ 		tape_wr <= 'b0;   
+    //    tape_complete <= 1'b0;                
 end
 endmodule

@@ -13,3 +13,4 @@ set_global_assignment -name VHDL_FILE rtl/oricatmos.vhd
 set_global_assignment -name SYSTEMVERILOG_FILE "Oric.sv"
 set_global_assignment -name VERILOG_FILE rtl/cassette.v
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/ram.sv
+set_global_assignment -name VHDL_FILE rtl/dpram.vhd

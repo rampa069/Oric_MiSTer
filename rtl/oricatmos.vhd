@@ -96,7 +96,10 @@ ENTITY oricatmos IS
 		sd_dout : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 		sd_din : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
 		sd_dout_strobe : IN STD_LOGIC;
-		sd_din_strobe : IN STD_LOGIC
+		sd_din_strobe : IN STD_LOGIC;
+
+		tape_addr: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+		tape_complete : IN STD_LOGIC	
 	);
 END;
 
@@ -241,7 +244,10 @@ BEGIN
 			R_W_n => cpu_rw,
 			A => cpu_ad,
 			DI => cpu_di,
-			DO => cpu_do
+			DO => cpu_do,
+
+			tape_addr => tape_addr,
+			tape_complete => tape_complete
 		);
 
 	ram_ad <= ula_AD_SRAM WHEN (ula_PHI2 = '0') ELSE
