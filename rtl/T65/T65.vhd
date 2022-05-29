@@ -157,7 +157,10 @@ entity T65 is
     -- 6502 registers (MSB) PC, SP, P, Y, X, A (LSB)
     Regs    : out std_logic_vector(63 downto 0);
     DEBUG   : out T_t65_dbg;
-    NMI_ack : out std_logic
+    NMI_ack : out std_logic;
+
+		tape_addr: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+		tape_complete : IN STD_LOGIC	    
   );
 end T65;
 
@@ -244,6 +247,8 @@ architecture rtl of T65 is
 
   signal NMI_entered    : std_logic;
 
+  signal tape_complete_i    : std_logic;
+
 begin
   NMI_ack <= NMIAct;
 
@@ -319,18 +324,21 @@ begin
 
   -- the 65xx design requires at least two clock cycles before
   -- starting its reset sequence (according to datasheet)
-  process (Res_n, Clk)
+  process (Res_n, tape_complete, Clk)
   begin
     if Res_n = '0' then
       Res_n_i <= '0';
       Res_n_d <= '0';
+    elsif tape_complete = '1' then
+      Res_n_i <= Res_n_d;
+      Res_n_d <= '1';    
     elsif Clk'event and Clk = '1' then
       Res_n_i <= Res_n_d;
       Res_n_d <= '1';
     end if;
   end process;
 
-  process (Res_n_i, Clk)
+  process (Res_n_i, tape_complete, Clk)
   begin
     if Res_n_i = '0' then
       PC <= (others => '0');  -- Program Counter
@@ -348,7 +356,22 @@ begin
       EF_i <= '1';
       MF_i <= '1';
       XF_i <= '1';
+    elsif tape_complete = '1' then   
+      PC <= unsigned(tape_addr);  -- Program Counter
+      IR <= "00000000";
+      S <= (others => '0');       -- Dummy
+      PBR <= (others => '0');
+      DBR <= (others => '0');
 
+      Mode_r <= (others => '0');
+      ALU_Op_r <= ALU_OP_BIT;
+      Write_Data_r <= Write_Data_DL;
+      Set_Addr_To_r <= Set_Addr_To_PBR;
+
+      WRn_i <= '1';
+      EF_i <= '1';
+      MF_i <= '1';
+      XF_i <= '1';
     elsif Clk'event and Clk = '1' then  
       if (Enable = '1') then
         -- some instructions behavior changed by the Rdy line. Detect this at the correct cycles.

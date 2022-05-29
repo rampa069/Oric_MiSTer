@@ -221,7 +221,6 @@ localparam CONF_STR = {
 	"V,v",`BUILD_DATE
 };
 
-
 ///////////////////////////////////////////////////
 
 wire locked;
@@ -317,13 +316,11 @@ hps_io #(.STRLEN($size(CONF_STR)>>3)) hps_io
 	.gamma_bus(gamma_bus)
 );
 
-
 ///////////////////////////////////////////////////
 
 wire key_strobe = old_keystb ^ ps2_key[10];
 reg old_keystb = 0;
 always @(posedge clk_sys) old_keystb <= ps2_key[10];
-
 
 wire  [7:0] psg_a;
 wire  [7:0] psg_b;
@@ -340,12 +337,11 @@ wire        tape_in, tape_out;
 wire [15:0] ram_ad;
 wire  [7:0] ram_d;
 wire        ram_we,ram_cs;
+reg   [7:0] ram_q;
 
-reg [7:0] ram_q;
-
-ram ram (
+dpram ram (
 	.clk_sys(clk_sys), 
-	.reset(reset),
+	//.reset(reset),
 
     .ram_d(ram_d),
     .ram_ad(ram_ad),	
@@ -357,16 +353,18 @@ ram ram (
     .ram_cs_b(1'b1), 
 	.ram_we_b(tape_wr), 
 
-    .clr_addr(clr_addr[15:0]),
 	.ram_q(ram_q)
 );
 
 wire        led_disk;
 
+reg [15:0]  loadpoint;
 reg [15:0]  tape_addr;
 reg         tape_wr;
 reg [7:0]   tape_dout;
-reg         tape_complete;
+wire        tape_complete;
+
+//reg 		tape_autorun = 0;
 
 cassette cassette(
   .clk(clk_sys),
@@ -378,18 +376,29 @@ cassette cassette(
 
   .reset_n(~reset),
 
-  .autostart_basic(),
-
+  //.autostart(tap_autorun),
+  
+  .loadpoint(loadpoint),
   .tape_addr(tape_addr),
   .tape_wr(tape_wr),
   .tape_dout(tape_dout),
   .tape_complete(tape_complete)
 );
 
+/*
+always @(posedge clk_sys) begin
+    if(tape_complete)
+    	tape_autorun <= 1;
+	else
+    	tape_autorun <= 0;
+end
+*/
+
 oricatmos oricatmos
 (
 	.clk_in           (clk_sys),
 	.RESET            (reset),
+
 	.key_pressed      (ps2_key[9]),
 	.key_code         (ps2_key[7:0]),
 	.key_extended     (ps2_key[8]),
@@ -400,38 +409,45 @@ oricatmos oricatmos
 	.PSG_OUT_B        (psg_b),
 	.PSG_OUT_C        (psg_c),
 	.PSG_OUT          (psg_out),
-	.VIDEO_CLK			(clk_pix),
-	.VIDEO_R				(r),
-	.VIDEO_G				(g),
-	.VIDEO_B				(b),
-	.VIDEO_HSYNC		(hs),
-	.VIDEO_VSYNC		(vs),
-	.VIDEO_HBLANK		(HBlank),
-	.VIDEO_VBLANK		(VBlank),
-	.K7_TAPEIN			(tape_adc),
-	.K7_TAPEOUT			(tape_out),
-	.K7_REMOTE			(),
+
+	.VIDEO_CLK		  (clk_pix),
+	.VIDEO_R		  (r),
+	.VIDEO_G		  (g),
+	.VIDEO_B		  (b),
+	.VIDEO_HSYNC	  (hs),
+	.VIDEO_VSYNC	  (vs),
+	.VIDEO_HBLANK	  (HBlank),
+	.VIDEO_VBLANK	  (VBlank),
+
+	.K7_TAPEIN		  (tape_adc),
+	.K7_TAPEOUT		  (tape_out),
+	.K7_REMOTE		  (),
+
 	.ram_ad           (ram_ad),
 	.ram_d            (ram_d),
 	.ram_q            (ram_q),
 	.ram_cs           (ram_cs),
 	.ram_oe           (),
 	.ram_we           (ram_we),
+
 	.joystick_0       (0),
 	.joystick_1       (0),
+
 	.fd_led           (led_disk),
 	.fdd_ready        (fdd_ready),
 	.fdd_busy         (),
 	.fdd_reset        (0),
 	.fdd_layout       (0),
+
 	.phi2             (),
 	.pll_locked       (locked),
 	.disk_enable      ((!status[6:5]) ? ~fdd_ready : status[5]),
-	.rom			      (rom),
+	.rom			  (rom),
+
 	.img_mounted      (img_mounted), // signaling that new image has been mounted
 	.img_size         (img_size), // size of image in bytes
 	.img_wp           (status[7] | img_readonly), // write protect
-   .sd_lba           (sd_lba),
+    .sd_lba           (sd_lba),
 	.sd_rd            (sd_rd),
 	.sd_wr            (sd_wr),
 	.sd_ack           (sd_ack),
@@ -439,7 +455,10 @@ oricatmos oricatmos
 	.sd_dout          (sd_buff_dout),
 	.sd_din           (sd_buff_din),
 	.sd_dout_strobe   (sd_buff_wr),
-	.sd_din_strobe    (0)
+	.sd_din_strobe    (0),
+
+  	.tape_addr		  (tape_addr),
+    .tape_complete	  (tape_complete & tape_wr)
 );
 
 reg fdd_ready = 0;
@@ -447,7 +466,6 @@ always @(posedge clk_sys) if(img_mounted) fdd_ready <= |img_size;
 
 reg rom = 0;
 always @(posedge clk_sys) if(reset) rom <= ~status[3];
-
 
 ///////////////////////////////////////////////////
 
@@ -487,6 +505,7 @@ video_mixer #(.LINE_LENGTH(250), .HALF_DEPTH(1), .GAMMA(1)) video_mixer
 );
 
 ///////////////////////////////////////////////////
+
 always @ (psg_a,psg_b,psg_c,psg_out,stereo) begin
 		case (stereo)
 			2'b01  : {AUDIO_L,AUDIO_R} <= {{{2'b0,psg_a} + {2'b0,psg_b}},6'b0,{{2'b0,psg_c} + {2'b0,psg_b}},6'b0};
@@ -496,6 +515,7 @@ always @ (psg_a,psg_b,psg_c,psg_out,stereo) begin
 end
 
 ///////////////////////////////////////////////////
+
 wire tape_adc, tape_adc_act;
 ltc2308_tape ltc2308_tape
 (
