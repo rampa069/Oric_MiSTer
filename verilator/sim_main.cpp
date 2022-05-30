@@ -30,7 +30,7 @@ using namespace std;
 // Simulation control
 // ------------------
 int initialReset = 48;
-bool run_enable = 1;
+bool run_enable = 0;
 int batchSize = 150000;
 bool single_step = 0;
 bool multi_step = 0;
@@ -89,7 +89,7 @@ double sc_time_stamp() {	// Called by $time in Verilog.
 
 int clk_sys_freq = 48000000;
 SimClock clk_48(1); // 48mhz
-SimClock clk_24(3); // 24mhz
+//SimClock clk_24(2); // 24mhz
 
 // VCD trace logging
 // -----------------
@@ -128,7 +128,7 @@ void resetSim() {
 	main_time = 0;
 	top->reset = 1;
 	clk_48.Reset();
-	clk_24.Reset();
+	//clk_24.Reset();
 }
 
 int verilate() {
@@ -142,17 +142,17 @@ int verilate() {
 
 		// Clock dividers
 		clk_48.Tick();
-		clk_24.Tick();
+		//clk_24.Tick();
 
 		// Set clocks in core
 		top->clk_48 = clk_48.clk;
-		top->clk_24 = clk_24.clk;
+		//top->clk_24 = clk_24.clk;
 
 		// Simulate both edges of fastest clock
 		if (clk_48.clk != clk_48.old) {
 
 			// System clock simulates HPS functions
-			if (clk_24.clk) {
+			if (clk_48.clk) {
 				input.BeforeEval();
 				bus.BeforeEval();
 			}
@@ -163,7 +163,7 @@ int verilate() {
 			}
 
 			// System clock simulates HPS functions
-			if (clk_24.clk) { bus.AfterEval(); }
+			if (clk_48.clk) { bus.AfterEval(); }
 		}
 
 #ifndef DISABLE_AUDIO
@@ -252,7 +252,7 @@ int main(int argc, char** argv, char** env) {
 	// Setup video output
 	if (video.Initialise(windowTitle) == 1) { return 1; }
 
-	//bus.QueueDownload("./test.bin", 0, true);
+	bus.QueueDownload("./CENTIPED.TAP", 0, true);
 
 
 #ifdef WIN32

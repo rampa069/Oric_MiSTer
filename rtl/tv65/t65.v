@@ -126,7 +126,7 @@
 // ----- IMPORTANT NOTES -----
 //
 
-module t65(
+module tv65(
     Mode,
     Res_n,
     Enable,

@@ -364,7 +364,7 @@ reg         tape_wr;
 reg [7:0]   tape_dout;
 wire        tape_complete;
 
-//reg 		tape_autorun = 0;
+reg 		tape_autorun = 0;
 
 cassette cassette(
   .clk(clk_sys),
@@ -376,23 +376,15 @@ cassette cassette(
 
   .reset_n(~reset),
 
-  //.autostart(tap_autorun),
-  
-  .loadpoint(loadpoint),
+  .autostart(),
+
+  .tape_autorun(tape_autorun),
+
   .tape_addr(tape_addr),
   .tape_wr(tape_wr),
   .tape_dout(tape_dout),
   .tape_complete(tape_complete)
 );
-
-/*
-always @(posedge clk_sys) begin
-    if(tape_complete)
-    	tape_autorun <= 1;
-	else
-    	tape_autorun <= 0;
-end
-*/
 
 oricatmos oricatmos
 (
@@ -457,8 +449,8 @@ oricatmos oricatmos
 	.sd_dout_strobe   (sd_buff_wr),
 	.sd_din_strobe    (0),
 
-  	.tape_addr		  (tape_addr),
-    .tape_complete	  (tape_complete & tape_wr)
+  //	.tape_addr		  (tape_addr),
+  //  .tape_complete	  (tape_autorun)
 );
 
 reg fdd_ready = 0;

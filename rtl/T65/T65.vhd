@@ -324,14 +324,11 @@ begin
 
   -- the 65xx design requires at least two clock cycles before
   -- starting its reset sequence (according to datasheet)
-  process (Res_n, tape_complete, Clk)
+  process (Res_n, Clk)
   begin
     if Res_n = '0' then
       Res_n_i <= '0';
       Res_n_d <= '0';
-    elsif tape_complete = '1' then
-      Res_n_i <= Res_n_d;
-      Res_n_d <= '1';    
     elsif Clk'event and Clk = '1' then
       Res_n_i <= Res_n_d;
       Res_n_d <= '1';
@@ -358,20 +355,6 @@ begin
       XF_i <= '1';
     elsif tape_complete = '1' then   
       PC <= unsigned(tape_addr);  -- Program Counter
-      IR <= "00000000";
-      S <= (others => '0');       -- Dummy
-      PBR <= (others => '0');
-      DBR <= (others => '0');
-
-      Mode_r <= (others => '0');
-      ALU_Op_r <= ALU_OP_BIT;
-      Write_Data_r <= Write_Data_DL;
-      Set_Addr_To_r <= Set_Addr_To_PBR;
-
-      WRn_i <= '1';
-      EF_i <= '1';
-      MF_i <= '1';
-      XF_i <= '1';
     elsif Clk'event and Clk = '1' then  
       if (Enable = '1') then
         -- some instructions behavior changed by the Rdy line. Detect this at the correct cycles.
