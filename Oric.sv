@@ -335,18 +335,35 @@ wire        clk_pix;
 wire        tape_in, tape_out;
 
 wire [15:0] ram_ad;
+wire [15:0] ram_ad_temp;
 wire  [7:0] ram_d;
+wire  [7:0] ram_d_temp;
 wire        ram_we,ram_cs;
+wire        ram_we_temp,ram_cs_temp;
 reg   [7:0] ram_q;
+
+always @(posedge clk_sys) begin
+	if(reset) begin
+		ram_d_temp <= 1;
+		ram_ad_temp <= clr_addr[15:0];
+		ram_cs_temp <= 1'b1;
+		ram_we_temp <= 1'b1;
+	end
+	else begin
+		ram_d_temp <= ram_d;
+		ram_ad_temp <= ram_ad;
+		ram_cs_temp <= ram_cs;
+		ram_we_temp <= ram_we;		
+	end
+end
 
 dpram ram (
 	.clk_sys(clk_sys), 
-	//.reset(reset),
 
-    .ram_d(ram_d),
-    .ram_ad(ram_ad),	
-    .ram_cs(ram_cs), 
-	.ram_we(ram_we), 
+    .ram_d(ram_d_temp),
+    .ram_ad(ram_ad_temp),	
+    .ram_cs(ram_cs_temp), 
+	.ram_we(ram_we_temp), 
 
     .ram_d_b(tape_dout),
     .ram_ad_b(tape_addr),	
@@ -380,6 +397,7 @@ cassette cassette(
 
   .tape_autorun(tape_autorun),
 
+  .loadpoint(loadpoint),
   .tape_addr(tape_addr),
   .tape_wr(tape_wr),
   .tape_dout(tape_dout),
@@ -449,8 +467,8 @@ oricatmos oricatmos
 	.sd_dout_strobe   (sd_buff_wr),
 	.sd_din_strobe    (0),
 
-  //	.tape_addr		  (tape_addr),
-  //  .tape_complete	  (tape_autorun)
+  	.tape_addr		  (loadpoint),
+    .tape_complete	  (tape_autorun)
 );
 
 reg fdd_ready = 0;
