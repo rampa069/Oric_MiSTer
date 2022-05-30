@@ -53,11 +53,9 @@ CC_OPT = -O
 #CC_OPT =   
 
 V_SRC = \
-	centipede_sim.v \
-	$(RTL)/centipede.v $(RTL)/p6502.v $(RTL)/pokey.v \
-	$(RTL)/ram.v $(RTL)/rom.v \
-	$(RTL)/color_ram.v $(RTL)/pf_rom.v $(RTL)/pf_ram_dp.v \
-	$(RTL)/vprom.v $(RTL)/hs_ram.v
+	sim.v \
+	$(RTL)/cassette.v \
+	$(RTL)/newrom.v
 
 C_SRC = \
 	sim_main.cpp  \

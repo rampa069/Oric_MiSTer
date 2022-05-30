@@ -38,7 +38,7 @@ int multi_step_amount = 1024;
 
 // Debug GUI 
 // ---------
-const char* windowTitle = "Verilator Sim: Arcade-Centipede";
+const char* windowTitle = "Verilator Sim: Oric";
 const char* windowTitle_Control = "Simulation control";
 const char* windowTitle_DebugLog = "Debug log";
 const char* windowTitle_Video = "VGA output";
@@ -89,7 +89,7 @@ double sc_time_stamp() {	// Called by $time in Verilog.
 
 int clk_sys_freq = 48000000;
 SimClock clk_48(1); // 48mhz
-SimClock clk_12(4); // 12mhz
+SimClock clk_24(3); // 24mhz
 
 // VCD trace logging
 // -----------------
@@ -128,7 +128,7 @@ void resetSim() {
 	main_time = 0;
 	top->reset = 1;
 	clk_48.Reset();
-	clk_12.Reset();
+	clk_24.Reset();
 }
 
 int verilate() {
@@ -142,17 +142,17 @@ int verilate() {
 
 		// Clock dividers
 		clk_48.Tick();
-		clk_12.Tick();
+		clk_24.Tick();
 
 		// Set clocks in core
 		top->clk_48 = clk_48.clk;
-		top->clk_12 = clk_12.clk;
+		top->clk_24 = clk_24.clk;
 
 		// Simulate both edges of fastest clock
 		if (clk_48.clk != clk_48.old) {
 
 			// System clock simulates HPS functions
-			if (clk_12.clk) {
+			if (clk_24.clk) {
 				input.BeforeEval();
 				bus.BeforeEval();
 			}
@@ -163,7 +163,7 @@ int verilate() {
 			}
 
 			// System clock simulates HPS functions
-			if (clk_12.clk) { bus.AfterEval(); }
+			if (clk_24.clk) { bus.AfterEval(); }
 		}
 
 #ifndef DISABLE_AUDIO
@@ -252,7 +252,7 @@ int main(int argc, char** argv, char** env) {
 	// Setup video output
 	if (video.Initialise(windowTitle) == 1) { return 1; }
 
-	bus.QueueDownload("./test.bin", 0, true);
+	//bus.QueueDownload("./test.bin", 0, true);
 
 
 #ifdef WIN32
@@ -312,9 +312,12 @@ int main(int argc, char** argv, char** env) {
 		ImGui::SetWindowPos(windowTitle_DebugLog, ImVec2(0, 160), ImGuiCond_Once);
 
 		// Memory debug
-		//ImGui::Begin("PGROM Editor");
-		//mem_edit.DrawContents(top->top__DOT__uut__DOT__rom__DOT__mem, 32768, 0);
-		//ImGui::End();
+		ImGui::Begin("Memory");
+		mem_edit.DrawContents(&top->top__DOT__tape__DOT__memory, 65536, 0);
+		ImGui::End();
+		ImGui::Begin("ORIC RAM");
+		mem_edit.DrawContents(&top->top__DOT__ram, 65536, 0);
+		ImGui::End();
 
 		// Trace/VCD window
 		ImGui::Begin(windowTitle_Trace);
