@@ -1,4 +1,4 @@
-module BASIC11A
+module BASIC11Av
   (
    input wire         clk,
    input wire [13:0]  addr,

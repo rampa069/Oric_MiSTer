@@ -1,4 +1,4 @@
-module BASIC10
+module BASIC10v
   (
    input wire         clk,
    input wire [13:0]  addr,

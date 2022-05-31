@@ -19,7 +19,7 @@
 // along with Cumulus CPLD Core. If not, see .
 //
 
-module Microdisc
+module Microdiscv
   (
    input wire          CLK_SYS, // 24 Mhz input clock
 

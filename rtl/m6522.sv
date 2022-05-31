@@ -51,7 +51,7 @@
 // not very sure about the shift register, documentation is a bit light.
 // SystemVerilog conversion Copyright 2022 Frank Bruno
 
-module M6522
+module M6522v
   (
    input wire [3:0]   I_RS,
    input wire [7:0]   I_DATA,

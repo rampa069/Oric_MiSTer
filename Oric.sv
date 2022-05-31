@@ -383,6 +383,7 @@ wire        tape_complete;
 
 reg 		tape_autorun = 0;
 
+/*
 cassette cassette(
   .clk(clk_sys),
 
@@ -403,6 +404,30 @@ cassette cassette(
   .tape_dout(tape_dout),
   .tape_complete(tape_complete)
 );
+*/
+
+cassettecached cassette(
+  .clk(clk_sys),
+
+  // input raw tape data from tape cache
+  .ioctl_download(ioctl_download),
+  .ioctl_wr(ioctl_wr),
+  .ioctl_addr(ioctl_addr),
+  .ioctl_dout(ioctl_dout),
+
+  .reset_n(~reset),
+  .tape_request(tape_request),
+
+  // output processed tape data to ram
+  .autostart(),
+  .tape_autorun(tape_autorun),
+  .loadpoint(loadpoint),
+  .tape_addr(tape_addr),
+  .tape_wr(tape_wr),
+  .tape_dout(tape_dout),
+  .tape_complete(tape_complete)
+);
+
 
 oricatmos oricatmos
 (

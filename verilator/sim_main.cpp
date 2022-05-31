@@ -252,9 +252,9 @@ int main(int argc, char** argv, char** env) {
 	// Setup video output
 	if (video.Initialise(windowTitle) == 1) { return 1; }
 
-	bus.QueueDownload("./CENTIPED.TAP", 0, true);
+	//bus.QueueDownload("./CENTIPED.TAP", 0, true);
 	//bus.QueueDownload("./Galaxians.TAP", 0, true);
-	//bus.QueueDownload("./DEVILS.tap", 0, true);
+	bus.QueueDownload("./DEVILS.tap", 0, true);
 
 #ifdef WIN32
 	MSG msg;

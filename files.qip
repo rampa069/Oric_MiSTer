@@ -12,6 +12,8 @@ set_global_assignment -name SYSTEMVERILOG_FILE rtl/video.vhd
 set_global_assignment -name VHDL_FILE rtl/oricatmos.vhd
 set_global_assignment -name SYSTEMVERILOG_FILE "Oric.sv"
 set_global_assignment -name VERILOG_FILE rtl/cassette.v
+set_global_assignment -name VERILOG_FILE rtl/cassettecached.v
+set_global_assignment -name VERILOG_FILE rtl/bram.v
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/ram.sv
 #set_global_assignment -name VERILOG_FILE rtl/tv65/t65.v
 #set_global_assignment -name VERILOG_FILE rtl/tv65/t65_mcode.v

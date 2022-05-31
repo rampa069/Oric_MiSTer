@@ -13,7 +13,7 @@
 // TODO :
 // Remark :
 
-module video
+module videov
   (
    input wire          RESETn,
    input wire          CLK_PIXEL,

@@ -32,20 +32,6 @@ module top(
    
 wire ce_pix = 1'b1;  
  
-/*
-bram tapecache(
-  .clk(clk_48),
-
-  .bram_wr(ioctl_download),
-  .bram_init_address(ioctl_addr),
-  .bram_din(ioctl_dout),
-
-  .addr(),
-  .dout(),
-  .cs()
-);
-*/
-
 reg [16:0] clr_addr = 0;
 wire [15:0] ram_ad;
 wire  [7:0] ram_d;
@@ -79,7 +65,7 @@ always @(posedge clk_48)
     begin
       if(tape_wr)
         ram[tape_addr] <= tape_dout;      
-       // $display( "(TOP) tape_addr %x tape_wr %x tape_dout %x tape_complete %x", tape_addr, tape_wr, tape_dout, tape_complete);   
+        $display( "(TOP) tape_addr %x tape_wr %x tape_dout %x tape_complete %x tape_autorun %x loadpoint %x", tape_addr, tape_wr, tape_dout, tape_complete, tape_autorun, loadpoint);   
     end
 
 cassettecached cassette(

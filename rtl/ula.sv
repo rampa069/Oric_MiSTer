@@ -75,7 +75,7 @@
 // 19 BLU         A13 22
 // 20 GRN         RED 21
 
-module ula
+module ulav
   (
    input wire          RESETn, // RESET master
    output logic        CLK_4, // 4 MHz internal

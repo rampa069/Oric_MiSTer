@@ -1,4 +1,4 @@
-module ORICDOS06
+module ORICDOS06v
   (
    input wire [12:0] addr,
    input wire        clk,

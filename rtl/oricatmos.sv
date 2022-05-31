@@ -39,7 +39,7 @@
 //
 //
 
-module oricatmos
+module oricatmosv
   (
    input wire          CLK_IN,
    input wire          RESET,
