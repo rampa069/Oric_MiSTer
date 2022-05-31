@@ -206,13 +206,13 @@ module oricatmos
      .tape_complete (tape_complete)
      );
 
-  assign ram_ad  = ~ula_PHI2 ? ula_AD_SRAM : cpu_ad[15:0];
+  assign ram_ad  = ~ula_phi2 ? ula_AD_SRAM : cpu_ad[15:0];
   assign ram_d   = cpu_do;
   assign SRAM_DO = ram_q;
   assign ram_cs  = RESETn & ula_CE_SRAM;
   assign ram_oe  = RESETn & ula_OE_SRAM;
   assign ram_we  = RESETn & ula_WE_SRAM;
-  assign phi2    = ula_PHI2;
+  assign phi2    = ula_phi2;
 
   BASIC11A inst_rom0
     (
@@ -246,7 +246,7 @@ module oricatmos
      .RESETn (pll_locked), //RESETn),
      .MAPn (cont_MAPn),
      .DB (SRAM_DO),
-     .ADDR (cpu_ad(15 DOWNTO 0)),
+     .ADDR (cpu_ad[15:0]),
      .SRAM_AD (ula_AD_SRAM),
      .SRAM_OE (ula_OE_SRAM),
      .SRAM_CE (ula_CE_SRAM),
@@ -340,7 +340,7 @@ module oricatmos
      );
 
   assign KEYB_NMIn = ~swnmi;
-  assign KEYB_RESETn <= ~swrst;
+  assign KEYB_RESETn = ~swrst;
 
   Microdisc inst_microdisc
     (
@@ -351,7 +351,7 @@ module oricatmos
      .A (cpu_ad[15:0]), // 6502 Address Bus
      .RnW (cpu_rw), // 6502 Read-/Write
      .nIRQ (cont_irq), // 6502 /IRQ
-     .PH2 (ula_PHI2), // 6502 PH2
+     .PH2 (ula_phi2), // 6502 PH2
      .nROMDIS (cont_ROMDISn), // Oric ROM Disable
      .nMAP (cont_MAPn), // Oric MAP
      .IO (ula_CSIOn), // Oric I/O
@@ -402,9 +402,9 @@ module oricatmos
   assign PRN_STROBE = via_pb_out[4];
   assign PRN_DATA   = via_pa_out;
 
-  always @(posedge clk_in) begin
+  always @(posedge CLK_IN) begin
     // expansion port
-    if (cpu_rw && ula_PHI2 && ~ula_CSIOn && ~cont_IOCONTROLn)
+    if (cpu_rw && ula_phi2 && ~ula_CSIOn && ~cont_IOCONTROLn)
       cpu_di <= cont_D_OUT;
     // VIA
     else if (cpu_rw && ula_phi2 && ~ula_CSIOn && cont_IOCONTROLn)
