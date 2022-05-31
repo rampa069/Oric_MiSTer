@@ -54,8 +54,10 @@ CC_OPT = -O
 
 V_SRC = \
 	sim.v \
-	$(RTL)/cassette.v \
-	$(RTL)/newrom.v
+	$(RTL)/cassettecached.v \
+	$(RTL)/bram.v \
+	$(RTL)/oricatmos.sv \
+	$(RTL)/ram.sv
 
 C_SRC = \
 	sim_main.cpp  \

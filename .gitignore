@@ -37,3 +37,7 @@ c5_pin_model_dump.txt
 *.xml
 *_netlist
 *.cdf
+verilator/x64/Release/
+verilator/.vs/sim/v17/Browse.VC.db
+verilator/DEVILS.tap
+verilator/Galaxians.TAP

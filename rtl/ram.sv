@@ -17,21 +17,19 @@ module ram
 
     input [15:0] clr_addr,
 
-    output reg [7:0] ram_q,
-    output reg [7:0] ram_q_b    
+    output reg [7:0] ram_q
+    //output reg [7:0] ram_q_b    
 );
 
 reg   [7:0] ram[65536];
 
 always @(posedge clk_sys) begin
-	//if(reset) 
-    //    ram[clr_addr] <= '1;
-	//else 
-
     ram_q <= ram[ram_ad];
-    ram_q_b <= ram[ram_ad_b];
-
-    if(ram_cs & ram_we) 
+    //ram_q_b <= ram[ram_ad_b];
+	
+    if(reset) 
+        ram[clr_addr] <= '1;
+	else if(ram_cs & ram_we) 
         ram[ram_ad] <= ram_d;
 
     if(ram_cs_b & ram_we_b) 

@@ -253,7 +253,8 @@ int main(int argc, char** argv, char** env) {
 	if (video.Initialise(windowTitle) == 1) { return 1; }
 
 	bus.QueueDownload("./CENTIPED.TAP", 0, true);
-
+	//bus.QueueDownload("./Galaxians.TAP", 0, true);
+	//bus.QueueDownload("./DEVILS.tap", 0, true);
 
 #ifdef WIN32
 	MSG msg;
@@ -312,8 +313,8 @@ int main(int argc, char** argv, char** env) {
 		ImGui::SetWindowPos(windowTitle_DebugLog, ImVec2(0, 160), ImGuiCond_Once);
 
 		// Memory debug
-		ImGui::Begin("Memory");
-		mem_edit.DrawContents(&top->top__DOT__tape__DOT__memory, 65536, 0);
+		ImGui::Begin("Tape Cache");
+		mem_edit.DrawContents(&top->top__DOT__cassette__DOT__tapecache__DOT__memory, 65536, 0);
 		ImGui::End();
 		ImGui::Begin("ORIC RAM");
 		mem_edit.DrawContents(&top->top__DOT__ram, 65536, 0);

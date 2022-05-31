@@ -30,18 +30,21 @@ module top(
    
 );
    
-wire ce_pix = 1'b1;   
-
-newrom tape(
+wire ce_pix = 1'b1;  
+ 
+/*
+bram tapecache(
   .clk(clk_48),
+
+  .bram_wr(ioctl_download),
+  .bram_init_address(ioctl_addr),
+  .bram_din(ioctl_dout),
+
   .addr(),
   .dout(),
-  .cs(),
-  .rom_init(ioctl_download),
-  .rom_init_clk(clk_48),
-  .rom_init_address(ioctl_addr),
-  .rom_init_data(ioctl_dout)
+  .cs()
 );
+*/
 
 reg [16:0] clr_addr = 0;
 wire [15:0] ram_ad;
@@ -58,7 +61,7 @@ reg  [7:0] ram_q;
 always @(posedge clk_48) ram_q <= ram[ram_ad];
 
 always @(posedge clk_48) begin
-      $display( "(TOP) tape_autorun %x", tape_autorun);              
+     // $display( "(TOP) tape_autorun %x", tape_autorun);              
 end
 
 reg [15:0]  tape_addr;
@@ -66,28 +69,35 @@ reg         tape_wr;
 reg [7:0]   tape_dout;
 reg         tape_complete;
 reg 		    tape_autorun = 0;
+reg [15:0]  loadpoint;
+
+wire tape_request;
+reg [15:0]  tape_read_addr;
+reg [15:0]  tape_read_dout;
 
 always @(posedge clk_48) 
     begin
       if(tape_wr)
         ram[tape_addr] <= tape_dout;      
-        $display( "(TOP) tape_addr %x tape_wr %x tape_dout %x tape_complete %x", tape_addr, tape_wr, tape_dout, tape_complete);   
+       // $display( "(TOP) tape_addr %x tape_wr %x tape_dout %x tape_complete %x", tape_addr, tape_wr, tape_dout, tape_complete);   
     end
 
-cassette cassette(
+cassettecached cassette(
   .clk(clk_48),
 
+  // input raw tape data from tape cache
   .ioctl_download(ioctl_download),
   .ioctl_wr(ioctl_wr),
   .ioctl_addr(ioctl_addr),
   .ioctl_dout(ioctl_dout),
 
   .reset_n(~reset),
+  .tape_request(tape_request),
 
+  // output processed tape data to ram
   .autostart(),
-
   .tape_autorun(tape_autorun),
-
+  .loadpoint(loadpoint),
   .tape_addr(tape_addr),
   .tape_wr(tape_wr),
   .tape_dout(tape_dout),
