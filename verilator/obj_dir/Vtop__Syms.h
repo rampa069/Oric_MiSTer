@@ -20,11 +20,11 @@ class Vtop__Syms : public VerilatedSyms {
     // LOCAL STATE
     const char* __Vm_namep;
     bool __Vm_activity;  ///< Used by trace routines to determine change occurred
+    uint32_t __Vm_baseCode;  ///< Used by trace routines when tracing multiple models
     bool __Vm_didInit;
     
     // SUBCELL STATE
     Vtop*                          TOPp;
-    Vtop___024unit                 TOP____024unit;
     
     // CREATORS
     Vtop__Syms(Vtop* topp, const char* namep);
@@ -32,7 +32,6 @@ class Vtop__Syms : public VerilatedSyms {
     
     // METHODS
     inline const char* name() { return __Vm_namep; }
-    inline bool getClearActivity() { bool r=__Vm_activity; __Vm_activity=false; return r; }
     void __Vserialize(VerilatedSerialize& os);
     void __Vdeserialize(VerilatedDeserialize& os);
     
