@@ -26,13 +26,18 @@ module top(
    input [7:0]  ioctl_dout,
    input [7:0]  ioctl_din,   
    input [7:0]  ioctl_index,
-   output  reg  ioctl_wait=1'b0
+   output  reg  ioctl_wait=1'b0,
+   output reg ce_pix=1'b1
    
 );
 
 wire [10:0] ps2_key;
 
-wire ce_pix = 1'b1;  
+assign VGA_R={8{r}};
+assign VGA_G={8{g}};
+assign VGA_B={8{b}};
+wire r,g,b;
+
 
 reg [16:0] clr_addr = 0;
 
@@ -72,7 +77,9 @@ always @(posedge clk_48) ram_q <= ram[ram_ad];
 
 always @(posedge clk_48) begin
      // $display( "(TOP) tape_autorun %x", tape_autorun);              
+//$display("VGA_HS %x VGA_HB %x clk %x",VGA_HS,VGA_HB,video_clk);
 end
+wire video_clk;
 
 reg [15:0]  tape_addr;
 reg         tape_wr;
@@ -148,14 +155,14 @@ oricatmos oricatmos
 	.PSG_OUT_C        (psg_c),
 	.PSG_OUT          (psg_out),
 
-	.VIDEO_CLK		    (clk_pix),
+	.VIDEO_CLK		    (video_clk),
 	.VIDEO_R		      (r),
 	.VIDEO_G		      (g),
 	.VIDEO_B		      (b),
-	.VIDEO_HSYNC	    (hs),
-	.VIDEO_VSYNC	    (vs),
-	.VIDEO_HBLANK	    (HBlank),
-	.VIDEO_VBLANK	    (VBlank),
+	.VIDEO_HSYNC	    (VGA_HS),
+	.VIDEO_VSYNC	    (VGA_VS),
+	.VIDEO_HBLANK	    (VGA_HB),
+	.VIDEO_VBLANK	    (VGA_VB),
 
 	.K7_TAPEIN		    (tape_adc),
 	.K7_TAPEOUT		    (tape_out),
@@ -178,7 +185,7 @@ oricatmos oricatmos
 	.fdd_layout       (0),
 
 	.phi2             (),
-	.pll_locked       (locked),
+	.pll_locked       ( locked),
 	.disk_enable      ((1'b0) ? ~fdd_ready : 1'b1),
 	.rom			        (rom),
 

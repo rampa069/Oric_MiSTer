@@ -364,6 +364,11 @@ module ULA
   assign BLANKINGn   = lVBLANKn & lHBLANKn;
   assign CLK_PIX     = CLK_PIXEL_INT;
 
+/*
+always @(posedge CLK_24)
+$display("RESET_INT %x  RESETn %x  lHSYNCn %x VBLANKn %x",RESET_INT,RESETn,lHSYNCn,lVBLANKn);
+*/
+
   always_ff @(posedge CLK_24)
     if (CLK_PIXEL_INT) begin
       HBLANK <= ~lHBLANKn;

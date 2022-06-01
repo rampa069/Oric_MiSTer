@@ -3,6 +3,7 @@
 
 #include "Vtop__Syms.h"
 #include "Vtop.h"
+#include "Vtop___024unit.h"
 
 
 void Vtop__Syms::__Vserialize(VerilatedSerialize& os) {
@@ -20,14 +21,9 @@ void Vtop__Syms::__Vdeserialize(VerilatedDeserialize& os) {
 
 
 // FUNCTIONS
-Vtop__Syms::~Vtop__Syms()
-{
-}
-
-Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, Vtop* topp, const char* namep)
+Vtop__Syms::Vtop__Syms(Vtop* topp, const char* namep)
     // Setup locals
-    : VerilatedSyms{contextp}
-    , __Vm_namep(namep)
+    : __Vm_namep(namep)
     , __Vm_activity(false)
     , __Vm_baseCode(0)
     , __Vm_didInit(false)

@@ -1,3 +1,4 @@
+#include "sim_console.h"
 #include "sim_input.h"
 
 #include <string>
@@ -19,7 +20,6 @@ unsigned char m_keyboardState_last[256];
 #endif
 
 #include <vector>
-#include "sim_console.h"
 
 static DebugConsole console;
 
@@ -593,7 +593,7 @@ void SimInput::Read() {
 	for (int k = 0; k < m_keyboardStateCount; k++) {
 		if (m_keyboardState_last[k] != m_keyboardState[k]) {
 			bool ext = 0;
-			SimInput_PS2KeyEvent evt = SimInput_PS2KeyEvent(k, m_keyboardState[k], ext);
+			SimInput_PS2KeyEvent evt = SimInput_PS2KeyEvent(k, m_keyboardState[k], ext, ev2ps2[k]);
 			keyEvents.push(evt);
 		}
 		m_keyboardState_last[k] = m_keyboardState[k];
@@ -626,21 +626,25 @@ bool ps2_clock = 1;
 
 void SimInput::BeforeEval()
 {
-	if (ps2_key == NULL) {
-		return;
-	}
 	if (keyEventTimer == 0) {
 
 		if (keyEvents.size() > 0) {
 			// Get chunk from queue
 			SimInput_PS2KeyEvent evt = keyEvents.front();
 			keyEvents.pop();
+
+			//ps2_key_temp = ev2ps2[evt.code];
 			ps2_key_temp = evt.mapped;
+			/*fprintf(stderr, "evt = %x  ext = %d key = %d \n", evt.code, evt.extended, evt.mapped);*/
+
 			if (evt.extended) { ps2_key_temp |= (1UL << 8); }
 			if (evt.pressed) { ps2_key_temp |= (1UL << 9); }
 			if (ps2_clock) { ps2_key_temp |= (1UL << 10); }
+
 			ps2_clock = !ps2_clock;
+
 			*ps2_key = ps2_key_temp;
+
 			keyEventTimer = keyEventWait;
 		}
 	}
