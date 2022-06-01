@@ -61,6 +61,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="obj_dir\Vtop___024unit.cpp" />
     <ClCompile Include="sim\imgui\imgui_widgets.cpp" />
     <ClCompile Include="sim\imgui\imgui_tables.cpp" />
     <ClCompile Include="sim\imgui\imgui_impl_win32.cpp" />
@@ -75,7 +76,6 @@
     <ClCompile Include="sim\vinc\verilated_vcd_c.cpp" />
     <ClCompile Include="obj_dir\Vtop.cpp" />
     <ClCompile Include="obj_dir\Vtop__Syms.cpp" />
-    <ClCompile Include="obj_dir\Vtop__Slow.cpp" />
     <ClCompile Include="obj_dir\Vtop__Trace.cpp" />
     <ClCompile Include="obj_dir\Vtop__Trace__Slow.cpp" />
     <ClCompile Include="sim\sim_clock.cpp" />

@@ -18,8 +18,6 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  * DEALINGS IN THE SOFTWARE.
- *
- * SPDX-License-Identifier: MIT
  */
 
 /*
@@ -78,12 +76,6 @@
 
 #ifndef PATH_MAX
 #define PATH_MAX (4096)
-#endif
-
-#if defined(_MSC_VER)
-typedef int64_t fst_off_t;
-#else
-typedef off_t fst_off_t;
 #endif
 
 /* note that Judy versus Jenkins requires more experimentation: they are  */
@@ -161,8 +153,8 @@ void **JenkinsIns(void *base_i, const unsigned char *mem, uint32_t length, uint3
 #ifdef __MINGW32__
 #include <io.h>
 #ifndef HAVE_FSEEKO
-#define ftello _ftelli64
-#define fseeko _fseeki64
+#define ftello ftell
+#define fseeko fseek
 #endif
 #endif
 
@@ -290,7 +282,7 @@ static size_t fstFwrite(const void *buf, size_t siz, size_t cnt, FILE *fp)
 return(fwrite(buf, siz, cnt, fp));
 }
 
-static int fstFtruncate(int fd, fst_off_t length)
+static int fstFtruncate(int fd, off_t length)
 {
 return(ftruncate(fd, length));
 }
@@ -335,12 +327,12 @@ return(NULL);
 #define fstMmap(__addr,__len,__prot,__flags,__fd,__off) fstMmap2((__len), (__fd), (__off))
 #define fstMunmap(__addr,__len)                         free(__addr)
 
-static void *fstMmap2(size_t __len, int __fd, fst_off_t __off)
+static void *fstMmap2(size_t __len, int __fd, off_t __off)
 {
 (void)__off;
 
 unsigned char *pnt = (unsigned char *)malloc(__len);
-fst_off_t cur_offs = lseek(__fd, 0, SEEK_CUR);
+off_t cur_offs = lseek(__fd, 0, SEEK_CUR);
 size_t i;
 
 lseek(__fd, 0, SEEK_SET);
@@ -740,7 +732,7 @@ FILE *tchn_handle;
 
 unsigned char *vchg_mem;
 
-fst_off_t hier_file_len;
+off_t hier_file_len;
 
 uint32_t *valpos_mem;
 unsigned char *curval_mem;
@@ -760,7 +752,7 @@ unsigned fourpack : 1;
 unsigned fastpack : 1;
 
 int64_t timezero;
-fst_off_t section_header_truncpos;
+off_t section_header_truncpos;
 uint32_t tchn_cnt, tchn_idx;
 uint64_t curtime;
 uint64_t firsttime;
@@ -768,7 +760,7 @@ uint32_t vchg_siz;
 uint32_t vchg_alloc_siz;
 
 uint32_t secnum;
-fst_off_t section_start;
+off_t section_start;
 
 uint32_t numscopes;
 double nan; /* nan value for uninitialized doubles */
@@ -800,7 +792,6 @@ pthread_t thread;
 pthread_attr_t thread_attr;
 struct fstWriterContext *xc_parent;
 #endif
-unsigned in_pthread : 1;
 
 size_t fst_orig_break_size;
 size_t fst_orig_break_add_size;
@@ -826,7 +817,7 @@ fstEnumHandle max_enumhandle;
 };
 
 
-static int fstWriterFseeko(struct fstWriterContext *xc, FILE *stream, fst_off_t offset, int whence)
+static int fstWriterFseeko(struct fstWriterContext *xc, FILE *stream, off_t offset, int whence)
 {
 int rc = fseeko(stream, offset, whence);
 
@@ -993,7 +984,7 @@ if(pnt == MAP_FAILED)
 
 static void fstWriterCreateMmaps(struct fstWriterContext *xc)
 {
-fst_off_t curpos = ftello(xc->handle);
+off_t curpos = ftello(xc->handle);
 
 fflush(xc->hier_handle);
 
@@ -1033,9 +1024,7 @@ if(!xc->curval_mem)
 
 static void fstDestroyMmaps(struct fstWriterContext *xc, int is_closing)
 {
-#if !defined __CYGWIN__ && !defined __MINGW32__
 (void)is_closing;
-#endif
 
 fstMunmap(xc->valpos_mem, xc->maxhandle * 4 * sizeof(uint32_t));
 xc->valpos_mem = NULL;
@@ -1047,7 +1036,7 @@ if(xc->curval_mem)
                 {
                 unsigned char *pnt = xc->curval_mem;
                 int __fd = fileno(xc->curval_handle);
-                fst_off_t cur_offs = lseek(__fd, 0, SEEK_CUR);
+                off_t cur_offs = lseek(__fd, 0, SEEK_CUR);
                 size_t i;
                 size_t __len = xc->maxvalpos;
 
@@ -1288,14 +1277,14 @@ int cnt = 0;
 unsigned int i;
 unsigned char *vchg_mem;
 FILE *f;
-fst_off_t fpos, indxpos, endpos;
+off_t fpos, indxpos, endpos;
 uint32_t prevpos;
 int zerocnt;
 unsigned char *scratchpad;
 unsigned char *scratchpnt;
 unsigned char *tmem;
-fst_off_t tlen;
-fst_off_t unc_memreq = 0; /* for reader */
+off_t tlen;
+off_t unc_memreq = 0; /* for reader */
 unsigned char *packmem;
 unsigned int packmemlen;
 uint32_t *vm4ip;
@@ -1739,7 +1728,7 @@ if(tmem)
         unsigned char *dmem = (unsigned char *)malloc(compressBound(destlen));
         int rc = compress2(dmem, &destlen, tmem, tlen, 9);
 
-        if((rc == Z_OK) && (((fst_off_t)destlen) < tlen))
+        if((rc == Z_OK) && (((off_t)destlen) < tlen))
                 {
                 fstFwrite(dmem, destlen, 1, xc->handle);
                 }
@@ -1787,7 +1776,7 @@ fstWriterFseeko(xc, xc->handle, endpos, SEEK_SET);                              
 xc2->section_header_truncpos = endpos;                          /* cache in case of need to truncate */
 if(xc->dump_size_limit)
         {
-        if(endpos >= ((fst_off_t)xc->dump_size_limit))
+        if(endpos >= ((off_t)xc->dump_size_limit))
                 {
                 xc2->skip_writing_section_hdr = 1;
                 xc2->size_limit_locked = 1;
@@ -1812,10 +1801,10 @@ xc->already_in_flush = 0;
 static void *fstWriterFlushContextPrivate1(void *ctx)
 {
 struct fstWriterContext *xc = (struct fstWriterContext *)ctx;
-struct fstWriterContext *xc_parent;
 
-pthread_mutex_lock(&(xc->xc_parent->mutex));
 fstWriterFlushContextPrivate2(xc);
+
+pthread_mutex_unlock(&(xc->xc_parent->mutex));
 
 #ifdef FST_REMOVE_DUPLICATE_VC
 free(xc->curval_mem);
@@ -1823,11 +1812,7 @@ free(xc->curval_mem);
 free(xc->valpos_mem);
 free(xc->vchg_mem);
 tmpfile_close(&xc->tchn_handle, &xc->tchn_handle_nam);
-xc_parent = xc->xc_parent;
 free(xc);
-
-xc_parent->in_pthread = 0;
-pthread_mutex_unlock(&(xc_parent->mutex));
 
 return(NULL);
 }
@@ -1876,15 +1861,7 @@ if(xc->parallel_enabled)
         xc->section_header_only = 0;
         xc->secnum++;
 
-	while (xc->in_pthread) 
-		{ 
-		pthread_mutex_lock(&xc->mutex); 
-		pthread_mutex_unlock(&xc->mutex); 
-		};
-
         pthread_mutex_lock(&xc->mutex);
-	xc->in_pthread = 1;
-        pthread_mutex_unlock(&xc->mutex);
 
         pthread_create(&xc->thread, &xc->thread_attr, fstWriterFlushContextPrivate1, xc2);
         }
@@ -1937,7 +1914,7 @@ if(xc)
 if(xc && !xc->already_in_close && !xc->already_in_flush)
         {
         unsigned char *tmem = NULL;
-        fst_off_t fixup_offs, tlen, hlen;
+        off_t fixup_offs, tlen, hlen;
 
         xc->already_in_close = 1; /* never need to zero this out as it is freed at bottom */
 
@@ -1966,12 +1943,6 @@ if(xc && !xc->already_in_close && !xc->already_in_flush)
 #ifdef FST_WRITER_PARALLEL
                         pthread_mutex_lock(&xc->mutex);
                         pthread_mutex_unlock(&xc->mutex);
-
-			while (xc->in_pthread) 
-				{ 
-				pthread_mutex_lock(&xc->mutex); 
-				pthread_mutex_unlock(&xc->mutex); 
-				};
 #endif
                         }
                 }
@@ -1997,7 +1968,7 @@ if(xc && !xc->already_in_close && !xc->already_in_flush)
                 unsigned char *dmem = (unsigned char *)malloc(compressBound(destlen));
                 int rc = compress2(dmem, &destlen, tmem, tlen, 9);
 
-                if((rc != Z_OK) || (((fst_off_t)destlen) > tlen))
+                if((rc != Z_OK) || (((off_t)destlen) > tlen))
                         {
                         destlen = tlen;
                         }
@@ -2008,7 +1979,7 @@ if(xc && !xc->already_in_close && !xc->already_in_flush)
                 fstWriterUint64(xc->handle, tlen);              /* uncompressed */
                                                                 /* compressed len is section length - 24 */
                 fstWriterUint64(xc->handle, xc->maxhandle);     /* maxhandle */
-                fstFwrite((((fst_off_t)destlen) != tlen) ? dmem : tmem, destlen, 1, xc->handle);
+                fstFwrite((((off_t)destlen) != tlen) ? dmem : tmem, destlen, 1, xc->handle);
                 fflush(xc->handle);
 
                 fstWriterFseeko(xc, xc->handle, fixup_offs, SEEK_SET);
@@ -2024,7 +1995,7 @@ if(xc && !xc->already_in_close && !xc->already_in_flush)
         if(xc->num_blackouts)
                 {
                 uint64_t cur_bl = 0;
-                fst_off_t bpos, eos;
+                off_t bpos, eos;
                 uint32_t i;
 
                 fixup_offs = ftello(xc->handle);
@@ -2057,7 +2028,7 @@ if(xc && !xc->already_in_close && !xc->already_in_flush)
 
         if(xc->compress_hier)
                 {
-                fst_off_t hl, eos;
+                off_t hl, eos;
                 gzFile zhandle;
                 int zfd;
                 int fourpack_duo = 0;
@@ -2180,7 +2151,7 @@ if(xc && !xc->already_in_close && !xc->already_in_flush)
                 if(xc->repack_on_close)
                         {
                         FILE *fp;
-                        fst_off_t offpnt, uclen;
+                        off_t offpnt, uclen;
                         int flen = strlen(xc->filename);
                         char *hf = (char *)calloc(1, flen + 5);
 
@@ -2287,7 +2258,7 @@ struct fstWriterContext *xc = (struct fstWriterContext *)ctx;
 if(xc)
         {
         char s[FST_HDR_DATE_SIZE];
-        fst_off_t fpos = ftello(xc->handle);
+        off_t fpos = ftello(xc->handle);
         int len = strlen(dat);
 
         fstWriterFseeko(xc, xc->handle, FST_HDR_OFFS_DATE, SEEK_SET);
@@ -2306,7 +2277,7 @@ struct fstWriterContext *xc = (struct fstWriterContext *)ctx;
 if(xc && vers)
         {
         char s[FST_HDR_SIM_VERSION_SIZE];
-        fst_off_t fpos = ftello(xc->handle);
+        off_t fpos = ftello(xc->handle);
         int len = strlen(vers);
 
         fstWriterFseeko(xc, xc->handle, FST_HDR_OFFS_SIM_VERSION, SEEK_SET);
@@ -2326,7 +2297,7 @@ if(xc)
         {
         if(/*(filetype >= FST_FT_MIN) &&*/ (filetype <= FST_FT_MAX))
                 {
-                fst_off_t fpos = ftello(xc->handle);
+                off_t fpos = ftello(xc->handle);
 
                 xc->filetype = filetype;
 
@@ -2467,7 +2438,7 @@ void fstWriterSetTimescale(void *ctx, int ts)
 struct fstWriterContext *xc = (struct fstWriterContext *)ctx;
 if(xc)
         {
-        fst_off_t fpos = ftello(xc->handle);
+        off_t fpos = ftello(xc->handle);
         fstWriterFseeko(xc, xc->handle, FST_HDR_OFFS_TIMESCALE, SEEK_SET);
         fputc(ts & 255, xc->handle);
         fflush(xc->handle);
@@ -2525,7 +2496,7 @@ void fstWriterSetTimezero(void *ctx, int64_t tim)
 struct fstWriterContext *xc = (struct fstWriterContext *)ctx;
 if(xc)
         {
-        fst_off_t fpos = ftello(xc->handle);
+        off_t fpos = ftello(xc->handle);
         fstWriterFseeko(xc, xc->handle, FST_HDR_OFFS_TIMEZERO, SEEK_SET);
         fstWriterUint64(xc->handle, (xc->timezero = tim));
         fflush(xc->handle);
@@ -3367,7 +3338,7 @@ char date[FST_HDR_DATE_SIZE + 1];
 int64_t timezero;
 
 char *filename, *filename_unpacked;
-fst_off_t hier_pos;
+off_t hier_pos;
 
 uint32_t num_blackouts;
 uint64_t *blackout_times;
@@ -3382,10 +3353,10 @@ uint64_t *rvat_time_table;
 uint64_t rvat_beg_tim, rvat_end_tim;
 unsigned char *rvat_frame_data;
 uint64_t rvat_frame_maxhandle;
-fst_off_t *rvat_chain_table;
+off_t *rvat_chain_table;
 uint32_t *rvat_chain_table_lengths;
 uint64_t rvat_vc_maxhandle;
-fst_off_t rvat_vc_start;
+off_t rvat_vc_start;
 uint32_t *rvat_sig_offs;
 int rvat_packtype;
 
@@ -3424,7 +3395,7 @@ char *fh_nam;
 };
 
 
-int fstReaderFseeko(struct fstReaderContext *xc, FILE *stream, fst_off_t offset, int whence)
+int fstReaderFseeko(struct fstReaderContext *xc, FILE *stream, off_t offset, int whence)
 {
 int rc = fseeko(stream, offset, whence);
 
@@ -3917,11 +3888,11 @@ int pass_status = 1;
 
 if(!xc->fh)
         {
-        fst_off_t offs_cache = ftello(xc->f);
+        off_t offs_cache = ftello(xc->f);
         char *fnam = (char *)malloc(strlen(xc->filename) + 6 + 16 + 32 + 1);
         unsigned char *mem = (unsigned char *)malloc(FST_GZIO_LEN);
-        fst_off_t hl, uclen;
-        fst_off_t clen = 0;
+        off_t hl, uclen;
+        off_t clen = 0;
         gzFile zhandle = NULL;
         int zfd;
         int htyp = FST_BL_SKIP;
@@ -4541,8 +4512,8 @@ return(1);
  */
 int fstReaderInit(struct fstReaderContext *xc)
 {
-fst_off_t blkpos = 0;
-fst_off_t endfile;
+off_t blkpos = 0;
+off_t endfile;
 uint64_t seclen;
 int sectype;
 uint64_t vc_section_count_actual = 0;
@@ -4554,7 +4525,7 @@ sectype = fgetc(xc->f);
 if(sectype == FST_BL_ZWRAPPER)
         {
         FILE *fcomp;
-        fst_off_t offpnt, uclen;
+        off_t offpnt, uclen;
         char gz_membuf[FST_GZIO_LEN];
         gzFile zhandle;
         int zfd;
@@ -4987,15 +4958,15 @@ uint64_t *time_table = NULL;
 uint64_t tsec_nitems;
 unsigned int secnum = 0;
 int blocks_skipped = 0;
-fst_off_t blkpos = 0;
+off_t blkpos = 0;
 uint64_t seclen, beg_tim;
 #ifdef FST_DEBUG
 uint64_t end_tim;
 #endif
 uint64_t frame_uclen, frame_clen, frame_maxhandle, vc_maxhandle;
-fst_off_t vc_start;
-fst_off_t indx_pntr, indx_pos;
-fst_off_t *chain_table = NULL;
+off_t vc_start;
+off_t indx_pntr, indx_pos;
+off_t *chain_table = NULL;
 uint32_t *chain_table_lengths = NULL;
 unsigned char *chain_cmem;
 unsigned char *pnt;
@@ -5111,7 +5082,7 @@ for(;;)
         destlen = tsec_uclen;
         sourcelen = tsec_clen;
 
-        fstReaderFseeko(xc, xc->f, -24 - ((fst_off_t)tsec_clen), SEEK_CUR);
+        fstReaderFseeko(xc, xc->f, -24 - ((off_t)tsec_clen), SEEK_CUR);
 
         if(tsec_uclen != tsec_clen)
                 {
@@ -5352,11 +5323,11 @@ for(;;)
                                 }
 
                         free(mu);
-                        fstReaderFseeko(xc, xc->f, -((fst_off_t)frame_clen), SEEK_CUR);
+                        fstReaderFseeko(xc, xc->f, -((off_t)frame_clen), SEEK_CUR);
                         }
                 }
 
-        fstReaderFseeko(xc, xc->f, (fst_off_t)frame_clen, SEEK_CUR); /* skip past compressed data */
+        fstReaderFseeko(xc, xc->f, (off_t)frame_clen, SEEK_CUR); /* skip past compressed data */
 
         vc_maxhandle = fstReaderVarint64(xc->f);
         vc_start = ftello(xc->f);       /* points to '!' character */
@@ -5386,7 +5357,7 @@ for(;;)
                 free(chain_table_lengths);
 
                 vc_maxhandle_largest = vc_maxhandle;
-                chain_table = (fst_off_t *)calloc((vc_maxhandle+1), sizeof(fst_off_t));
+                chain_table = (off_t *)calloc((vc_maxhandle+1), sizeof(off_t));
                 chain_table_lengths = (uint32_t *)calloc((vc_maxhandle+1), sizeof(uint32_t));
                 }
 
@@ -6007,7 +5978,7 @@ return(buf);
 char *fstReaderGetValueFromHandleAtTime(void *ctx, uint64_t tim, fstHandle facidx, char *buf)
 {
 struct fstReaderContext *xc = (struct fstReaderContext *)ctx;
-fst_off_t blkpos = 0, prev_blkpos;
+off_t blkpos = 0, prev_blkpos;
 uint64_t beg_tim, end_tim, beg_tim2, end_tim2;
 int sectype;
 unsigned int secnum = 0;
@@ -6018,7 +5989,7 @@ uint64_t frame_uclen, frame_clen;
 #ifdef FST_DEBUG
 uint64_t mem_required_for_traversal;
 #endif
-fst_off_t indx_pntr, indx_pos;
+off_t indx_pntr, indx_pos;
 long chain_clen;
 unsigned char *chain_cmem;
 unsigned char *pnt;
@@ -6080,7 +6051,7 @@ for(;;)
                 {
                 if((tim == end_tim) && (tim != xc->end_time))
                         {
-                        fst_off_t cached_pos = ftello(xc->f);
+                        off_t cached_pos = ftello(xc->f);
                         fstReaderFseeko(xc, xc->f, blkpos, SEEK_SET);
 
                         sectype = fgetc(xc->f);
@@ -6142,7 +6113,7 @@ ucdata = (unsigned char *)malloc(tsec_uclen);
 destlen = tsec_uclen;
 sourcelen = tsec_clen;
 
-fstReaderFseeko(xc, xc->f, -24 - ((fst_off_t)tsec_clen), SEEK_CUR);
+fstReaderFseeko(xc, xc->f, -24 - ((off_t)tsec_clen), SEEK_CUR);
 if(tsec_uclen != tsec_clen)
         {
         cdata = (unsigned char *)malloc(tsec_clen);
@@ -6227,7 +6198,7 @@ chain_cmem = (unsigned char *)malloc(chain_clen);
 fstReaderFseeko(xc, xc->f, indx_pos, SEEK_SET);
 fstFread(chain_cmem, chain_clen, 1, xc->f);
 
-xc->rvat_chain_table = (fst_off_t *)calloc((xc->rvat_vc_maxhandle+1), sizeof(fst_off_t));
+xc->rvat_chain_table = (off_t *)calloc((xc->rvat_vc_maxhandle+1), sizeof(off_t));
 xc->rvat_chain_table_lengths = (uint32_t *)calloc((xc->rvat_vc_maxhandle+1), sizeof(uint32_t));
 
 pnt = chain_cmem;
