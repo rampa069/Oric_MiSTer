@@ -32,7 +32,7 @@ Vtop::~Vtop() {
 
 // Savable
 void Vtop::__Vserialize(VerilatedSerialize& os) {
-    vluint64_t __Vcheckval = 0x46d491c7b8800076ULL;
+    vluint64_t __Vcheckval = 0x295276291bdae07ULL;
     os<<__Vcheckval;
     os<<clk_48;
     os<<reset;
@@ -53,9 +53,9 @@ void Vtop::__Vserialize(VerilatedSerialize& os) {
     os<<ioctl_dout;
     os<<ioctl_din;
     os<<ioctl_index;
+    os<<ps2_key;
     os<<ioctl_wait;
     os<<ce_pix;
-    os<<top__DOT__ps2_key;
     os<<top__DOT__ram_ad_temp;
     os<<top__DOT__ram_d_temp;
     os<<top__DOT__ram_we_temp;
@@ -70,13 +70,14 @@ void Vtop::__Vserialize(VerilatedSerialize& os) {
     os<<top__DOT__tape_request;
     os<<top__DOT__tape_read_addr;
     os<<top__DOT__tape_read_dout;
+    os<<top__DOT__key_strobe;
+    os<<top__DOT__old_keystb;
     os<<top__DOT____Vcellout__oricatmos__sd_din;
     os<<top__DOT____Vcellout__oricatmos__PSG_OUT;
     os<<top__DOT____Vcellout__oricatmos__PSG_OUT_C;
     os<<top__DOT____Vcellout__oricatmos__PSG_OUT_B;
     os<<top__DOT____Vcellout__oricatmos__PSG_OUT_A;
     os<<top__DOT__fdd_ready;
-    os<<top__DOT__key_strobe;
     os<<top__DOT__tape_adc;
     os<<top__DOT__locked;
     os<<top__DOT__rom;
@@ -765,7 +766,7 @@ void Vtop::__Vserialize(VerilatedSerialize& os) {
     __VlSymsp->__Vserialize(os);
 }
 void Vtop::__Vdeserialize(VerilatedDeserialize& os) {
-    vluint64_t __Vcheckval = 0x46d491c7b8800076ULL;
+    vluint64_t __Vcheckval = 0x295276291bdae07ULL;
     os.readAssert(__Vcheckval);
     os>>clk_48;
     os>>reset;
@@ -786,9 +787,9 @@ void Vtop::__Vdeserialize(VerilatedDeserialize& os) {
     os>>ioctl_dout;
     os>>ioctl_din;
     os>>ioctl_index;
+    os>>ps2_key;
     os>>ioctl_wait;
     os>>ce_pix;
-    os>>top__DOT__ps2_key;
     os>>top__DOT__ram_ad_temp;
     os>>top__DOT__ram_d_temp;
     os>>top__DOT__ram_we_temp;
@@ -803,13 +804,14 @@ void Vtop::__Vdeserialize(VerilatedDeserialize& os) {
     os>>top__DOT__tape_request;
     os>>top__DOT__tape_read_addr;
     os>>top__DOT__tape_read_dout;
+    os>>top__DOT__key_strobe;
+    os>>top__DOT__old_keystb;
     os>>top__DOT____Vcellout__oricatmos__sd_din;
     os>>top__DOT____Vcellout__oricatmos__PSG_OUT;
     os>>top__DOT____Vcellout__oricatmos__PSG_OUT_C;
     os>>top__DOT____Vcellout__oricatmos__PSG_OUT_B;
     os>>top__DOT____Vcellout__oricatmos__PSG_OUT_A;
     os>>top__DOT__fdd_ready;
-    os>>top__DOT__key_strobe;
     os>>top__DOT__tape_adc;
     os>>top__DOT__locked;
     os>>top__DOT__rom;
@@ -1505,6 +1507,7 @@ void Vtop::_initial__TOP__1(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->ioctl_wait = 0U;
     vlTOPp->ce_pix = 1U;
     vlTOPp->top__DOT__tape_autorun = 0U;
+    vlTOPp->top__DOT__old_keystb = 0U;
     vlTOPp->top__DOT__oricatmos__DOT__inst_via__DOT__t1_irq = 0U;
     vlTOPp->top__DOT__oricatmos__DOT__inst_via__DOT__t2_irq = 0U;
     vlTOPp->top__DOT__oricatmos__DOT__inst_via__DOT__p2_h_t1 = 0U;

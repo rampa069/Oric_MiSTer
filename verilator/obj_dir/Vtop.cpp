@@ -252,185 +252,187 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         vlTOPp->__Vdlyvdim0__top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT__genblk1__DOT__sbuf__DOT__ram__v1 
             = vlTOPp->top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT____Vcellinp__genblk1__DOT__sbuf__address_b;
     }
+    vlTOPp->top__DOT__old_keystb = (1U & ((IData)(vlTOPp->ps2_key) 
+                                          >> 0xaU));
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if ((1U & (~ ((((((
                                                    ((0x11U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                      & (IData)(vlTOPp->ps2_key))) 
                                                     | (0x66U 
                                                        == 
                                                        (0xffU 
-                                                        & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                        & (IData)(vlTOPp->ps2_key)))) 
                                                    | (0x71U 
                                                       == 
                                                       (0xffU 
-                                                       & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                       & (IData)(vlTOPp->ps2_key)))) 
                                                   | (0x5bU 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                      & (IData)(vlTOPp->ps2_key)))) 
                                                  | (0x54U 
                                                     == 
                                                     (0xffU 
-                                                     & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                     & (IData)(vlTOPp->ps2_key)))) 
                                                 | (0x5dU 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x4eU 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x52U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))))) {
                                     if (((((((((0x4cU 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                                | (0x76U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x14U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x78U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (9U == 
                                                (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                            | (5U == 
                                               (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                           | (6U == 
                                              (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                          | (4U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))) {
                                         if ((0x4cU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x76U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x14U 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x78U 
                                                          == 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         vlTOPp->top__DOT__oricatmos__DOT__swrst 
                                                             = 
                                                             (1U 
-                                                             & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                             & ((IData)(vlTOPp->ps2_key) 
                                                                 >> 9U));
                                                     }
                                                 }
@@ -1216,120 +1218,120 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
                      >> 2U));
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if (((((((((0x59U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                        | (0x12U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x29U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x41U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x49U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x5aU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x4aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x55U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                              & (IData)(vlTOPp->ps2_key))))) {
                                 if ((0x59U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x12U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x29U 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x41U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x49U 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x5aU 
                                                          != 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         if (
                                                             (0x4aU 
                                                              != 
                                                              (0xffU 
-                                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                              & (IData)(vlTOPp->ps2_key)))) {
                                                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__sweq 
                                                                 = 
                                                                 (1U 
-                                                                 & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                                 & ((IData)(vlTOPp->ps2_key) 
                                                                     >> 9U));
                                                         }
                                                     }
@@ -1346,194 +1348,194 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if ((1U & (~ ((((((
                                                    ((0x11U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                      & (IData)(vlTOPp->ps2_key))) 
                                                     | (0x66U 
                                                        == 
                                                        (0xffU 
-                                                        & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                        & (IData)(vlTOPp->ps2_key)))) 
                                                    | (0x71U 
                                                       == 
                                                       (0xffU 
-                                                       & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                       & (IData)(vlTOPp->ps2_key)))) 
                                                   | (0x5bU 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                      & (IData)(vlTOPp->ps2_key)))) 
                                                  | (0x54U 
                                                     == 
                                                     (0xffU 
-                                                     & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                     & (IData)(vlTOPp->ps2_key)))) 
                                                 | (0x5dU 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x4eU 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x52U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))))) {
                                     if (((((((((0x4cU 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                                | (0x76U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x14U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x78U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (9U == 
                                                (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                            | (5U == 
                                               (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                           | (6U == 
                                              (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                          | (4U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))) {
                                         if ((0x4cU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x76U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x14U 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x78U 
                                                          != 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         if (
                                                             (9U 
                                                              != 
                                                              (0xffU 
-                                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                              & (IData)(vlTOPp->ps2_key)))) {
                                                             if (
                                                                 (5U 
                                                                  == 
                                                                  (0xffU 
-                                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swf1 
                                                                     = 
                                                                     (1U 
-                                                                     & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                                     & ((IData)(vlTOPp->ps2_key) 
                                                                         >> 9U));
                                                             }
                                                         }
@@ -1551,115 +1553,115 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if (((((((((0x59U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                        | (0x12U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x29U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x41U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x49U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x5aU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x4aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x55U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                              & (IData)(vlTOPp->ps2_key))))) {
                                 if ((0x59U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x12U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x29U 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x41U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x49U 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x5aU 
                                                          == 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swret 
                                                             = 
                                                             (1U 
-                                                             & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                             & ((IData)(vlTOPp->ps2_key) 
                                                                 >> 9U));
                                                     }
                                                 }
@@ -1675,94 +1677,94 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if (((((((((0x59U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                        | (0x12U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x29U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x41U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x49U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x5aU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x4aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x55U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                              & (IData)(vlTOPp->ps2_key))))) {
                                 if ((0x59U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swrs 
-                                        = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                        = (1U & ((IData)(vlTOPp->ps2_key) 
                                                  >> 9U));
                                 }
                             }
@@ -1773,120 +1775,120 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if (((((((((0x59U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                        | (0x12U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x29U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x41U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x49U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x5aU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x4aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x55U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                              & (IData)(vlTOPp->ps2_key))))) {
                                 if ((0x59U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x12U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x29U 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x41U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x49U 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x5aU 
                                                          != 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         if (
                                                             (0x4aU 
                                                              == 
                                                              (0xffU 
-                                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                              & (IData)(vlTOPp->ps2_key)))) {
                                                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swfs 
                                                                 = 
                                                                 (1U 
-                                                                 & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                                 & ((IData)(vlTOPp->ps2_key) 
                                                                     >> 9U));
                                                         }
                                                     }
@@ -1903,60 +1905,60 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if (((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                   | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                  | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                 | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-               | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-              | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-             | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-            if ((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+        if (((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                   | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                  | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                 | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+               | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+              | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+             | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+            if ((0x45U == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__sw0 
-                    = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                    = (1U & ((IData)(vlTOPp->ps2_key) 
                              >> 9U));
             }
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                if (((((((((0x34U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                           | (0x33U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x43U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x3bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x42U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x4bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                    if ((0x34U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x33U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x43U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                if (((((((((0x34U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                           | (0x33U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x43U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x3bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x42U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x4bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                    if ((0x34U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x33U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x43U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x3bU != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x42U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x4bU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swl 
                                                 = (1U 
-                                                   & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                   & ((IData)(vlTOPp->ps2_key) 
                                                       >> 9U));
                                         }
                                     }
@@ -1969,94 +1971,94 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                       | (0x46U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                    | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                   | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                  | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                 | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                if ((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                       | (0x46U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                    | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                   | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                  | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                 | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                if ((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                     vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__sw8 
-                        = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                        = (1U & ((IData)(vlTOPp->ps2_key) 
                                  >> 9U));
                 }
             }
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if (((((((((0x1dU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                              & (IData)(vlTOPp->ps2_key))) 
                                    | (0x22U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x35U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x1aU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x75U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x72U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x6bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x74U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                            if ((0x1dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x72U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x6bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x74U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                            if ((0x1dU == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__sww 
-                                    = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                    = (1U & ((IData)(vlTOPp->ps2_key) 
                                              >> 9U));
                             }
                         }
@@ -2066,57 +2068,57 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                               | (0x4dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x15U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x2dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x1bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x2cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x3cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x2aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                        if ((0x44U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x4dU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                               | (0x4dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x15U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x2dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x1bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x2cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x3cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x2aU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                        if ((0x44U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x4dU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x15U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x2dU != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x1bU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__sws 
                                                 = (1U 
-                                                   & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                   & ((IData)(vlTOPp->ps2_key) 
                                                       >> 9U));
                                         }
                                     }
@@ -2129,27 +2131,27 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                       | (0x46U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                    | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                   | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                  | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                 | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                if ((0x3eU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                    if ((0x46U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                       | (0x46U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                    | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                   | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                  | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                 | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                if ((0x3eU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                    if ((0x46U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swa 
-                                = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                = (1U & ((IData)(vlTOPp->ps2_key) 
                                          >> 9U));
                         }
                     }
@@ -2158,199 +2160,199 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if ((1U & (~ ((((((
                                                    ((0x11U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                      & (IData)(vlTOPp->ps2_key))) 
                                                     | (0x66U 
                                                        == 
                                                        (0xffU 
-                                                        & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                        & (IData)(vlTOPp->ps2_key)))) 
                                                    | (0x71U 
                                                       == 
                                                       (0xffU 
-                                                       & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                       & (IData)(vlTOPp->ps2_key)))) 
                                                   | (0x5bU 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                      & (IData)(vlTOPp->ps2_key)))) 
                                                  | (0x54U 
                                                     == 
                                                     (0xffU 
-                                                     & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                     & (IData)(vlTOPp->ps2_key)))) 
                                                 | (0x5dU 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x4eU 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x52U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))))) {
                                     if (((((((((0x4cU 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                                | (0x76U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x14U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x78U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (9U == 
                                                (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                            | (5U == 
                                               (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                           | (6U == 
                                              (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                          | (4U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))) {
                                         if ((0x4cU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x76U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x14U 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x78U 
                                                          != 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         if (
                                                             (9U 
                                                              != 
                                                              (0xffU 
-                                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                              & (IData)(vlTOPp->ps2_key)))) {
                                                             if (
                                                                 (5U 
                                                                  != 
                                                                  (0xffU 
-                                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                                 if (
                                                                     (6U 
                                                                      == 
                                                                      (0xffU 
-                                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                                     vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swf2 
                                                                         = 
                                                                         (1U 
-                                                                         & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                                         & ((IData)(vlTOPp->ps2_key) 
                                                                             >> 9U));
                                                                 }
                                                             }
@@ -2369,36 +2371,36 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                       | (0x46U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                    | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                   | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                  | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                 | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                if ((0x3eU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                    if ((0x46U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x1cU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x32U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                       | (0x46U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                    | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                   | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                  | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                 | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                if ((0x3eU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                    if ((0x46U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x1cU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x32U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x21U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x23U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x24U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swe 
                                                 = (1U 
-                                                   & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                   & ((IData)(vlTOPp->ps2_key) 
                                                       >> 9U));
                                         }
                                     }
@@ -2411,34 +2413,34 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                if (((((((((0x34U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                           | (0x33U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x43U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x3bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x42U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x4bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                    if ((0x34U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                if (((((((((0x34U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                           | (0x33U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x43U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x3bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x42U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x4bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                    if ((0x34U == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swg 
-                            = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                            = (1U & ((IData)(vlTOPp->ps2_key) 
                                      >> 9U));
                     }
                 }
@@ -2446,35 +2448,35 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                if (((((((((0x34U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                           | (0x33U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x43U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x3bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x42U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x4bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                    if ((0x34U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x33U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                if (((((((((0x34U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                           | (0x33U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x43U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x3bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x42U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x4bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                    if ((0x34U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x33U == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swh 
-                                = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                = (1U & ((IData)(vlTOPp->ps2_key) 
                                          >> 9U));
                         }
                     }
@@ -2483,74 +2485,74 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if (((((((((0x1dU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                              & (IData)(vlTOPp->ps2_key))) 
                                    | (0x22U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x35U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x1aU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x75U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x72U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x6bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x74U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                            if ((0x1dU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x72U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x6bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x74U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                            if ((0x1dU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x22U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x35U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swy 
                                             = (1U & 
-                                               ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                               ((IData)(vlTOPp->ps2_key) 
                                                 >> 9U));
                                     }
                                 }
@@ -2562,146 +2564,146 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if (((((((((0x11U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                             & (IData)(vlTOPp->ps2_key))) 
                                            | (0x66U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x71U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x5bU == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x54U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x5dU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x4eU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x52U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))) {
                                     if ((0x11U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x66U 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x71U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x5bU 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x54U 
                                                          == 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swlsb 
                                                             = 
                                                             (1U 
-                                                             & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                             & ((IData)(vlTOPp->ps2_key) 
                                                                 >> 9U));
                                                     }
                                                 }
@@ -2717,141 +2719,141 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if (((((((((0x11U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                             & (IData)(vlTOPp->ps2_key))) 
                                            | (0x66U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x71U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x5bU == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x54U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x5dU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x4eU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x52U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))) {
                                     if ((0x11U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x66U 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x71U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x5bU 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swrsb 
                                                         = 
                                                         (1U 
-                                                         & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                         & ((IData)(vlTOPp->ps2_key) 
                                                             >> 9U));
                                                 }
                                             }
@@ -2866,141 +2868,141 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if (((((((((0x11U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                             & (IData)(vlTOPp->ps2_key))) 
                                            | (0x66U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x71U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x5bU == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x54U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x5dU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x4eU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x52U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))) {
                                     if ((0x11U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x66U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swdel 
                                                 = (1U 
-                                                   & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                   & ((IData)(vlTOPp->ps2_key) 
                                                       >> 9U));
                                         } else {
                                             if ((0x71U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swdel 
                                                     = 
                                                     (1U 
-                                                     & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                     & ((IData)(vlTOPp->ps2_key) 
                                                         >> 9U));
                                             }
                                         }
@@ -3014,128 +3016,128 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if (((((((((0x11U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                             & (IData)(vlTOPp->ps2_key))) 
                                            | (0x66U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x71U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x5bU == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x54U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x5dU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x4eU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x52U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))) {
                                     if ((0x11U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swfcn 
                                             = (1U & 
-                                               ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                               ((IData)(vlTOPp->ps2_key) 
                                                 >> 9U));
                                     }
                                 }
@@ -3147,49 +3149,49 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                               | (0x4dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x15U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x2dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x1bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x2cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x3cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x2aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                        if ((0x44U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x4dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                               | (0x4dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x15U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x2dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x1bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x2cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x3cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x2aU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                        if ((0x44U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x4dU == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swp 
-                                    = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                    = (1U & ((IData)(vlTOPp->ps2_key) 
                                              >> 9U));
                             }
                         }
@@ -3199,48 +3201,48 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                               | (0x4dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x15U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x2dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x1bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x2cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x3cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x2aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                        if ((0x44U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                               | (0x4dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x15U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x2dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x1bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x2cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x3cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x2aU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                        if ((0x44U == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swo 
-                                = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                = (1U & ((IData)(vlTOPp->ps2_key) 
                                          >> 9U));
                         }
                     }
@@ -3249,36 +3251,36 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                if (((((((((0x34U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                           | (0x33U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x43U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x3bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x42U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x4bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                    if ((0x34U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x33U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x43U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                if (((((((((0x34U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                           | (0x33U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x43U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x3bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x42U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x4bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                    if ((0x34U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x33U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x43U == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swi 
-                                    = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                    = (1U & ((IData)(vlTOPp->ps2_key) 
                                              >> 9U));
                             }
                         }
@@ -3288,67 +3290,67 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                               | (0x4dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x15U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x2dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x1bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x2cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x3cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x2aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                        if ((0x44U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x4dU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                               | (0x4dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x15U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x2dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x1bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x2cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x3cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x2aU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                        if ((0x44U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x4dU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x15U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x2dU != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x1bU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x2cU 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x3cU 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swu 
                                                         = 
                                                         (1U 
-                                                         & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                         & ((IData)(vlTOPp->ps2_key) 
                                                             >> 9U));
                                                 }
                                             }
@@ -3363,92 +3365,92 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if (((((((((0x1dU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                              & (IData)(vlTOPp->ps2_key))) 
                                    | (0x22U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x35U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x1aU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x75U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x72U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x6bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x74U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                            if ((0x1dU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x72U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x6bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x74U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                            if ((0x1dU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x22U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x35U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x1aU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x75U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x72U 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x6bU 
                                                          != 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swR 
                                                             = 
                                                             (1U 
-                                                             & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                             & ((IData)(vlTOPp->ps2_key) 
                                                                 >> 9U));
                                                     }
                                                 }
@@ -3464,87 +3466,87 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if (((((((((0x1dU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                              & (IData)(vlTOPp->ps2_key))) 
                                    | (0x22U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x35U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x1aU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x75U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x72U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x6bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x74U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                            if ((0x1dU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x72U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x6bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x74U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                            if ((0x1dU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x22U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x35U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x1aU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x75U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x72U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swD 
                                                         = 
                                                         (1U 
-                                                         & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                         & ((IData)(vlTOPp->ps2_key) 
                                                             >> 9U));
                                                 }
                                             }
@@ -3559,92 +3561,92 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if (((((((((0x1dU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                              & (IData)(vlTOPp->ps2_key))) 
                                    | (0x22U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x35U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x1aU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x75U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x72U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x6bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x74U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                            if ((0x1dU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x72U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x6bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x74U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                            if ((0x1dU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x22U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x35U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x1aU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x75U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x72U 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x6bU 
                                                          == 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swL 
                                                             = 
                                                             (1U 
-                                                             & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                             & ((IData)(vlTOPp->ps2_key) 
                                                                 >> 9U));
                                                     }
                                                 }
@@ -3660,97 +3662,97 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if (((((((((0x59U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                        | (0x12U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x29U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x41U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x49U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x5aU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x4aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x55U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                              & (IData)(vlTOPp->ps2_key))))) {
                                 if ((0x59U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x12U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swls 
                                             = (1U & 
-                                               ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                               ((IData)(vlTOPp->ps2_key) 
                                                 >> 9U));
                                     }
                                 }
@@ -3762,82 +3764,82 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if (((((((((0x1dU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                              & (IData)(vlTOPp->ps2_key))) 
                                    | (0x22U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x35U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x1aU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x75U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x72U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x6bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x74U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                            if ((0x1dU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x72U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x6bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x74U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                            if ((0x1dU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x22U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x35U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x1aU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x75U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swU 
                                                     = 
                                                     (1U 
-                                                     & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                     & ((IData)(vlTOPp->ps2_key) 
                                                         >> 9U));
                                             }
                                         }
@@ -3851,110 +3853,110 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if (((((((((0x59U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                        | (0x12U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x29U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x41U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x49U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x5aU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x4aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x55U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                              & (IData)(vlTOPp->ps2_key))))) {
                                 if ((0x59U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x12U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x29U 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x41U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x49U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swdot 
                                                         = 
                                                         (1U 
-                                                         & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                         & ((IData)(vlTOPp->ps2_key) 
                                                             >> 9U));
                                                 }
                                             }
@@ -3969,105 +3971,105 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if (((((((((0x59U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                        | (0x12U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x29U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x41U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x49U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x5aU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x4aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x55U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                              & (IData)(vlTOPp->ps2_key))))) {
                                 if ((0x59U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x12U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x29U 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swcom 
                                                     = 
                                                     (1U 
-                                                     & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                     & ((IData)(vlTOPp->ps2_key) 
                                                         >> 9U));
                                             }
                                         }
@@ -4081,100 +4083,100 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if (((((((((0x59U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                        | (0x12U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x29U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x41U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x49U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x5aU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x4aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x55U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                              & (IData)(vlTOPp->ps2_key))))) {
                                 if ((0x59U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x12U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x29U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swsp 
                                                 = (1U 
-                                                   & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                   & ((IData)(vlTOPp->ps2_key) 
                                                       >> 9U));
                                         }
                                     }
@@ -4187,156 +4189,156 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if (((((((((0x11U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                             & (IData)(vlTOPp->ps2_key))) 
                                            | (0x66U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x71U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x5bU == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x54U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x5dU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x4eU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x52U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))) {
                                     if ((0x11U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x66U 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x71U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x5bU 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x54U 
                                                          != 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         if (
                                                             (0x5dU 
                                                              != 
                                                              (0xffU 
-                                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                              & (IData)(vlTOPp->ps2_key)))) {
                                                             if (
                                                                 (0x4eU 
                                                                  != 
                                                                  (0xffU 
-                                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swsq 
                                                                     = 
                                                                     (1U 
-                                                                     & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                                     & ((IData)(vlTOPp->ps2_key) 
                                                                         >> 9U));
                                                             }
                                                         }
@@ -4354,151 +4356,151 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if (((((((((0x11U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                             & (IData)(vlTOPp->ps2_key))) 
                                            | (0x66U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x71U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x5bU == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x54U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x5dU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x4eU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x52U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))) {
                                     if ((0x11U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x66U 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x71U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x5bU 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x54U 
                                                          != 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         if (
                                                             (0x5dU 
                                                              == 
                                                              (0xffU 
-                                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                              & (IData)(vlTOPp->ps2_key)))) {
                                                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swbs 
                                                                 = 
                                                                 (1U 
-                                                                 & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                                 & ((IData)(vlTOPp->ps2_key) 
                                                                     >> 9U));
                                                         }
                                                     }
@@ -4515,199 +4517,199 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if ((1U & (~ ((((((
                                                    ((0x11U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                      & (IData)(vlTOPp->ps2_key))) 
                                                     | (0x66U 
                                                        == 
                                                        (0xffU 
-                                                        & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                        & (IData)(vlTOPp->ps2_key)))) 
                                                    | (0x71U 
                                                       == 
                                                       (0xffU 
-                                                       & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                       & (IData)(vlTOPp->ps2_key)))) 
                                                   | (0x5bU 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                      & (IData)(vlTOPp->ps2_key)))) 
                                                  | (0x54U 
                                                     == 
                                                     (0xffU 
-                                                     & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                     & (IData)(vlTOPp->ps2_key)))) 
                                                 | (0x5dU 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x4eU 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x52U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))))) {
                                     if (((((((((0x4cU 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                                | (0x76U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x14U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x78U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (9U == 
                                                (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                            | (5U == 
                                               (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                           | (6U == 
                                              (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                          | (4U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))) {
                                         if ((0x4cU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x76U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x14U 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x78U 
                                                          != 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         if (
                                                             (9U 
                                                              != 
                                                              (0xffU 
-                                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                              & (IData)(vlTOPp->ps2_key)))) {
                                                             if (
                                                                 (5U 
                                                                  != 
                                                                  (0xffU 
-                                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                                 if (
                                                                     (6U 
                                                                      != 
                                                                      (0xffU 
-                                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                                     vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swf3 
                                                                         = 
                                                                         (1U 
-                                                                         & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                                         & ((IData)(vlTOPp->ps2_key) 
                                                                             >> 9U));
                                                                 }
                                                             }
@@ -4726,175 +4728,175 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if ((1U & (~ ((((((
                                                    ((0x11U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                      & (IData)(vlTOPp->ps2_key))) 
                                                     | (0x66U 
                                                        == 
                                                        (0xffU 
-                                                        & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                        & (IData)(vlTOPp->ps2_key)))) 
                                                    | (0x71U 
                                                       == 
                                                       (0xffU 
-                                                       & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                       & (IData)(vlTOPp->ps2_key)))) 
                                                   | (0x5bU 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                      & (IData)(vlTOPp->ps2_key)))) 
                                                  | (0x54U 
                                                     == 
                                                     (0xffU 
-                                                     & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                     & (IData)(vlTOPp->ps2_key)))) 
                                                 | (0x5dU 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x4eU 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x52U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))))) {
                                     if ((1U & (~ ((
                                                    ((((((0x4cU 
                                                          == 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                          & (IData)(vlTOPp->ps2_key))) 
                                                         | (0x76U 
                                                            == 
                                                            (0xffU 
-                                                            & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                            & (IData)(vlTOPp->ps2_key)))) 
                                                        | (0x14U 
                                                           == 
                                                           (0xffU 
-                                                           & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                           & (IData)(vlTOPp->ps2_key)))) 
                                                       | (0x78U 
                                                          == 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                          & (IData)(vlTOPp->ps2_key)))) 
                                                      | (9U 
                                                         == 
                                                         (0xffU 
-                                                         & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                         & (IData)(vlTOPp->ps2_key)))) 
                                                     | (5U 
                                                        == 
                                                        (0xffU 
-                                                        & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                        & (IData)(vlTOPp->ps2_key)))) 
                                                    | (6U 
                                                       == 
                                                       (0xffU 
-                                                       & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                       & (IData)(vlTOPp->ps2_key)))) 
                                                   | (4U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                      & (IData)(vlTOPp->ps2_key))))))) {
                                         if ((0xcU == 
                                              (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                              & (IData)(vlTOPp->ps2_key)))) {
                                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swf4 
                                                 = (1U 
-                                                   & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                   & ((IData)(vlTOPp->ps2_key) 
                                                       >> 9U));
                                         }
                                     }
@@ -4907,156 +4909,156 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if (((((((((0x11U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                             & (IData)(vlTOPp->ps2_key))) 
                                            | (0x66U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x71U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x5bU == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x54U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x5dU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x4eU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x52U == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))) {
                                     if ((0x11U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x66U 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x71U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x5bU 
                                                      != 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     if (
                                                         (0x54U 
                                                          != 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                          & (IData)(vlTOPp->ps2_key)))) {
                                                         if (
                                                             (0x5dU 
                                                              != 
                                                              (0xffU 
-                                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                              & (IData)(vlTOPp->ps2_key)))) {
                                                             if (
                                                                 (0x4eU 
                                                                  == 
                                                                  (0xffU 
-                                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swdsh 
                                                                     = 
                                                                     (1U 
-                                                                     & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                                     & ((IData)(vlTOPp->ps2_key) 
                                                                         >> 9U));
                                                             }
                                                         }
@@ -5074,169 +5076,169 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if ((1U & (~ ((((((
                                                    ((0x11U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                      & (IData)(vlTOPp->ps2_key))) 
                                                     | (0x66U 
                                                        == 
                                                        (0xffU 
-                                                        & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                        & (IData)(vlTOPp->ps2_key)))) 
                                                    | (0x71U 
                                                       == 
                                                       (0xffU 
-                                                       & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                       & (IData)(vlTOPp->ps2_key)))) 
                                                   | (0x5bU 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                      & (IData)(vlTOPp->ps2_key)))) 
                                                  | (0x54U 
                                                     == 
                                                     (0xffU 
-                                                     & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                     & (IData)(vlTOPp->ps2_key)))) 
                                                 | (0x5dU 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x4eU 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x52U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))))) {
                                     if (((((((((0x4cU 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                                | (0x76U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x14U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x78U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (9U == 
                                                (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                            | (5U == 
                                               (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                           | (6U == 
                                              (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                          | (4U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))) {
                                         if ((0x4cU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swsc 
                                                 = (1U 
-                                                   & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                   & ((IData)(vlTOPp->ps2_key) 
                                                       >> 9U));
                                         }
                                     }
@@ -5249,26 +5251,26 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                       | (0x46U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                    | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                   | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                  | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                 | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                if ((0x3eU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                    if ((0x46U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                       | (0x46U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                    | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                   | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                  | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                 | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                if ((0x3eU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                    if ((0x46U == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__sw9 
-                            = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                            = (1U & ((IData)(vlTOPp->ps2_key) 
                                      >> 9U));
                     }
                 }
@@ -5276,41 +5278,41 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                if (((((((((0x34U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                           | (0x33U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x43U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x3bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x42U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x4bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                    if ((0x34U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x33U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x43U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                if (((((((((0x34U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                           | (0x33U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x43U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x3bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x42U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x4bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                    if ((0x34U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x33U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x43U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x3bU != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x42U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swk 
                                             = (1U & 
-                                               ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                               ((IData)(vlTOPp->ps2_key) 
                                                 >> 9U));
                                     }
                                 }
@@ -5322,30 +5324,30 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                       | (0x46U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                    | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                   | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                  | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                 | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                if ((0x3eU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                    if ((0x46U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x1cU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x32U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                       | (0x46U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                    | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                   | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                  | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                 | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                if ((0x3eU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                    if ((0x46U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x1cU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x32U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x21U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swc 
-                                        = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                        = (1U & ((IData)(vlTOPp->ps2_key) 
                                                  >> 9U));
                                 }
                             }
@@ -5356,19 +5358,19 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if (((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                   | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                  | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                 | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-               | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-              | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-             | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-            if ((0x45U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                if ((0x16U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                    if ((0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+        if (((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                   | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                  | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                 | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+               | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+              | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+             | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+            if ((0x45U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                if ((0x16U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                    if ((0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__sw2 
-                            = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                            = (1U & ((IData)(vlTOPp->ps2_key) 
                                      >> 9U));
                     }
                 }
@@ -5376,77 +5378,77 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if (((((((((0x1dU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                              & (IData)(vlTOPp->ps2_key))) 
                                    | (0x22U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x35U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x1aU == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x75U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x72U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x6bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x74U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                            if ((0x1dU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x72U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x6bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x74U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                            if ((0x1dU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x22U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x35U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swz 
                                                 = (1U 
-                                                   & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                   & ((IData)(vlTOPp->ps2_key) 
                                                       >> 9U));
                                         }
                                     }
@@ -5459,179 +5461,179 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if ((1U & (~ ((((((
                                                    ((0x11U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                      & (IData)(vlTOPp->ps2_key))) 
                                                     | (0x66U 
                                                        == 
                                                        (0xffU 
-                                                        & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                        & (IData)(vlTOPp->ps2_key)))) 
                                                    | (0x71U 
                                                       == 
                                                       (0xffU 
-                                                       & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                       & (IData)(vlTOPp->ps2_key)))) 
                                                   | (0x5bU 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                      & (IData)(vlTOPp->ps2_key)))) 
                                                  | (0x54U 
                                                     == 
                                                     (0xffU 
-                                                     & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                     & (IData)(vlTOPp->ps2_key)))) 
                                                 | (0x5dU 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x4eU 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x52U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))))) {
                                     if (((((((((0x4cU 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                                | (0x76U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x14U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x78U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (9U == 
                                                (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                            | (5U == 
                                               (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                           | (6U == 
                                              (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                          | (4U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))) {
                                         if ((0x4cU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x76U 
                                                  != 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 if (
                                                     (0x14U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                      & (IData)(vlTOPp->ps2_key)))) {
                                                     vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swctl 
                                                         = 
                                                         (1U 
-                                                         & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                         & ((IData)(vlTOPp->ps2_key) 
                                                             >> 9U));
                                                 }
                                             }
@@ -5646,21 +5648,21 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if (((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                   | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                  | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                 | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-               | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-              | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-             | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-            if ((0x45U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                if ((0x16U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                    if ((0x1eU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x26U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+        if (((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                   | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                  | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                 | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+               | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+              | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+             | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+            if ((0x45U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                if ((0x16U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                    if ((0x1eU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x26U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__sw4 
-                                    = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                    = (1U & ((IData)(vlTOPp->ps2_key) 
                                              >> 9U));
                             }
                         }
@@ -5670,28 +5672,28 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                       | (0x46U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                    | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                   | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                  | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                 | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                if ((0x3eU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                    if ((0x46U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x1cU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                       | (0x46U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                    | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                   | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                  | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                 | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                if ((0x3eU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                    if ((0x46U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x1cU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swb 
-                                    = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                    = (1U & ((IData)(vlTOPp->ps2_key) 
                                              >> 9U));
                             }
                         }
@@ -5701,26 +5703,26 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if (((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                   | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                  | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                 | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-               | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-              | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-             | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-            if ((0x45U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                if ((0x16U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                    if ((0x1eU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x26U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x25U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+        if (((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                   | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                  | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                 | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+               | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+              | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+             | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+            if ((0x45U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                if ((0x16U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                    if ((0x1eU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x26U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x25U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x2eU != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x36U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__sw6 
                                             = (1U & 
-                                               ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                               ((IData)(vlTOPp->ps2_key) 
                                                 >> 9U));
                                     }
                                 }
@@ -5732,49 +5734,49 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                if (((((((((0x34U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                           | (0x33U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x43U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x3bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x42U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x4bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                    if ((0x34U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x33U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x43U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                if (((((((((0x34U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                           | (0x33U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x43U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x3bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x42U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x4bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                    if ((0x34U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x33U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x43U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x3bU != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x42U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x4bU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x3aU 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swm 
                                                     = 
                                                     (1U 
-                                                     & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                     & ((IData)(vlTOPp->ps2_key) 
                                                         >> 9U));
                                             }
                                         }
@@ -5788,33 +5790,33 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                       | (0x46U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                    | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                   | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                  | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                 | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                if ((0x3eU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                    if ((0x46U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x1cU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x32U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                       | (0x46U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                    | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                   | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                  | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                 | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                if ((0x3eU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                    if ((0x46U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x1cU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x32U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x21U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x23U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swd 
                                             = (1U & 
-                                               ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                               ((IData)(vlTOPp->ps2_key) 
                                                 >> 9U));
                                     }
                                 }
@@ -5826,51 +5828,51 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                               | (0x4dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x15U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x2dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x1bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x2cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x3cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x2aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                        if ((0x44U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x4dU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                               | (0x4dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x15U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x2dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x1bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x2cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x3cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x2aU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                        if ((0x44U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x4dU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x15U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swq 
-                                        = (1U & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                        = (1U & ((IData)(vlTOPp->ps2_key) 
                                                  >> 9U));
                                 }
                             }
@@ -5881,174 +5883,174 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if ((1U & (~ ((((((
                                                    ((0x11U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                      & (IData)(vlTOPp->ps2_key))) 
                                                     | (0x66U 
                                                        == 
                                                        (0xffU 
-                                                        & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                        & (IData)(vlTOPp->ps2_key)))) 
                                                    | (0x71U 
                                                       == 
                                                       (0xffU 
-                                                       & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                       & (IData)(vlTOPp->ps2_key)))) 
                                                   | (0x5bU 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                      & (IData)(vlTOPp->ps2_key)))) 
                                                  | (0x54U 
                                                     == 
                                                     (0xffU 
-                                                     & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                     & (IData)(vlTOPp->ps2_key)))) 
                                                 | (0x5dU 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x4eU 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x52U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))))) {
                                     if (((((((((0x4cU 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                                | (0x76U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x14U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x78U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (9U == 
                                                (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                            | (5U == 
                                               (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                           | (6U == 
                                              (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                          | (4U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))) {
                                         if ((0x4cU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x76U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swesc 
                                                     = 
                                                     (1U 
-                                                     & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                     & ((IData)(vlTOPp->ps2_key) 
                                                         >> 9U));
                                             }
                                         }
@@ -6062,180 +6064,180 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                     if ((1U & (~ ((((((((0x44U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                   & (IData)(vlTOPp->ps2_key))) 
                                         | (0x4dU == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x15U == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                      | (0x1bU == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                     | (0x2cU == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x3cU == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x2aU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                               & (IData)(vlTOPp->ps2_key))))))) {
                         if ((1U & (~ ((((((((0x1dU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                 & (IData)(vlTOPp->ps2_key))) 
                                             | (0x22U 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x35U 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x1aU 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                          | (0x75U == 
                                             (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                             & (IData)(vlTOPp->ps2_key)))) 
                                         | (0x72U == 
-                                           (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                           (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                        | (0x6bU == 
-                                          (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                          (0xffU & (IData)(vlTOPp->ps2_key)))) 
                                       | (0x74U == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                   & (IData)(vlTOPp->ps2_key))))))) {
                             if ((1U & (~ ((((((((0x59U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                  & (IData)(vlTOPp->ps2_key))) 
                                                 | (0x12U 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x29U 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x41U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                              | (0x49U 
                                                 == 
                                                 (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                             | (0x5aU 
                                                == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                            | (0x4aU 
                                               == (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                  & (IData)(vlTOPp->ps2_key)))) 
                                           | (0x55U 
                                              == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                 & (IData)(vlTOPp->ps2_key))))))) {
                                 if ((1U & (~ ((((((
                                                    ((0x11U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                      & (IData)(vlTOPp->ps2_key))) 
                                                     | (0x66U 
                                                        == 
                                                        (0xffU 
-                                                        & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                        & (IData)(vlTOPp->ps2_key)))) 
                                                    | (0x71U 
                                                       == 
                                                       (0xffU 
-                                                       & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                       & (IData)(vlTOPp->ps2_key)))) 
                                                   | (0x5bU 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                      & (IData)(vlTOPp->ps2_key)))) 
                                                  | (0x54U 
                                                     == 
                                                     (0xffU 
-                                                     & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                     & (IData)(vlTOPp->ps2_key)))) 
                                                 | (0x5dU 
                                                    == 
                                                    (0xffU 
-                                                    & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                    & (IData)(vlTOPp->ps2_key)))) 
                                                | (0x4eU 
                                                   == 
                                                   (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                   & (IData)(vlTOPp->ps2_key)))) 
                                               | (0x52U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                  & (IData)(vlTOPp->ps2_key))))))) {
                                     if ((1U & (~ ((
                                                    ((((((0x4cU 
                                                          == 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                                          & (IData)(vlTOPp->ps2_key))) 
                                                         | (0x76U 
                                                            == 
                                                            (0xffU 
-                                                            & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                            & (IData)(vlTOPp->ps2_key)))) 
                                                        | (0x14U 
                                                           == 
                                                           (0xffU 
-                                                           & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                           & (IData)(vlTOPp->ps2_key)))) 
                                                       | (0x78U 
                                                          == 
                                                          (0xffU 
-                                                          & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                          & (IData)(vlTOPp->ps2_key)))) 
                                                      | (9U 
                                                         == 
                                                         (0xffU 
-                                                         & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                         & (IData)(vlTOPp->ps2_key)))) 
                                                     | (5U 
                                                        == 
                                                        (0xffU 
-                                                        & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                        & (IData)(vlTOPp->ps2_key)))) 
                                                    | (6U 
                                                       == 
                                                       (0xffU 
-                                                       & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                       & (IData)(vlTOPp->ps2_key)))) 
                                                   | (4U 
                                                      == 
                                                      (0xffU 
-                                                      & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                                      & (IData)(vlTOPp->ps2_key))))))) {
                                         if ((0xcU != 
                                              (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                              & (IData)(vlTOPp->ps2_key)))) {
                                             if ((3U 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swf5 
                                                     = 
                                                     (1U 
-                                                     & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                     & ((IData)(vlTOPp->ps2_key) 
                                                         >> 9U));
                                             }
                                         }
@@ -6249,36 +6251,36 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                       | (0x46U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                     | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                    | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                   | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                  | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                 | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                if ((0x3eU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                    if ((0x46U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                        if ((0x1cU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x32U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if (((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                       | (0x46U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                     | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                    | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                   | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                  | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                 | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                if ((0x3eU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                    if ((0x46U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                        if ((0x1cU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x32U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x21U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x23U != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x24U 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swf 
                                                 = (1U 
-                                                   & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                   & ((IData)(vlTOPp->ps2_key) 
                                                       >> 9U));
                                         }
                                     }
@@ -6291,54 +6293,54 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                               | (0x4dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x15U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x2dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x1bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x2cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x3cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x2aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                        if ((0x44U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x4dU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                               | (0x4dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x15U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x2dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x1bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x2cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x3cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x2aU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                        if ((0x44U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x4dU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x15U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x2dU == (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swr 
                                             = (1U & 
-                                               ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                               ((IData)(vlTOPp->ps2_key) 
                                                 >> 9U));
                                     }
                                 }
@@ -6350,62 +6352,62 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__6(Vtop__Syms* __restrict vlSymsp) {
         }
     }
     if (vlTOPp->top__DOT__key_strobe) {
-        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                            | (0x16U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x1eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x26U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x25U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                        | (0x2eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                       | (0x36U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                      | (0x3dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
+        if ((1U & (~ ((((((((0x45U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                            | (0x16U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x1eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x26U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x25U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                        | (0x2eU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                       | (0x36U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                      | (0x3dU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+            if ((1U & (~ ((((((((0x3eU == (0xffU & (IData)(vlTOPp->ps2_key))) 
                                 | (0x46U == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x1cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x32U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x21U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x23U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x24U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x2bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x1cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x32U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x21U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x23U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x24U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x2bU == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
                 if ((1U & (~ ((((((((0x34U == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key))) 
+                                               & (IData)(vlTOPp->ps2_key))) 
                                     | (0x33U == (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                 & (IData)(vlTOPp->ps2_key)))) 
                                    | (0x43U == (0xffU 
-                                                & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                                & (IData)(vlTOPp->ps2_key)))) 
                                   | (0x3bU == (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                               & (IData)(vlTOPp->ps2_key)))) 
                                  | (0x42U == (0xffU 
-                                              & (IData)(vlTOPp->top__DOT__ps2_key)))) 
+                                              & (IData)(vlTOPp->ps2_key)))) 
                                 | (0x4bU == (0xffU 
-                                             & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                               | (0x3aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x31U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))))) {
-                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))) 
-                               | (0x4dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                              | (0x15U == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                             | (0x2dU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                            | (0x1bU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                           | (0x2cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                          | (0x3cU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) 
-                         | (0x2aU == (0xffU & (IData)(vlTOPp->top__DOT__ps2_key))))) {
-                        if ((0x44U != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
-                            if ((0x4dU != (0xffU & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                             & (IData)(vlTOPp->ps2_key)))) 
+                               | (0x3aU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x31U == (0xffU & (IData)(vlTOPp->ps2_key))))))) {
+                    if (((((((((0x44U == (0xffU & (IData)(vlTOPp->ps2_key))) 
+                               | (0x4dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                              | (0x15U == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                             | (0x2dU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                            | (0x1bU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                           | (0x2cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                          | (0x3cU == (0xffU & (IData)(vlTOPp->ps2_key)))) 
+                         | (0x2aU == (0xffU & (IData)(vlTOPp->ps2_key))))) {
+                        if ((0x44U != (0xffU & (IData)(vlTOPp->ps2_key)))) {
+                            if ((0x4dU != (0xffU & (IData)(vlTOPp->ps2_key)))) {
                                 if ((0x15U != (0xffU 
-                                               & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                               & (IData)(vlTOPp->ps2_key)))) {
                                     if ((0x2dU != (0xffU 
-                                                   & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                   & (IData)(vlTOPp->ps2_key)))) {
                                         if ((0x1bU 
                                              != (0xffU 
-                                                 & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                 & (IData)(vlTOPp->ps2_key)))) {
                                             if ((0x2cU 
                                                  == 
                                                  (0xffU 
-                                                  & (IData)(vlTOPp->top__DOT__ps2_key)))) {
+                                                  & (IData)(vlTOPp->ps2_key)))) {
                                                 vlTOPp->top__DOT__oricatmos__DOT__inst_key__DOT__swt 
                                                     = 
                                                     (1U 
-                                                     & ((IData)(vlTOPp->top__DOT__ps2_key) 
+                                                     & ((IData)(vlTOPp->ps2_key) 
                                                         >> 9U));
                                             }
                                         }

@@ -26,12 +26,16 @@ module top(
    input [7:0]  ioctl_dout,
    input [7:0]  ioctl_din,   
    input [7:0]  ioctl_index,
+
+   // ps2 alternative interface.
+   // [8] - extended, [9] - pressed, [10] - toggles with every press/release
+   input [10:0] ps2_key,
+
    output  reg  ioctl_wait=1'b0,
    output reg ce_pix=1'b1
    
 );
 
-wire [10:0] ps2_key;
 
 assign VGA_R={8{r}};
 assign VGA_G={8{g}};
@@ -138,6 +142,10 @@ cassettecached cassette(
   .tape_dout(tape_dout),
   .tape_complete(tape_complete)
 );
+
+wire key_strobe = old_keystb ^ ps2_key[10];
+reg old_keystb = 0;
+always @(posedge clk_48) old_keystb <= ps2_key[10];
 
 oricatmos oricatmos
 (

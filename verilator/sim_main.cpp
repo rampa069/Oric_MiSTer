@@ -217,7 +217,7 @@ int main(int argc, char** argv, char** env) {
 	bus.ioctl_wr = &top->ioctl_wr;
 	bus.ioctl_dout = &top->ioctl_dout;
 	bus.ioctl_din = &top->ioctl_din;
-
+        input.ps2_key = &top->ps2_key;
 #ifndef DISABLE_AUDIO
 	audio.Initialise();
 #endif

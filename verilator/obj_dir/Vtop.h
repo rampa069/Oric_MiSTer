@@ -45,6 +45,7 @@ VL_MODULE(Vtop) {
     VL_IN16(inputs,11,0);
     VL_OUT16(AUDIO_L,15,0);
     VL_OUT16(AUDIO_R,15,0);
+    VL_IN16(ps2_key,10,0);
     VL_IN(ioctl_addr,24,0);
     
     // LOCAL SIGNALS
@@ -63,8 +64,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ top__DOT__tape_complete;
         CData/*0:0*/ top__DOT__tape_autorun;
         CData/*0:0*/ top__DOT__tape_request;
-        CData/*0:0*/ top__DOT__fdd_ready;
         CData/*0:0*/ top__DOT__key_strobe;
+        CData/*0:0*/ top__DOT__old_keystb;
+        CData/*0:0*/ top__DOT__fdd_ready;
         CData/*0:0*/ top__DOT__tape_adc;
         CData/*0:0*/ top__DOT__locked;
         CData/*0:0*/ top__DOT__rom;
@@ -114,9 +116,9 @@ VL_MODULE(Vtop) {
         CData/*7:0*/ top__DOT__oricatmos__DOT__ROM_MD_DO;
         CData/*0:0*/ top__DOT__oricatmos__DOT__swnmi;
         CData/*0:0*/ top__DOT__oricatmos__DOT__swrst;
-        CData/*0:0*/ top__DOT__oricatmos__DOT__cont_MAPn;
     };
     struct {
+        CData/*0:0*/ top__DOT__oricatmos__DOT__cont_MAPn;
         CData/*0:0*/ top__DOT__oricatmos__DOT__cont_ROMDISn;
         CData/*0:0*/ top__DOT__oricatmos__DOT__cont_IOCONTROLn;
         CData/*0:0*/ top__DOT__oricatmos__DOT__PH2_1;
@@ -180,9 +182,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_cpu__DOT__LDAD;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_cpu__DOT__LDBAL;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_cpu__DOT__LDBAH;
-        CData/*0:0*/ top__DOT__oricatmos__DOT__inst_cpu__DOT__SaveP;
     };
     struct {
+        CData/*0:0*/ top__DOT__oricatmos__DOT__inst_cpu__DOT__SaveP;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_cpu__DOT__Write;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_cpu__DOT__Res_n_d;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_cpu__DOT__rdy_mod;
@@ -246,9 +248,9 @@ VL_MODULE(Vtop) {
         CData/*7:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__r_t1l_l;
         CData/*7:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__r_t1l_h;
         CData/*7:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__r_t2l_l;
-        CData/*7:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__r_t2l_h;
     };
     struct {
+        CData/*7:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__r_t2l_h;
         CData/*7:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__r_sr;
         CData/*7:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__r_acr;
         CData/*7:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__r_pcr;
@@ -312,9 +314,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__cb1_int;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__ca1_irq;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__cb1_irq;
-        CData/*0:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__ca2_ip_reg_c;
     };
     struct {
+        CData/*0:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__ca2_ip_reg_c;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__ca2_ip_reg_d;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__cb2_ip_reg_c;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_via__DOT__cb2_ip_reg_d;
@@ -378,9 +380,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_key__DOT__sw3;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_key__DOT__sw4;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_key__DOT__sw5;
-        CData/*0:0*/ top__DOT__oricatmos__DOT__inst_key__DOT__sw6;
     };
     struct {
+        CData/*0:0*/ top__DOT__oricatmos__DOT__inst_key__DOT__sw6;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_key__DOT__sw7;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_key__DOT__sw8;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_key__DOT__sw9;
@@ -444,9 +446,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc_CLK_en;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__sel;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__u16k;
-        CData/*0:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__inECE;
     };
     struct {
+        CData/*0:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__inECE;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__inROMDIS;
         CData/*1:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__DSEL;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__SSEL;
@@ -510,9 +512,9 @@ VL_MODULE(Vtop) {
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT__unnamedblk2__DOT__write;
         CData/*5:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT__unnamedblk2__DOT__ack;
         CData/*0:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT__unnamedblk2__DOT__sd_busy;
-        CData/*0:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT__unnamedblk2__DOT__old_mounted;
     };
     struct {
+        CData/*0:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT__unnamedblk2__DOT__old_mounted;
         CData/*3:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT__unnamedblk2__DOT__scan_state;
         CData/*1:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT__unnamedblk2__DOT__scan_cnt;
         CData/*1:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT__unnamedblk2__DOT__blk_max;
@@ -531,7 +533,6 @@ VL_MODULE(Vtop) {
         CData/*7:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT__genblk3__DOT__unnamedblk3__DOT__size_lo;
         CData/*7:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT__genblk3__DOT__unnamedblk3__DOT__trackf;
         CData/*7:0*/ top__DOT__oricatmos__DOT__inst_microdisc__DOT__fdc1__DOT__genblk3__DOT__unnamedblk3__DOT__sidef;
-        SData/*10:0*/ top__DOT__ps2_key;
         SData/*15:0*/ top__DOT__ram_ad_temp;
         SData/*15:0*/ top__DOT__tape_addr;
         SData/*15:0*/ top__DOT__loadpoint;
