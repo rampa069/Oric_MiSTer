@@ -3,17 +3,17 @@
 
 module keyboard
 (
-	input			   clk_sys,
-	input			   reset,
-	input          key_pressed,  // 1-make (pressed), 0-break (released)
-	input          key_extended, // extended code
-	input          key_strobe,   // strobe
-	input  [7:0]   key_code,     // key scan code
-	input  [2:0]	col,
-	input	 [7:0]	row,
-	output [7:0]	ROWbit,
-	output			swrst,
-	output         swnmi
+	input			 clk_sys,
+	input			 reset,
+	input            key_pressed,  // 1-make (pressed), 0-break (released)
+	input            key_extended, // extended code
+	input            key_strobe,   // strobe
+	input  [7:0]     key_code,     // key scan code
+	input  [2:0]	 col,
+	input	 [7:0]	 row,
+	output [7:0]	 ROWbit,
+	output	reg	 	 swrst,
+	output  reg      swnmi
 );
 
 

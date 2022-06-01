@@ -1,12 +1,12 @@
-module BASIC10v
+module BASIC10
   (
    input wire         clk,
    input wire [13:0]  addr,
    output logic [7:0] data
    );
 
-  logic [7:0]         rom_data[16384] =
-     {8'h4C,8'h59,8'hEA,8'h4C,8'h75,8'hC4,8'h40,8'hC9,8'hA4,8'hC6,8'hE3,8'hCF,8'hE3,8'hCF,8'h8B,8'hCC,
+  logic [7:0] rom_data[16384] =
+              '{8'h4C,8'h59,8'hEA,8'h4C,8'h75,8'hC4,8'h40,8'hC9,8'hA4,8'hC6,8'hE3,8'hCF,8'hE3,8'hCF,8'h8B,8'hCC,
                 8'h8E,8'hCC,8'hDF,8'hC9,8'hC5,8'hD9,8'h15,8'hDA,8'h36,8'hD9,8'hAB,8'hD8,8'hF9,8'hD9,8'h15,8'hDA,
                 8'h40,8'hC8,8'h23,8'hC8,8'h31,8'hC8,8'h0B,8'hCE,8'h09,8'hCA,8'hC8,8'hCC,8'hF1,8'hD0,8'h09,8'hCC,
                 8'hFC,8'hCC,8'hD1,8'hCA,8'hB2,8'hC9,8'h8A,8'hC9,8'h3D,8'hCA,8'h1E,8'hC9,8'h95,8'hC9,8'hDF,8'hC9,

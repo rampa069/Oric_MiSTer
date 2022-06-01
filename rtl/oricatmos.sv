@@ -39,7 +39,7 @@
 //
 //
 
-module oricatmosv
+module oricatmos
   (
    input wire          CLK_IN,
    input wire          RESET,
@@ -319,9 +319,9 @@ module oricatmosv
      .A (PSG_OUT_A),
      .B (PSG_OUT_B),
      .C (PSG_OUT_C),
-     .IOA_In ('0),
-     .IOA_Out (ym_o_ioa),
-     .IOB_In ('0)
+     .IOA_in ('0),
+     .IOA_out (ym_o_ioa),
+     .IOB_in ('0)
      );
 
   keyboard inst_key

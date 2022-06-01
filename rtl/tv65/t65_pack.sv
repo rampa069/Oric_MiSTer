@@ -49,8 +49,8 @@
 // Limitations :
 //   See in T65 top file (T65.vhd)...
 
-`ifndef tv65_pack
-`define tv65_pack
+`ifndef T65_pack
+`define T65_pack
 
 
 parameter        Flag_C = 0;

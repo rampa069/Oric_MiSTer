@@ -126,7 +126,7 @@
 // ----- IMPORTANT NOTES -----
 //
 
-module tv65(
+module T65(
     Mode,
     Res_n,
     Enable,
@@ -156,7 +156,10 @@ module tv65(
     DEBUG_S,
     DEBUG_P,
     NMI_ack,
-    PRINT
+    PRINT,
+
+    tape_addr,
+    tape_complete
 );
     // begin code from package t65_pack
     
@@ -290,8 +293,11 @@ module tv65(
     output [7:0]  DEBUG_P;
     output        NMI_ack;
     
-   output reg PRINT; 
+    output reg PRINT; 
     
+    input [7:0] tape_addr;
+    input [7:0] tape_complete;
+
     // Registers
     reg [15:0]    ABC;
     reg [15:0]    X;

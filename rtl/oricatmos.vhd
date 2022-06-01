@@ -42,7 +42,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.std_logic_arith.ALL;
 USE ieee.std_logic_unsigned.ALL;
-ENTITY oricatmos IS
+ENTITY oricatmosVHDL IS
 	PORT (
 		CLK_IN : IN STD_LOGIC;
 		RESET : IN STD_LOGIC;
@@ -103,7 +103,7 @@ ENTITY oricatmos IS
 	);
 END;
 
-ARCHITECTURE RTL OF oricatmos IS
+ARCHITECTURE RTL OF oricatmosVHDL IS
 
 	-- Gestion des resets
 	SIGNAL RESETn : STD_LOGIC;

@@ -1,12 +1,12 @@
-module ORICDOS06v
+module ORICDOS06
   (
    input wire [12:0] addr,
    input wire        clk,
    output logic [7:0]      data
    );
 
-  logic [7:0]        rom_data[8192] =
-    {8'h4c, 8'hc2, 8'he5, 8'h4c, 8'h0c, 8'he2, 8'h4c, 8'h34,
+  logic [7:0] rom_data[8192] =
+   '{8'h4c, 8'hc2, 8'he5, 8'h4c, 8'h0c, 8'he2, 8'h4c, 8'h34,
      8'heb, 8'h4c, 8'hce, 8'he4, 8'h4c, 8'hd3, 8'hea, 8'h4c,
      8'hde, 8'he4, 8'h4c, 8'hfc, 8'hea, 8'h4c, 8'h17, 8'he1,
      8'h4c, 8'h1f, 8'he1, 8'h4c, 8'hdc, 8'he7, 8'h4c, 8'h16,

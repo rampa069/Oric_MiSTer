@@ -357,6 +357,7 @@ always @(posedge clk_sys) begin
 	end
 end
 
+/*
 dpram ram (
 	.clk_sys(clk_sys), 
 
@@ -372,6 +373,24 @@ dpram ram (
 
 	.ram_q(ram_q)
 );
+*/
+
+dpram #(.AW(16)) ram (
+	.clock(clk_sys),
+
+	.ce1(ram_cs_temp),
+	.we1(ram_we_temp),
+	.di1(ram_d_temp),
+	.do1(ram_q),
+	.a1(ram_ad_temp),
+
+	.ce2(1'b1),
+	.we2(tape_wr),
+	.di2(tape_dout),
+	.do2(),
+	.a2(tape_addr)
+);
+
 
 wire        led_disk;
 

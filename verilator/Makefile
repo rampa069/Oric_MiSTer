@@ -57,7 +57,28 @@ V_SRC = \
 	$(RTL)/cassettecached.v \
 	$(RTL)/bram.v \
 	$(RTL)/oricatmos.sv \
-	$(RTL)/ram.sv
+	$(RTL)/ram.sv \
+	$(RTL)/wd1793.sv \
+	$(RTL)/keyboard.sv \
+	$(RTL)/microdisc.sv \
+	$(RTL)/rom/MICRODIS.sv \
+	$(RTL)/rom/BASIC10.sv \
+	$(RTL)/rom/BASIC11A.sv \
+	$(RTL)/ula.sv \
+	$(RTL)/tv65/t65.v \
+	$(RTL)/tv65/t65_mcode.v \
+	$(RTL)/tv65/t65_pack.sv \
+	$(RTL)/tv65/t65_alu.v \
+	$(RTL)/video.sv \
+	$(RTL)//m6522.sv \
+	$(RTL)/dpram.v \
+	$(RTL)/jt49/hdl/jt49_bus.v \
+	$(RTL)/jt49/hdl/jt49_cen.v \
+	$(RTL)/jt49/hdl/jt49_div.v \
+	$(RTL)/jt49/hdl/jt49_eg.v \
+	$(RTL)/jt49/hdl/jt49_exp.v \
+	$(RTL)/jt49/hdl/jt49_noise.v \
+	$(RTL)/jt49/hdl/jt49.v
 
 C_SRC = \
 	sim_main.cpp  \

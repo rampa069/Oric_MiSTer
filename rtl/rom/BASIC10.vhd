@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all,ieee.numeric_std.all;
 
-entity BASIC10 is
+entity BASIC10VHDL is
 port (
 	clk  : in  std_logic;
 	addr : in  std_logic_vector(13 downto 0);
@@ -9,7 +9,7 @@ port (
 );
 end entity;
 
-architecture prom of BASIC10 is
+architecture prom of BASIC10VHDL is
 	type rom is array(0 to  16383) of std_logic_vector(7 downto 0);
 	signal rom_data: rom := (
 		X"4C",X"59",X"EA",X"4C",X"75",X"C4",X"40",X"C9",X"A4",X"C6",X"E3",X"CF",X"E3",X"CF",X"8B",X"CC",

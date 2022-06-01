@@ -317,7 +317,7 @@ int main(int argc, char** argv, char** env) {
 		mem_edit.DrawContents(&top->top__DOT__cassette__DOT__tapecache__DOT__memory, 65536, 0);
 		ImGui::End();
 		ImGui::Begin("ORIC RAM");
-		mem_edit.DrawContents(&top->top__DOT__ram, 65536, 0);
+		mem_edit.DrawContents(&top->top__DOT__ram__DOT__d, 65536, 0);
 		ImGui::End();
 
 		// Trace/VCD window

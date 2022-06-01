@@ -15,7 +15,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_STD.all;
 
-entity video is
+entity videoVHDL is
 port (  RESETn      : in  std_logic;
         CLK_PIXEL   : in  std_logic;
         CLK_FLASH   : in  std_logic;
@@ -38,7 +38,7 @@ port (  RESETn      : in  std_logic;
       );
 end entity video;
 
-architecture video_arch of video is
+architecture video_arch of videoVHDL is
 
 -- locals signals
 signal lDATABUS   : std_logic_vector(7 downto 0);

@@ -49,7 +49,7 @@
 // Limitations :
 //   See in T65 top file (T65.vhd)...
 
-module TV65_ALU(
+module T65_ALU(
     Mode,
     Op,
     BusA,

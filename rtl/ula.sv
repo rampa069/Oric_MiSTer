@@ -75,7 +75,7 @@
 // 19 BLU         A13 22
 // 20 GRN         RED 21
 
-module ulav
+module ULA
   (
    input wire          RESETn, // RESET master
    output logic        CLK_4, // 4 MHz internal
@@ -417,10 +417,10 @@ module ulav
       // mode is missing, bad coding style
     end else if (RELD_REG && isAttrib && BLANKINGn) begin
       case (lREGHOLD[6:3])
-        4'h0000: lREG_INK   <= lREGHOLD[2:0];
-        4'h0001: lREG_STYLE <= lREGHOLD[2:0];
-        4'h0010: lREG_PAPER <= lREGHOLD[2:0];
-        4'h0011: lREG_MODE  <= lREGHOLD[2:0];
+        4'b0000: lREG_INK   <= lREGHOLD[2:0];
+        4'b0001: lREG_STYLE <= lREGHOLD[2:0];
+        4'b0010: lREG_PAPER <= lREGHOLD[2:0];
+        4'b0011: lREG_MODE  <= lREGHOLD[2:0];
       endcase
     end
   end // block: u_ld_reg

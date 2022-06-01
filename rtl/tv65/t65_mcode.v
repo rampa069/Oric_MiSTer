@@ -49,7 +49,7 @@
 // Limitations :
 //   See in T65 top file (T65.vhd)...
 
-module TV65_MCode(
+module T65_MCode(
     Mode,
     IR,
     MCycle,

@@ -29,14 +29,37 @@ module top(
    output  reg  ioctl_wait=1'b0
    
 );
-   
-wire ce_pix = 1'b1;  
- 
-reg [16:0] clr_addr = 0;
-wire [15:0] ram_ad;
-wire  [7:0] ram_d;
-wire        ram_we,ram_cs;
 
+wire [10:0] ps2_key;
+
+wire ce_pix = 1'b1;  
+
+reg [16:0] clr_addr = 0;
+
+wire [15:0] ram_ad;
+reg  [15:0] ram_ad_temp;
+wire  [7:0] ram_d;
+reg   [7:0] ram_d_temp;
+wire        ram_we,ram_cs;
+reg         ram_we_temp,ram_cs_temp;
+reg   [7:0] ram_q;
+
+always @(posedge clk_48) begin
+	if(reset) begin
+		ram_d_temp <= 1;
+		ram_ad_temp <= clr_addr[15:0];
+		ram_cs_temp <= 1'b1;
+		ram_we_temp <= 1'b1;
+	end
+	else begin
+		ram_d_temp <= ram_d;
+		ram_ad_temp <= ram_ad;
+		ram_cs_temp <= ram_cs;
+		ram_we_temp <= ram_we;		
+	end
+end
+
+/*
 reg   [7:0] ram[65536];
 always @(posedge clk_48) begin
 	if(reset) ram[clr_addr[15:0]] <= '1;
@@ -45,6 +68,7 @@ end
 
 reg  [7:0] ram_q;
 always @(posedge clk_48) ram_q <= ram[ram_ad];
+*/
 
 always @(posedge clk_48) begin
      // $display( "(TOP) tape_autorun %x", tape_autorun);              
@@ -61,12 +85,30 @@ wire tape_request;
 reg [15:0]  tape_read_addr;
 reg [15:0]  tape_read_dout;
 
+/*
 always @(posedge clk_48) 
     begin
       if(tape_wr)
         ram[tape_addr] <= tape_dout;      
         $display( "(TOP) tape_addr %x tape_wr %x tape_dout %x tape_complete %x tape_autorun %x loadpoint %x", tape_addr, tape_wr, tape_dout, tape_complete, tape_autorun, loadpoint);   
     end
+*/
+
+dpram #(.AW(16)) ram (
+	.clock(clk_48),
+
+	.ce1(ram_cs_temp),
+	.we1(ram_we_temp),
+	.di1(ram_d_temp),
+	.do1(ram_q),
+	.a1(ram_ad_temp),
+
+	.ce2(1'b1),
+	.we2(tape_wr),
+	.di2(tape_dout),
+	.do2(),
+	.a2(tape_addr)
+);
 
 cassettecached cassette(
   .clk(clk_48),
@@ -89,5 +131,75 @@ cassettecached cassette(
   .tape_dout(tape_dout),
   .tape_complete(tape_complete)
 );
+
+oricatmos oricatmos
+(
+	.CLK_IN           (clk_48),
+	.RESET            (reset),
+
+	.key_pressed      (ps2_key[9]),
+	.key_code         (ps2_key[7:0]),
+	.key_extended     (ps2_key[8]),
+	.key_strobe       (key_strobe),
+	//.PSG_OUT_L			(psg_l),
+	//.PSG_OUT_R			(psg_r),
+	.PSG_OUT_A        (psg_a),
+	.PSG_OUT_B        (psg_b),
+	.PSG_OUT_C        (psg_c),
+	.PSG_OUT          (psg_out),
+
+	.VIDEO_CLK		    (clk_pix),
+	.VIDEO_R		      (r),
+	.VIDEO_G		      (g),
+	.VIDEO_B		      (b),
+	.VIDEO_HSYNC	    (hs),
+	.VIDEO_VSYNC	    (vs),
+	.VIDEO_HBLANK	    (HBlank),
+	.VIDEO_VBLANK	    (VBlank),
+
+	.K7_TAPEIN		    (tape_adc),
+	.K7_TAPEOUT		    (tape_out),
+	.K7_REMOTE		    (),
+
+	.ram_ad           (ram_ad),
+	.ram_d            (ram_d),
+	.ram_q            (ram_q),
+	.ram_cs           (ram_cs),
+	.ram_oe           (),
+	.ram_we           (ram_we),
+
+	.joystick_0       (0),
+	.joystick_1       (0),
+
+	.fd_led           (led_disk),
+	.fdd_ready        (fdd_ready),
+	.fdd_busy         (),
+	.fdd_reset        (0),
+	.fdd_layout       (0),
+
+	.phi2             (),
+	.pll_locked       (locked),
+	.disk_enable      ((1'b0) ? ~fdd_ready : 1'b1),
+	.rom			        (rom),
+
+	.img_mounted      (img_mounted), // signaling that new image has been mounted
+	.img_size         (img_size), // size of image in bytes
+	.img_wp           (1'b0 | img_readonly), // write protect
+  .sd_lba           (sd_lba),
+	.sd_rd            (sd_rd),
+	.sd_wr            (sd_wr),
+	.sd_ack           (sd_ack),
+	.sd_buff_addr     (sd_buff_addr),
+	.sd_dout          (sd_buff_dout),
+	.sd_din           (sd_buff_din),
+	.sd_dout_strobe   (sd_buff_wr),
+	.sd_din_strobe    (0),
+
+  .tape_addr		    (loadpoint),
+  .tape_complete	  (tape_autorun)
+);
+
+reg fdd_ready = 0;
+always @(posedge clk_48) if(img_mounted) fdd_ready <= |img_size;
 
 endmodule

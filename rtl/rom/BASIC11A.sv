@@ -1,4 +1,4 @@
-module BASIC11Av
+module BASIC11A
   (
    input wire         clk,
    input wire [13:0]  addr,
@@ -6,7 +6,7 @@ module BASIC11Av
    );
 
   logic [7:0] rom_data[16384] =
-              {8'h4C,8'hCC,8'hEC,8'h4C,8'h71,8'hC4,8'h72,8'hC9,8'h91,8'hC6,8'h86,8'hE9,8'hD0,8'hE9,8'h15,8'hCD,
+              '{8'h4C,8'hCC,8'hEC,8'h4C,8'h71,8'hC4,8'h72,8'hC9,8'h91,8'hC6,8'h86,8'hE9,8'hD0,8'hE9,8'h15,8'hCD,
                 8'h18,8'hCD,8'h11,8'hCA,8'h50,8'hDA,8'hA0,8'hDA,8'hDD,8'hD9,8'h66,8'hD9,8'h84,8'hDA,8'hA0,8'hDA,
                 8'h54,8'hC8,8'hFC,8'hC7,8'h08,8'hC8,8'h97,8'hCE,8'h3B,8'hCA,8'h54,8'hCD,8'h7D,8'hD1,8'hCD,8'hCC,
                 8'h88,8'hCD,8'h1B,8'hCB,8'hE4,8'hC9,8'hBC,8'hC9,8'h6F,8'hCA,8'h51,8'hC9,8'hC7,8'hC9,8'h11,8'hCA,

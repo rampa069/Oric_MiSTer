@@ -42,3 +42,4 @@ verilator/.vs/sim/v17/Browse.VC.db
 verilator/DEVILS.tap
 verilator/Galaxians.TAP
 verilator/.vs/sim/v17/ipch/AutoPCH/e9e1f9b4feb7f52f/SIM_MAIN.ipch
+verilator/obj_dir/
