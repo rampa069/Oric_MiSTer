@@ -4,8 +4,8 @@
 // Internal details; most calling programs do not need this header,
 // unless using verilator public meta comments.
 
-#ifndef _VTOP__SYMS_H_
-#define _VTOP__SYMS_H_  // guard
+#ifndef VERILATED_VTOP__SYMS_H_
+#define VERILATED_VTOP__SYMS_H_  // guard
 
 #include "verilated_heavy.h"
 
@@ -16,25 +16,26 @@
 // SYMS CLASS
 class Vtop__Syms : public VerilatedSyms {
   public:
-    
+
     // LOCAL STATE
     const char* __Vm_namep;
     bool __Vm_activity;  ///< Used by trace routines to determine change occurred
     uint32_t __Vm_baseCode;  ///< Used by trace routines when tracing multiple models
     bool __Vm_didInit;
-    
+
     // SUBCELL STATE
     Vtop*                          TOPp;
-    
+    Vtop___024unit                 TOP____024unit;
+
     // CREATORS
-    Vtop__Syms(Vtop* topp, const char* namep);
-    ~Vtop__Syms() {}
-    
+    Vtop__Syms(VerilatedContext* contextp, Vtop* topp, const char* namep);
+    ~Vtop__Syms();
+
     // METHODS
     inline const char* name() { return __Vm_namep; }
     void __Vserialize(VerilatedSerialize& os);
     void __Vdeserialize(VerilatedDeserialize& os);
-    
+
 } VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
 
 #endif  // guard

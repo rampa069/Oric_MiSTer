@@ -319,6 +319,24 @@ int main(int argc, char** argv, char** env) {
 		ImGui::Begin("ORIC RAM");
 		mem_edit.DrawContents(&top->top__DOT__ram__DOT__d, 65536, 0);
 		ImGui::End();
+		ImGui::Begin("ORIC ATMOS ROM");
+		mem_edit.DrawContents(&top->top__DOT__oricatmos__DOT__inst_rom0__DOT__rom_data, 16384, 0);
+		ImGui::End();
+
+		// ORIC debug
+		ImGui::Begin("Oric Debug");
+		ImGui::Text("cpu_rw           0x%04X", top->top__DOT__oricatmos__DOT__cpu_rw);
+		ImGui::Text("ula_phi2         0x%04X", top->top__DOT__oricatmos__DOT__ula_phi2);
+		ImGui::Text("ula_CSIOn        0x%04X", top->top__DOT__oricatmos__DOT__ula_CSIOn);
+		ImGui::Text("ula_CSROMn       0x%04X", top->top__DOT__oricatmos__DOT__ula_CSROMn);
+		ImGui::Text("cont_MAPn        0x%04X", top->top__DOT__oricatmos__DOT__cont_MAPn);
+		ImGui::Text("cont_ROMDISn     0x%04X", top->top__DOT__oricatmos__DOT__cont_ROMDISn);
+		ImGui::Text("rom              0x%04X", top->top__DOT__oricatmos__DOT__rom);
+		ImGui::Text("cpu_di           0x%04X", top->top__DOT__oricatmos__DOT__cpu_di);
+		ImGui::Text("ROM_ATMOS_DO     0x%04X", top->top__DOT__oricatmos__DOT__ROM_ATMOS_DO);		
+		ImGui::Text("ula_LATCH_SRAM   0x%04X", top->top__DOT__oricatmos__DOT__ula_LATCH_SRAM);
+		ImGui::Text("SRAM_DO          0x%04X", top->top__DOT__oricatmos__DOT__SRAM_DO);			
+		ImGui::End();
 
 		// Trace/VCD window
 		ImGui::Begin(windowTitle_Trace);

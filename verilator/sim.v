@@ -3,13 +3,13 @@
 module top(
 
    input clk_48,
-  // input clk_24,
+   //input clk_24,
    input reset,
    input [11:0]  inputs,
 
-   output [7:0] VGA_R,
-   output [7:0] VGA_G,
-   output [7:0] VGA_B,
+   output reg [7:0] VGA_R,
+   output reg [7:0] VGA_G,
+   output reg [7:0] VGA_B,
    
    output VGA_HS,
    output VGA_VS,
@@ -32,16 +32,8 @@ module top(
    input [10:0] ps2_key,
 
    output  reg  ioctl_wait=1'b0,
-   output reg ce_pix=1'b1
-   
+   output  reg	ce_pix
 );
-
-
-assign VGA_R={8{r}};
-assign VGA_G={8{g}};
-assign VGA_B={8{b}};
-wire r,g,b;
-
 
 reg [16:0] clr_addr = 0;
 
@@ -163,18 +155,18 @@ oricatmos oricatmos
 	.PSG_OUT_C        (psg_c),
 	.PSG_OUT          (psg_out),
 
-	.VIDEO_CLK		    (video_clk),
-	.VIDEO_R		      (r),
-	.VIDEO_G		      (g),
-	.VIDEO_B		      (b),
-	.VIDEO_HSYNC	    (VGA_HS),
-	.VIDEO_VSYNC	    (VGA_VS),
-	.VIDEO_HBLANK	    (VGA_HB),
-	.VIDEO_VBLANK	    (VGA_VB),
+	.VIDEO_CLK		  (clk_pix),
+	.VIDEO_R		  (r),
+	.VIDEO_G		  (g),
+	.VIDEO_B		  (b),
+	.VIDEO_HSYNC	  (hs),
+	.VIDEO_VSYNC	  (vs),
+	.VIDEO_HBLANK	  (VGA_HB),
+	.VIDEO_VBLANK	  (VGA_VB),
 
-	.K7_TAPEIN		    (tape_adc),
-	.K7_TAPEOUT		    (tape_out),
-	.K7_REMOTE		    (),
+	.K7_TAPEIN		  (tape_adc),
+	.K7_TAPEOUT		  (tape_out),
+	.K7_REMOTE		  (),
 
 	.ram_ad           (ram_ad),
 	.ram_d            (ram_d),
@@ -193,14 +185,14 @@ oricatmos oricatmos
 	.fdd_layout       (0),
 
 	.phi2             (),
-	.pll_locked       ( locked),
-	.disk_enable      ((1'b0) ? ~fdd_ready : 1'b1),
-	.rom			        (rom),
+	.pll_locked       (0),
+	.disk_enable      (1'b1),
+	.rom			  (1),
 
 	.img_mounted      (img_mounted), // signaling that new image has been mounted
 	.img_size         (img_size), // size of image in bytes
-	.img_wp           (1'b0 | img_readonly), // write protect
-  .sd_lba           (sd_lba),
+	.img_wp           (img_readonly), // write protect
+  	.sd_lba           (sd_lba),
 	.sd_rd            (sd_rd),
 	.sd_wr            (sd_wr),
 	.sd_ack           (sd_ack),
@@ -210,9 +202,36 @@ oricatmos oricatmos
 	.sd_dout_strobe   (sd_buff_wr),
 	.sd_din_strobe    (0),
 
-  .tape_addr		    (loadpoint),
-  .tape_complete	  (tape_autorun)
+  	.tape_addr		  (loadpoint),
+  	.tape_complete	  (tape_autorun)
 );
+
+wire   r, g, b; 
+wire   hs, vs;
+reg    clk_pix2;
+always @(posedge clk_48) clk_pix2 <= clk_pix;
+
+always @(posedge clk_48) begin
+	reg old_clk;
+	
+	old_clk <= clk_pix2;
+	ce_pix <= ~old_clk & clk_pix2;
+end
+
+always @(posedge clk_48) begin
+	if(ce_pix) begin
+		VGA_HS <= ~hs;
+		if(~VGA_HS & ~hs) VGA_VS <= ~vs;
+	end
+
+	VGA_R <= {4{r}};
+	VGA_G <= {4{g}};
+	VGA_B <= {4{b}};	
+end
+
+//assign	VGA_R = {4{r}};
+//assign	VGA_G = {4{g}};
+//assign 	VGA_B = {4{b}};
 
 reg fdd_ready = 0;
 always @(posedge clk_48) if(img_mounted) fdd_ready <= |img_size;

@@ -267,6 +267,7 @@ module oricatmos
      .VSYNC (VIDEO_VSYNC)
      );
 
+/*
   M6522 inst_via
     (
      .I_RS (cpu_ad[3:0]),
@@ -304,7 +305,9 @@ module oricatmos
      .ENA_4 (ula_CLK_4_en),
      .CLK (CLK_IN)
      );
+*/
 
+/*
   jt49_bus inst_psg
     (
      .clk (CLK_IN),
@@ -324,6 +327,7 @@ module oricatmos
      .IOA_out (ym_o_ioa),
      .IOB_in ('0)
      );
+*/
 
   keyboard inst_key
     (
@@ -343,6 +347,7 @@ module oricatmos
   assign KEYB_NMIn = ~swnmi;
   assign KEYB_RESETn = ~swrst;
 
+/*
   Microdisc inst_microdisc
     (
      .CLK_SYS (CLK_IN),
@@ -388,6 +393,7 @@ module oricatmos
      .fdd_layout (fdd_layout),
      .fd_led (fd_led)
      );
+*/
 
   assign via_pa_in = (via_pa_out & ~via_pa_out_oe) |
                      (via_pa_in_from_psg & via_pa_out_oe);
@@ -405,22 +411,22 @@ module oricatmos
 
   always @(posedge CLK_IN) begin
     // expansion port
-    if (cpu_rw && ula_phi2 && ~ula_CSIOn && ~cont_IOCONTROLn)
-      cpu_di <= cont_D_OUT;
+    //if (cpu_rw && ula_phi2 && ~ula_CSIOn && ~cont_IOCONTROLn)
+    //  cpu_di <= cont_D_OUT;
     // VIA
-    else if (cpu_rw && ula_phi2 && ~ula_CSIOn && cont_IOCONTROLn)
-      cpu_di <= VIA_DO;
+    //else if (cpu_rw && ula_phi2 && ~ula_CSIOn && cont_IOCONTROLn)
+    //  cpu_di <= VIA_DO;
     // ROM Atmos
-    else if (cpu_rw && ula_phi2 && ula_CSIOn && ~ula_CSROMn && cont_MAPn &&
+    if (cpu_rw && ula_phi2 && ula_CSIOn && ~ula_CSROMn && cont_MAPn &&
              cont_ROMDISn && rom)
       cpu_di <= ROM_ATMOS_DO;
     // ROM Oric 1
-    else if (cpu_rw && ula_phi2 && ula_CSIOn && ~ula_CSROMn && cont_MAPn &&
-             cont_ROMDISn && ~rom)
-      cpu_di <= ROM_1_DO;
+    //else if (cpu_rw && ula_phi2 && ula_CSIOn && ~ula_CSROMn && cont_MAPn &&
+    //         cont_ROMDISn && ~rom)
+    //  cpu_di <= ROM_1_DO;
     //ROM Microdisc
-    else if (cpu_rw && ula_phi2 && ~cont_ECE && ~cont_ROMDISn && cont_MAPn)
-      cpu_di <= ROM_MD_DO;
+    //else if (cpu_rw && ula_phi2 && ~cont_ECE && ~cont_ROMDISn && cont_MAPn)
+    //  cpu_di <= ROM_MD_DO;
     // RAM
     else if (cpu_rw && ula_phi2 && ~ula_CSRAMn && ~ula_LATCH_SRAM)
       cpu_di <= SRAM_DO;

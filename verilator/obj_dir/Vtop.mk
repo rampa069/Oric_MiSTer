@@ -10,7 +10,7 @@ default: Vtop
 # Perl executable (from $PERL)
 PERL = perl
 # Path to Verilator kit (from $VERILATOR_ROOT)
-VERILATOR_ROOT = /usr/local/Cellar/verilator/4.100/share/verilator
+VERILATOR_ROOT = /usr/local/share/verilator
 # SystemC include directory with systemc.h (from $SYSTEMC_INCLUDE)
 SYSTEMC_INCLUDE ?= 
 # SystemC library directory with libsystemc.a (from $SYSTEMC_LIBDIR)
@@ -33,33 +33,15 @@ VM_PREFIX = Vtop
 VM_MODPREFIX = Vtop
 # User CFLAGS (from -CFLAGS on Verilator command line)
 VM_USER_CFLAGS = \
-	-I../sim/imgui -I../sim/vinc -I../sim/ -O3 \
-	-I/usr/local/include/SDL2 \
 
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \
-	-framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo -L/usr/local/lib -lSDL2 -L/usr/local/lib -L/opt/local/lib  \
 
 # User .cpp files (from .cpp's on Verilator command line)
 VM_USER_CLASSES = \
-	imgui \
-	imgui_draw \
-	imgui_impl_opengl2 \
-	imgui_impl_sdl \
-	imgui_tables \
-	imgui_widgets \
-	sim_bus \
-	sim_clock \
-	sim_console \
-	sim_input \
-	sim_video \
-	sim_main \
 
 # User .cpp directories (from .cpp's on Verilator command line)
 VM_USER_DIR = \
-	. \
-	sim \
-	sim/imgui \
 
 
 ### Default rules...
@@ -71,30 +53,6 @@ include $(VERILATOR_ROOT)/include/verilated.mk
 ### Executable rules... (from --exe)
 VPATH += $(VM_USER_DIR)
 
-imgui.o: sim/imgui/imgui.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-imgui_draw.o: sim/imgui/imgui_draw.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-imgui_impl_opengl2.o: sim/imgui/imgui_impl_opengl2.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-imgui_impl_sdl.o: sim/imgui/imgui_impl_sdl.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-imgui_tables.o: sim/imgui/imgui_tables.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-imgui_widgets.o: sim/imgui/imgui_widgets.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-sim_bus.o: sim/sim_bus.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-sim_clock.o: sim/sim_clock.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-sim_console.o: sim/sim_console.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-sim_input.o: sim/sim_input.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-sim_video.o: sim/sim_video.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-sim_main.o: sim_main.cpp
-	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
 
 ### Link rules... (from --exe)
 Vtop: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a $(VM_HIER_LIBS)

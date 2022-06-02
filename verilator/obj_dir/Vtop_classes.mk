@@ -15,6 +15,8 @@ VM_PARALLEL_BUILDS = 1
 VM_THREADS = 0
 # Tracing output mode?  0/1 (from --trace/--trace-fst)
 VM_TRACE = 1
+# Tracing output mode in FST format?  0/1 (from --trace-fst)
+VM_TRACE_FST = 0
 # Tracing threaded output mode?  0/1/N threads (from --trace-thread)
 VM_TRACE_THREADS = 0
 # Separate FST writer thread? 0/1 (from --trace-fst with --trace-thread > 0)
@@ -35,6 +37,11 @@ VM_CLASSES_SLOW += \
 	Vtop__2__Slow \
 	Vtop__3__Slow \
 	Vtop__4__Slow \
+	Vtop__5__Slow \
+	Vtop__6__Slow \
+	Vtop__7__Slow \
+	Vtop__8__Slow \
+	Vtop__9__Slow \
 	Vtop___024unit__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
