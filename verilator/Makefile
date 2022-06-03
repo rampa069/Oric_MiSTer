@@ -70,7 +70,7 @@ V_SRC = \
 	$(RTL)/tv65/t65_pack.sv \
 	$(RTL)/tv65/t65_alu.v \
 	$(RTL)/video.sv \
-	$(RTL)//m6522.sv \
+	$(RTL)/m6522.sv \
 	$(RTL)/dpram.v \
 	$(RTL)/jt49/hdl/jt49_bus.v \
 	$(RTL)/jt49/hdl/jt49_cen.v \
