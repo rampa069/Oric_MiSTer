@@ -3,7 +3,7 @@
 module top(
 
    input clk_48,
-   //input clk_24,
+   input clk_24,
    input reset,
    input [11:0]  inputs,
 
@@ -32,7 +32,7 @@ module top(
    input [10:0] ps2_key,
 
    output  reg  ioctl_wait=1'b0,
-   output  reg	ce_pix=1'b1
+   output  reg	ce_pix
 );
 
 reg [16:0] clr_addr = 0;
@@ -156,11 +156,11 @@ oricatmos oricatmos
 	.PSG_OUT          (psg_out),
 
 	.VIDEO_CLK		    (clk_pix),
-	.VIDEO_R		      (VGA_R),
-	.VIDEO_G		      (VGA_G),
-	.VIDEO_B		      (VGA_B),
-	.VIDEO_HSYNC	    (VGA_HS),
-	.VIDEO_VSYNC	    (VGA_VS),
+	.VIDEO_R		      (r),
+	.VIDEO_G		      (g),
+	.VIDEO_B		      (b),
+	.VIDEO_HSYNC	    (hs),
+	.VIDEO_VSYNC	    (vs),
 	.VIDEO_HBLANK	    (VGA_HB),
 	.VIDEO_VBLANK	    (VGA_VB),
 
@@ -206,34 +206,33 @@ oricatmos oricatmos
   	.tape_complete	(tape_autorun)
 );
 
-/*
+
 wire   r, g, b; 
 wire   hs, vs;
-reg HSync, VSync;
 reg    clk_pix2;
 always @(posedge clk_48) clk_pix2 <= clk_pix;
 
-always @(posedge clk_48) begin
+always @(posedge clk_24) begin
 	reg old_clk;
 	
 	old_clk <= clk_pix2;
 	ce_pix <= ~old_clk & clk_pix2;
 end
 
-always @(posedge clk_48) begin
+always @(posedge clk_24) begin
 	if(ce_pix) begin
-		HSync <= ~VGA_HS;
-		if(~HSync & ~VGA_HS) VSync <= ~VGA_VS;
+		VGA_HS <= ~hs;
+		if(~VGA_HS & ~hs) VGA_VS <= ~vs;
 	end
 
-//	VGA_R <= {4{r}};
-//	VGA_G <= {4{g}};
-//	VGA_B <= {4{b}};	
+//	r <= {4{VGA_R}};
+//	g <= {4{VGA_G}};
+//	b <= {4{VGA_B}};	
 end
-*/
-//assign	VGA_R = {4{r}};
-//assign	VGA_G = {4{g}};
-//assign 	VGA_B = {4{b}};
+
+assign	VGA_R = {4{r}};
+assign	VGA_G = {4{g}};
+assign 	VGA_B = {4{b}};
 
 reg fdd_ready = 0;
 always @(posedge clk_48) if(img_mounted) fdd_ready <= |img_size;

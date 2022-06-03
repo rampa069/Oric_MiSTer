@@ -89,7 +89,7 @@ double sc_time_stamp() {	// Called by $time in Verilog.
 
 int clk_sys_freq = 48000000;
 SimClock clk_48(1); // 48mhz
-//SimClock clk_24(2); // 24mhz
+SimClock clk_24(2); // 24mhz
 
 // VCD trace logging
 // -----------------
@@ -128,7 +128,7 @@ void resetSim() {
 	main_time = 0;
 	top->reset = 1;
 	clk_48.Reset();
-	//clk_24.Reset();
+	clk_24.Reset();
 }
 
 int verilate() {
@@ -142,11 +142,11 @@ int verilate() {
 
 		// Clock dividers
 		clk_48.Tick();
-		//clk_24.Tick();
+		clk_24.Tick();
 
 		// Set clocks in core
 		top->clk_48 = clk_48.clk;
-		//top->clk_24 = clk_24.clk;
+		top->clk_24 = clk_24.clk;
 
 		// Simulate both edges of fastest clock
 		if (clk_48.clk != clk_48.old) {
@@ -174,12 +174,12 @@ int verilate() {
 #endif
 
 		// Output pixels on rising edge of pixel clock
-		if (clk_48.IsRising() && top->ce_pix) {
+		if (clk_24.IsRising() && top->ce_pix) {
 			uint32_t colour = 0xFF000000 | top->VGA_B << 16 | top->VGA_G << 8 | top->VGA_R;
 			video.Clock(top->VGA_HB, top->VGA_VB, top->VGA_HS, top->VGA_VS, colour);
 		}
 
-		if (clk_48.IsRising()) {
+		if (clk_24.IsRising()) {
 			main_time++;
 		}
 		return 1;
