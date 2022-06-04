@@ -30,7 +30,7 @@ using namespace std;
 // Simulation control
 // ------------------
 int initialReset = 48;
-bool run_enable = 0;
+bool run_enable = 1;
 int batchSize = 150000;
 bool single_step = 0;
 bool multi_step = 0;
@@ -70,13 +70,13 @@ const int input_pause = 11;
 
 // Video
 // -----
-#define VGA_WIDTH 320
-#define VGA_HEIGHT 240
-#define VGA_ROTATE -1  // 90 degrees anti-clockwise
+#define VGA_WIDTH 240
+#define VGA_HEIGHT 224
+#define VGA_ROTATE 0
 #define VGA_SCALE_X vga_scale
 #define VGA_SCALE_Y vga_scale
 SimVideo video(VGA_WIDTH, VGA_HEIGHT, VGA_ROTATE);
-float vga_scale = 2.5;
+float vga_scale = 3.5;
 
 // Verilog module
 // --------------

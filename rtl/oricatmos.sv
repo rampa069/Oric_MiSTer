@@ -183,10 +183,8 @@ module oricatmos
   logic [3:0]          PH2_old;
   logic [4:0]          PH2_cntr;
 
-  //assign RESETn = ~RESET;
   assign RESETn = (~RESET & KEYB_RESETn);
 
-  //inst_cpu : T65
   T65 inst_cpu
     (
      .Mode          ('0),

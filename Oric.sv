@@ -450,7 +450,7 @@ cassettecached cassette(
 
 oricatmos oricatmos
 (
-	.clk_in           (clk_sys),
+	.CLK_IN           (clk_sys),
 	.RESET            (reset),
 
 	.key_pressed      (ps2_key[9]),

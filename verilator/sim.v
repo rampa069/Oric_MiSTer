@@ -206,7 +206,6 @@ oricatmos oricatmos
   	.tape_complete	(tape_autorun)
 );
 
-
 wire   r, g, b; 
 wire   hs, vs;
 reg    clk_pix2;
@@ -223,11 +222,7 @@ always @(posedge clk_24) begin
 	if(ce_pix) begin
 		VGA_HS <= ~hs;
 		if(~VGA_HS & ~hs) VGA_VS <= ~vs;
-	end
-
-//	r <= {4{VGA_R}};
-//	g <= {4{VGA_G}};
-//	b <= {4{VGA_B}};	
+	end	
 end
 
 assign	VGA_R = {4{r}};

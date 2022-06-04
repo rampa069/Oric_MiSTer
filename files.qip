@@ -7,9 +7,9 @@ set_global_assignment -name SYSTEMVERILOG_FILE rtl/rom/MICRODIS.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/rom/BASIC10.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/rom/BASIC11A.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/ula.sv
-set_global_assignment -name SYSTEMVERILOG_FILE rtl/m6522.vhd
-set_global_assignment -name SYSTEMVERILOG_FILE rtl/video.vhd
-set_global_assignment -name VHDL_FILE rtl/oricatmos.vhd
+set_global_assignment -name SYSTEMVERILOG_FILE rtl/m6522.sv
+set_global_assignment -name SYSTEMVERILOG_FILE rtl/oricatmos.sv
+#set_global_assignment -name VHDL_FILE rtl/oricatmos.vhd
 set_global_assignment -name SYSTEMVERILOG_FILE "Oric.sv"
 set_global_assignment -name VERILOG_FILE rtl/cassette.v
 set_global_assignment -name VERILOG_FILE rtl/cassettecached.v
@@ -19,4 +19,4 @@ set_global_assignment -name SYSTEMVERILOG_FILE rtl/ram.sv
 #set_global_assignment -name VERILOG_FILE rtl/tv65/t65_mcode.v
 #set_global_assignment -name VERILOG_FILE rtl/tv65/t65_pack.v
 #set_global_assignment -name VERILOG_FILE rtl/tv65/t65_alu.v
-set_global_assignment -name VHDL_FILE rtl/dpram.vhd
+set_global_assignment -name VERILOG_FILE rtl/dpram.v
