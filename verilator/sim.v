@@ -115,7 +115,6 @@ dpram #(.AW(16)) ram (
 );
 
 
-
 cassette cassette(
   .clk(clk_48),
 
@@ -126,7 +125,6 @@ cassette cassette(
   .ioctl_dout(ioctl_dout),
 
   .reset_n(~reset),
-  //.tape_request(tape_request),
 
   // output processed tape data to ram
   .autostart(),

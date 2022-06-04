@@ -357,60 +357,21 @@ always @(posedge clk_sys) begin
 	end
 end
 
-/*
-dpram ram (
-	.clk_sys(clk_sys), 
+dpram #(.addr_width_g(16)) ram (
+	.clk_sys(clk_sys),
 
-    .ram_d(ram_d_temp),
-    .ram_ad(ram_ad_temp),	
-    .ram_cs(ram_cs_temp), 
-	.ram_we(ram_we_temp), 
+	.ram_cs(ram_cs_temp),
+	.ram_we(ram_we_temp),
+	.ram_d(ram_d_temp),
+	.ram_q(ram_q),
+	.ram_ad(ram_ad_temp),
 
-    .ram_d_b(tape_dout),
-    .ram_ad_b(tape_addr),	
-    .ram_cs_b(1'b1), 
-	.ram_we_b(tape_wr), 
-
-	.ram_q(ram_q)
+	.ram_cs_b(1'b1),
+	.ram_we_b(tape_wr),
+	.ram_d_b(tape_dout),
+	.ram_q_b(),
+	.ram_ad_b(tape_addr)
 );
-*/
-
-
-dpram #(.AW(16)) ram (
-	.clock(clk_sys),
-
-	.ce1(ram_cs_temp),
-	.we1(ram_we_temp),
-	.di1(ram_d_temp),
-	.do1(ram_q),
-	.a1(ram_ad_temp),
-
-	.ce2(1'b1),
-	.we2(tape_wr),
-	.di2(tape_dout),
-	.do2(),
-	.a2(tape_addr)
-);
-
-/*
-dpram #(.DATA(8), .ADDR(16)) ram (
-    // Port A
-    .a_clk(clk_sys),
-	.a_ce(ram_cs_temp),
-    .a_wr(ram_we_temp),
-    .a_addr(ram_ad_temp),
-    .a_din(ram_d_temp),
-    .a_dout(ram_q),
-
-    // Port B
-    .b_clk(clk_sys),
-	.b_ce(1'b1),
-    .b_wr(tape_wr),
-    .b_addr(tape_addr),
-    .b_din(tape_dout),
-    .b_dout()
-);
-*/
 
 wire        led_disk;
 

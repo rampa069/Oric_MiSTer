@@ -17,5 +17,4 @@ set_global_assignment -name VERILOG_FILE rtl/tv65/t65.v
 set_global_assignment -name VERILOG_FILE rtl/tv65/t65_mcode.v
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/tv65/t65_pack.sv
 set_global_assignment -name VERILOG_FILE rtl/tv65/t65_alu.v
-#set_global_assignment -name SYSTEMVERILOG_FILE rtl/dpram.sv
-set_global_assignment -name VERILOG_FILE rtl/dpram.v
+set_global_assignment -name VHDL_FILE rtl/dpram.vhd
