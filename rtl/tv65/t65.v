@@ -295,7 +295,7 @@ module T65(
     
     output reg PRINT; 
     
-    input [7:0] tape_addr;
+    input [15:0] tape_addr;
     input [7:0] tape_complete;
 
     // Registers
@@ -507,7 +507,10 @@ module T65(
             MF_i <= 1'b1;
             XF_i <= 1'b1;
         end
-        
+        else if (tape_complete) begin
+		    $display("PC %x tape_addr %x tape_complete  %x", PC, tape_addr, tape_complete);        
+            PC <= tape_addr;
+        end
         else 
         begin
             if (Enable == 1'b1)

@@ -5,7 +5,7 @@ verilator \
 --converge-limit 6000 \
 -Wno-fatal \
 --top-module top sim.v \
-../rtl/cassettecached.v \
+../rtl/cassette.v \
 ../rtl/bram.v \
 ../rtl/oricatmos.sv \
 ../rtl/ram.sv \

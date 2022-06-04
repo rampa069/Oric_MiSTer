@@ -375,6 +375,7 @@ dpram ram (
 );
 */
 
+
 dpram #(.AW(16)) ram (
 	.clock(clk_sys),
 
@@ -391,6 +392,25 @@ dpram #(.AW(16)) ram (
 	.a2(tape_addr)
 );
 
+/*
+dpram #(.DATA(8), .ADDR(16)) ram (
+    // Port A
+    .a_clk(clk_sys),
+	.a_ce(ram_cs_temp),
+    .a_wr(ram_we_temp),
+    .a_addr(ram_ad_temp),
+    .a_din(ram_d_temp),
+    .a_dout(ram_q),
+
+    // Port B
+    .b_clk(clk_sys),
+	.b_ce(1'b1),
+    .b_wr(tape_wr),
+    .b_addr(tape_addr),
+    .b_din(tape_dout),
+    .b_dout()
+);
+*/
 
 wire        led_disk;
 
@@ -402,7 +422,7 @@ wire        tape_complete;
 
 reg 		tape_autorun = 0;
 
-/*
+
 cassette cassette(
   .clk(clk_sys),
 
@@ -423,8 +443,9 @@ cassette cassette(
   .tape_dout(tape_dout),
   .tape_complete(tape_complete)
 );
-*/
 
+
+/*
 cassettecached cassette(
   .clk(clk_sys),
 
@@ -435,7 +456,7 @@ cassettecached cassette(
   .ioctl_dout(ioctl_dout),
 
   .reset_n(~reset),
-  .tape_request(tape_request),
+  //.tape_request(tape_request),
 
   // output processed tape data to ram
   .autostart(),
@@ -446,7 +467,7 @@ cassettecached cassette(
   .tape_dout(tape_dout),
   .tape_complete(tape_complete)
 );
-
+*/
 
 oricatmos oricatmos
 (
@@ -494,7 +515,7 @@ oricatmos oricatmos
 	.fdd_layout       (0),
 
 	.phi2             (),
-	.pll_locked       (locked),
+	.pll_locked       (~reset),
 	.disk_enable      ((!status[6:5]) ? ~fdd_ready : status[5]),
 	.rom			  (rom),
 

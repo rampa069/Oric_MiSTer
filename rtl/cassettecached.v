@@ -148,7 +148,7 @@ always @(posedge clk) begin
             begin
                 if(cache_addr>='d14) begin
                     start_addr <= { startAddressHIGH, startAddressLOW }; 
-                    loadpoint <= start_addr;                        
+                    //loadpoint <= start_addr;                        
                     $display("cache_addr %x cache_dout %x", cache_addr, cache_dout); 
 
                     // check the byte for ASCII uppercase and h'20
@@ -164,7 +164,8 @@ always @(posedge clk) begin
             end    
             SM_PROGRAMCODE: 
             begin
-               // $display("cache_addr %x cache_dout %x", cache_addr, cache_dout); 
+                loadpoint <= { startAddressHIGH, startAddressLOW }; 
+                // $display("cache_addr %x cache_dout %x", cache_addr, cache_dout); 
                 tape_wr <= 1'b1;	                     
                 tape_addr <= start_addr;
                 tape_dout <= cache_dout;
@@ -174,7 +175,7 @@ always @(posedge clk) begin
                 if(start_addr == (end_addr))
                 begin
                     tape_complete <= 1'b1;                          
-                    $display( "(state SM_PROGRAMCODE %x) start_addr %x end_addr %x", state, start_addr, end_addr); 
+                    $display( "(state SM_PROGRAMCODE %x) loadpoint %x end_addr %x", state, loadpoint, end_addr); 
                     state <= SM_COMPLETE;                                                  
                 end                    
             end   

@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+//`timescale 1ns / 1ps
 
 module bram (
   input clk,
@@ -13,7 +13,7 @@ module bram (
   output reg [7:0] dout
 );
 
-reg [7:0] memory[65535:0];
+reg [7:0] memory[65536:0];
 
 always @(posedge clk) begin
   if (bram_download && bram_wr)

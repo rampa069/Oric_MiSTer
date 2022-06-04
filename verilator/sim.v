@@ -97,6 +97,7 @@ always @(posedge clk_48)
     end
 */
 
+
 dpram #(.AW(16)) ram (
 	.clock(clk_48),
 
@@ -113,7 +114,9 @@ dpram #(.AW(16)) ram (
 	.a2(tape_addr)
 );
 
-cassettecached cassette(
+
+
+cassette cassette(
   .clk(clk_48),
 
   // input raw tape data from tape cache
@@ -123,7 +126,7 @@ cassettecached cassette(
   .ioctl_dout(ioctl_dout),
 
   .reset_n(~reset),
-  .tape_request(tape_request),
+  //.tape_request(tape_request),
 
   // output processed tape data to ram
   .autostart(),

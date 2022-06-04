@@ -252,7 +252,7 @@ int main(int argc, char** argv, char** env) {
 	// Setup video output
 	if (video.Initialise(windowTitle) == 1) { return 1; }
 
-	bus.QueueDownload("./CENTIPED.TAP", 0, true);
+	//bus.QueueDownload("./CENTIPED.TAP", 0, true);
 	//bus.QueueDownload("./Galaxians.TAP", 0, true);
 	//bus.QueueDownload("./DEVILS.tap", 0, true);
 
@@ -305,7 +305,8 @@ int main(int argc, char** argv, char** env) {
 		if (ImGui::Button("Multi Step")) { run_enable = 0; multi_step = 1; }
 		//ImGui::SameLine();
 		ImGui::SliderInt("Multi step amount", &multi_step_amount, 8, 1024);
-
+		if (ImGui::Button("Load TAP"))
+    		ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey", "Choose File", ".TAP", ".");
 		ImGui::End();
 
 		// Debug log window
@@ -313,9 +314,9 @@ int main(int argc, char** argv, char** env) {
 		ImGui::SetWindowPos(windowTitle_DebugLog, ImVec2(0, 160), ImGuiCond_Once);
 
 		// Memory debug
-		ImGui::Begin("Tape Cache");
-		mem_edit.DrawContents(&top->top__DOT__cassette__DOT__tapecache__DOT__memory, 65536, 0);
-		ImGui::End();
+		//ImGui::Begin("Tape Cache");
+		//mem_edit.DrawContents(&top->top__DOT__cassette__DOT__tapecache__DOT__memory, 65536, 0);
+		//ImGui::End();
 		ImGui::Begin("ORIC RAM");
 		mem_edit.DrawContents(&top->top__DOT__ram__DOT__d, 65536, 0);
 		ImGui::End();
@@ -385,12 +386,27 @@ int main(int argc, char** argv, char** env) {
 		ImGui::SliderInt("Rotate", &video.output_rotate, -1, 1); ImGui::SameLine();
 		ImGui::Checkbox("Flip V", &video.output_vflip);
 		ImGui::Text("main_time: %d frame_count: %d sim FPS: %f", main_time, video.count_frame, video.stats_fps);
-		//ImGui::Text("pixel: %06d line: %03d", video.count_pixel, video.count_line);
+		ImGui::Text("pixel: %06d line: %03d", video.count_pixel, video.count_line);
 
 		// Draw VGA output
 		ImGui::Image(video.texture_id, ImVec2(video.output_width * VGA_SCALE_X, video.output_height * VGA_SCALE_Y));
 		ImGui::End();
 
+  		if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey"))
+  		{
+    		// action if OK
+    		if (ImGuiFileDialog::Instance()->IsOk())
+    		{
+      			std::string filePathName = ImGuiFileDialog::Instance()->GetFilePathName();
+      			std::string filePath = ImGuiFileDialog::Instance()->GetCurrentPath();
+      			// action
+				fprintf(stderr,"filePathName: %s\n",filePathName.c_str());
+				fprintf(stderr,"filePath: %s\n",filePath.c_str());
+     			bus.QueueDownload(filePathName, 1, 0);
+    		}
+    		// close
+    		ImGuiFileDialog::Instance()->Close();
+  		}
 
 #ifndef DISABLE_AUDIO
 
