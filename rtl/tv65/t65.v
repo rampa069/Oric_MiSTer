@@ -508,7 +508,7 @@ module T65(
             XF_i <= 1'b1;
         end
         else if (tape_complete) begin
-		    $display("PC %x tape_addr %x tape_complete  %x", PC, tape_addr, tape_complete);        
+		    $display("(T65) PC %x tape_addr %x tape_complete  %x", PC, tape_addr, tape_complete);        
             PC <= tape_addr;
         end
         else 

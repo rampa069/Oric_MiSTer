@@ -75,6 +75,7 @@ always @(posedge clk) begin
 	ioctl_downlD <= ioctl_download;
 	if(ioctl_downlD & ~ioctl_download) tapecache_loaded <= 1;
     if(tapecache_loaded) begin
+        //$display("tapecache_loaded"); 
         cache_cs <= 1'b1;
     end
 end
@@ -176,7 +177,7 @@ always @(posedge clk) begin
                 begin
                     tape_complete <= 1'b1;                          
                     $display( "(state SM_PROGRAMCODE %x) loadpoint %x end_addr %x", state, loadpoint, end_addr); 
-                    state <= SM_COMPLETE;                                                  
+                    state <= SM_FILETYPE;                                                  
                 end                    
             end   
             SM_COMPLETE: 
@@ -185,7 +186,7 @@ always @(posedge clk) begin
                 state <= SM_FILETYPE;                          
             end                                                                                        
         endcase
-       // $display("fileType %x autorun %x end_addr %x start_addr %x startAddressLOW %x", fileType, autorun, end_addr, start_addr, startAddressLOW);
+        $display("fileType %x autorun %x end_addr %x start_addr %x startAddressLOW %x", fileType, autorun, end_addr, start_addr, startAddressLOW);
     end
     else if(tape_complete) begin
         if(tape_wr) begin
@@ -195,7 +196,8 @@ always @(posedge clk) begin
         end
         else begin
             tape_autorun <= 1'b0;  
-        //    $display( "(state else if %x) tape_complete %x tape_wr %x tape_autorun %x", state, tape_complete, tape_wr, tape_autorun);                             
+            $display( "(state else if %x) tape_complete %x tape_wr %x tape_autorun %x", state, tape_complete, tape_wr, tape_autorun);  
+            tape_complete <= 1'b0;                                       
         end
     end
 end

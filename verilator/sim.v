@@ -115,7 +115,7 @@ dpram #(.AW(16)) ram (
 );
 
 
-cassette cassette(
+cassettecached cassette(
   .clk(clk_48),
 
   // input raw tape data from tape cache
