@@ -191,8 +191,8 @@ always @(posedge clk) begin
     else if(tape_complete) begin
         if(tape_wr) begin
  		    tape_wr <= 1'b0;  
-            //if(loadpoint > 4'h0505) tape_autorun <= 1'b1; 
-            tape_autorun <= 1'b1;                              
+            if(loadpoint > 'h0505) tape_autorun <= 1'b1; 
+            //tape_autorun <= 1'b1;                              
         end
         else begin
             tape_autorun <= 1'b0;  
