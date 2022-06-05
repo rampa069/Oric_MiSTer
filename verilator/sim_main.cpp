@@ -217,7 +217,8 @@ int main(int argc, char** argv, char** env) {
 	bus.ioctl_wr = &top->ioctl_wr;
 	bus.ioctl_dout = &top->ioctl_dout;
 	bus.ioctl_din = &top->ioctl_din;
-        input.ps2_key = &top->ps2_key;
+    input.ps2_key = &top->ps2_key;
+
 #ifndef DISABLE_AUDIO
 	audio.Initialise();
 #endif
@@ -336,7 +337,8 @@ int main(int argc, char** argv, char** env) {
 		ImGui::Text("cpu_di           0x%04X", top->top__DOT__oricatmos__DOT__cpu_di);
 		ImGui::Text("ROM_ATMOS_DO     0x%04X", top->top__DOT__oricatmos__DOT__ROM_ATMOS_DO);		
 		ImGui::Text("ula_LATCH_SRAM   0x%04X", top->top__DOT__oricatmos__DOT__ula_LATCH_SRAM);
-		ImGui::Text("SRAM_DO          0x%04X", top->top__DOT__oricatmos__DOT__SRAM_DO);			
+		ImGui::Text("SRAM_DO          0x%04X", top->top__DOT__oricatmos__DOT__SRAM_DO);	
+		ImGui::Text("ps2_key          0x%010X", top->top__DOT__ps2_key);			
 		ImGui::End();
 
 		// Trace/VCD window

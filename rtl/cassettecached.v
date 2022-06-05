@@ -186,7 +186,7 @@ always @(posedge clk) begin
                 state <= SM_FILETYPE;                          
             end                                                                                        
         endcase
-        $display("fileType %x autorun %x end_addr %x start_addr %x startAddressLOW %x", fileType, autorun, end_addr, start_addr, startAddressLOW);
+        //$display("fileType %x autorun %x end_addr %x start_addr %x startAddressLOW %x", fileType, autorun, end_addr, start_addr, startAddressLOW);
     end
     else if(tape_complete) begin
         if(tape_wr) begin
@@ -196,7 +196,7 @@ always @(posedge clk) begin
         end
         else begin
             tape_autorun <= 1'b0;  
-            $display( "(state else if %x) tape_complete %x tape_wr %x tape_autorun %x", state, tape_complete, tape_wr, tape_autorun);  
+            //$display( "(state else if %x) tape_complete %x tape_wr %x tape_autorun %x", state, tape_complete, tape_wr, tape_autorun);  
             tape_complete <= 1'b0;                                       
         end
     end

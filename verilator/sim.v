@@ -136,9 +136,17 @@ cassettecached cassette(
   .tape_complete(tape_complete)
 );
 
-wire key_strobe = old_keystb ^ ps2_key[10];
-reg old_keystb = 0;
-always @(posedge clk_48) old_keystb <= ps2_key[10];
+reg key_strobe;
+//wire key_strobe = old_keystb ^ ps2_key[10];
+//reg old_keystb = 0;
+//always @(posedge clk_48) old_keystb <= ps2_key[10];
+
+//always @(posedge clk_48) begin
+//	if (ps2_key[9])
+//		key_strobe <= 1;
+//	else
+//		key_strobe <= 0;
+//end
 
 oricatmos oricatmos
 (
@@ -148,7 +156,7 @@ oricatmos oricatmos
 	.key_pressed      (ps2_key[9]),
 	.key_code         (ps2_key[7:0]),
 	.key_extended     (ps2_key[8]),
-	.key_strobe       (key_strobe),
+	.key_strobe       (ps2_key[9]), //key_strobe
 	//.PSG_OUT_L			(psg_l),
 	//.PSG_OUT_R			(psg_r),
 	.PSG_OUT_A        (psg_a),
