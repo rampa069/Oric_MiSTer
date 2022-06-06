@@ -383,7 +383,7 @@ wire        tape_complete;
 
 reg 		tape_autorun = 0;
 
-
+/*
 cassette cassette(
   .clk(clk_sys),
 
@@ -404,9 +404,8 @@ cassette cassette(
   .tape_dout(tape_dout),
   .tape_complete(tape_complete)
 );
+*/
 
-
-/*
 cassettecached cassette(
   .clk(clk_sys),
 
@@ -428,7 +427,7 @@ cassettecached cassette(
   .tape_dout(tape_dout),
   .tape_complete(tape_complete)
 );
-*/
+
 
 oricatmos oricatmos
 (
