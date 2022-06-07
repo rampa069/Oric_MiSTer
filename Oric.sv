@@ -17,6 +17,7 @@
 //  You should have received a copy of the GNU General Public License along
 //  with this program; if not, write to the Free Software Foundation, Inc.,
 //  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+//
 //============================================================================
 
 module emu
@@ -29,7 +30,7 @@ module emu
 	input         RESET,
 
 	//Must be passed to hps_io module
-	inout  [45:0] HPS_BUS,
+	inout  [48:0] HPS_BUS,
 
 	//Base video clock. Usually equals to CLK_SYS.
 	output        CLK_VIDEO,
@@ -55,6 +56,7 @@ module emu
 
 	input  [11:0] HDMI_WIDTH,
 	input  [11:0] HDMI_HEIGHT,
+	output        HDMI_FREEZE,
 
 `ifdef MISTER_FB
 	// Use framebuffer in DDRAM (USE_FB=1 in qsf)
@@ -172,6 +174,7 @@ module emu
 	input         OSD_STATUS
 );
 
+
 assign USER_OUT = '1;
 assign {UART_RTS, UART_TXD, UART_DTR} = 0;
 assign {SD_SCK, SD_MOSI, SD_CS} = 'Z;
@@ -187,7 +190,7 @@ assign VGA_SCALER= 0;
 assign AUDIO_S   = 0;
 assign AUDIO_MIX = 0;
 
-wire [1:0] ar = status[14:13];
+wire [1:0] ar = status[122:121];
 video_freak video_freak
 (
 	.*,
@@ -211,7 +214,7 @@ localparam CONF_STR = {
 	"O56,FDD Controller,Auto,Off,On;",
 	"O7,Drive Write,Allow,Prohibit;",
 	"-;",
-	"ODE,Aspect ratio,Original,Full Screen,[ARC1],[ARC2];",
+	"O[122:121],Aspect ratio,Original,Full Screen,[ARC1],[ARC2];",
 	"OAC,Scandoubler Fx,None,HQ2x,CRT 25%,CRT 50%;",
 	"OFG,Scale,Normal,V-Integer,Narrower HV-Integer,Wider HV-Integer;",
 	"-;",
@@ -253,19 +256,21 @@ end
 
 wire [10:0] ps2_key;
 
-wire [15:0] joy;
-wire  [1:0] buttons;
-wire        forced_scandoubler;
-wire [31:0] status;
+wire [15:0]  joy;
+wire  [1:0]  buttons;
+wire         forced_scandoubler;
+wire [127:0] status;
+wire 		 freeze_sync;
 
 wire [31:0] sd_lba;
-wire        sd_rd;
-wire        sd_wr;
-wire        sd_ack;
+reg   [1:0] sd_rd;
+reg   [1:0] sd_wr;
+wire  [1:0] sd_ack;
 wire  [8:0] sd_buff_addr;
 wire  [7:0] sd_buff_dout;
 wire  [7:0] sd_buff_din;
 wire        sd_buff_wr;
+
 wire        img_mounted;
 wire [31:0] img_size;
 wire        img_readonly;
@@ -281,12 +286,10 @@ reg  [31:0] status_out;
 
 wire [21:0] gamma_bus;
 
-hps_io #(.STRLEN($size(CONF_STR)>>3)) hps_io
+hps_io #(.CONF_STR(CONF_STR)) hps_io
 (
 	.clk_sys(clk_sys),
 	.HPS_BUS(HPS_BUS),
-
-	.conf_str(CONF_STR),
 
 	.ps2_key(ps2_key),
 
@@ -295,13 +298,13 @@ hps_io #(.STRLEN($size(CONF_STR)>>3)) hps_io
 	.forced_scandoubler(forced_scandoubler),
 	.status(status),
 
-	.sd_lba(sd_lba),
+	.sd_lba('{sd_lba}),
 	.sd_rd(sd_rd),
 	.sd_wr(sd_wr),
 	.sd_ack(sd_ack),
 	.sd_buff_addr(sd_buff_addr),
 	.sd_buff_dout(sd_buff_dout),
-	.sd_buff_din(sd_buff_din),
+	.sd_buff_din('{sd_buff_din}),
 	.sd_buff_wr(sd_buff_wr),
 	.img_mounted(img_mounted),
 	.img_size(img_size),
@@ -482,13 +485,13 @@ oricatmos oricatmos
 	.img_mounted      (img_mounted), // signaling that new image has been mounted
 	.img_size         (img_size), // size of image in bytes
 	.img_wp           (status[7] | img_readonly), // write protect
-    .sd_lba           (sd_lba),
+    .sd_lba           (sd_lba[0]),
 	.sd_rd            (sd_rd),
 	.sd_wr            (sd_wr),
 	.sd_ack           (sd_ack),
 	.sd_buff_addr     (sd_buff_addr),
 	.sd_dout          (sd_buff_dout),
-	.sd_din           (sd_buff_din),
+	.sd_din           (sd_buff_din[0]),
 	.sd_dout_strobe   (sd_buff_wr),
 	.sd_din_strobe    (0),
 
