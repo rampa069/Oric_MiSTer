@@ -148,6 +148,7 @@ always @(posedge clk_48) begin
 		key_strobe <= 0;
 end
 
+/*
 oricatmos oricatmos
 (
 	.CLK_IN           (clk_48),
@@ -234,11 +235,13 @@ always @(posedge clk_24) begin
 	end	
 end
 
-assign	VGA_R = {4{r}};
-assign	VGA_G = {4{g}};
-assign 	VGA_B = {4{b}};
+
+assign	VGA_R = {8{r}};
+assign	VGA_G = {8{g}};
+assign 	VGA_B = {8{b}};
 
 reg fdd_ready = 0;
 always @(posedge clk_48) if(img_mounted) fdd_ready <= |img_size;
+*/
 
 endmodule

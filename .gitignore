@@ -46,3 +46,6 @@ verilator/obj_dir/
 *.vs
 verilator/Acheron.TAP
 verilator/Acrobates.TAP
+verilator/.vs/sim/v17/Browse.VC.db
+verilator/advl.TAP
+verilator/Harrier Attack.TAP

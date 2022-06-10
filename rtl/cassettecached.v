@@ -1,4 +1,28 @@
 
+//          +-----+----> Address for next line ($0510)
+//          |   | +----+----> Line number (10)
+//          |   | |   | +----> Token for REM
+//          |   | |   | |  +------------------------+----> LIGNE 10
+//          |   | |   | |  |                        |  +----> End Of Line
+//00000501  10 05 0a 00 9d 20 4c 49  47 4e 45 20 31 30 00       |..... LIGNE 10.|
+
+//          +--+----> Address for next line ($051d)
+//          |   | +----+----> Line number (20)
+//          |   | |   | +----> Token for PRINT
+//          |   | |   | |  +-------------------+----> "TEST"
+//          |   | |   | |  |                   | +----> End Of Line
+//00000510  1d 05 14 00 ba 20 22 54 45  53 54 22 00                |.... "TEST"..|
+
+//           +---+---> End of Program
+//0000051d   00 00
+
+//                                      +---+--> End address
+//                                      |   | +---+--> Start address
+//00000000  16 16 16 16 24 ff ff 00  00 05 1f 05 01 03 54 45  |....$.........TE|
+//00000010  53 54 53 41 56 45 00 10  05 0a 00 9d 20 4c 49 47  |STSAVE...... LIG|
+//00000020  4e 45 20 31 30 00 1d 05  14 00 ba 20 22 54 45 53  |NE 10...... "TES|
+//00000030  54 22 00 00 00 0b                                 |T"....|
+
 module cassettecached(
   input              clk,
 
@@ -67,17 +91,18 @@ bram tapecache(
   .cs(cache_cs)
 );
 
-reg tapecache_loaded;
-reg ioctl_downlD;
-
+reg         tapecache_loaded;
+reg         ioctl_downlD;
+reg [24:0]  tape_size;
 
 always @(posedge clk) begin
     // fill the cache
 	ioctl_downlD <= ioctl_download;
 	if(ioctl_downlD & ~ioctl_download) tapecache_loaded <= 1'b1;
     if(tapecache_loaded) begin
-        $display("tapecache_loaded tape_complete %x state %x", tape_complete, state); 
+        $display("tapecache_loaded tape_complete %x state %x size %x", tape_complete, state, ioctl_addr); 
         cache_cs <= 1'b1;
+        tape_size <= ioctl_addr;
     end
     if(tape_complete==1'b1) tapecache_loaded <= 1'b0;
 end
@@ -85,34 +110,29 @@ end
 
 // process tape header
 always @(posedge clk) begin
+
     if(tapecache_loaded==1'b1 && tape_complete==1'b0) begin
         case (state)
             SM_SYNC:
             begin
-                if (cache_dout==8'h16) begin
+                if (cache_dout==8'h24) begin
                     state <= SM_FILETYPE;                       
                 end  
                 cache_addr <= cache_addr + 1'd1;                   
             end
             SM_FILETYPE: 
             begin
-                if(cache_addr==8'd07) begin
-                    if (cache_dout==8'h00) begin
-                        fileType <= cache_dout;
-                        state <= SM_AUTORUN;                       
-                    end                
-                    else if (cache_dout==8'h80) begin
-                        fileType <= cache_dout;
-                        state <= SM_AUTORUN;                       
-                    end
-                end
+                if (cache_dout==8'h00 || cache_dout==8'h40 || cache_dout==8'h80) begin
+                    fileType <= cache_dout;
+                    state <= SM_AUTORUN;                       
+                end                
                 $display("SM_FILETYPE cache_addr %x cache_dout %x", cache_addr, cache_dout);                 
                 cache_addr <= cache_addr + 1'd1;   
             end
             SM_AUTORUN: 
             begin
                 if(cache_addr==8'd08) begin
-                   if(cache_dout==8'h00) begin
+                   if(cache_dout==8'h00 || cache_dout==8'h04) begin
                         autorun <= cache_dout;   
                         state <= SM_ENDADDRESSHIGH;       
                     end
@@ -161,7 +181,6 @@ always @(posedge clk) begin
             begin
                 if(cache_addr>=8'd14) begin
                     start_addr <= { startAddressHIGH, startAddressLOW }; 
-                    //loadpoint <= start_addr;                        
                     $display("cache_addr %x cache_dout %x", cache_addr, cache_dout); 
 
                     // check the byte for ASCII uppercase and h'20
@@ -185,7 +204,7 @@ always @(posedge clk) begin
                 start_addr <= start_addr + 1;                
                 cache_addr <= cache_addr + 1'd1; 
 
-                if(start_addr == (end_addr))
+                if(start_addr == tape_size)
                 begin
                     tape_complete <= 1'b1;                          
                     $display( "(state SM_PROGRAMCODE %x) loadpoint %x end_addr %x", state, loadpoint, end_addr); 
