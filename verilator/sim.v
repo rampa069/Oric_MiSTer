@@ -81,10 +81,10 @@ reg [15:0]  tape_addr;
 reg         tape_wr;
 reg [7:0]   tape_dout;
 reg         tape_complete;
-reg 		    tape_autorun = 0;
+reg 		tape_autorun = 0;
 reg [15:0]  loadpoint;
 
-wire tape_request;
+wire 		tape_request;
 reg [15:0]  tape_read_addr;
 reg [15:0]  tape_read_dout;
 
@@ -117,6 +117,7 @@ dpram #(.AW(16)) ram (
 
 cassettecached cassette(
   .clk(clk_48),
+  .tape_clk(clk_24),
 
   // input raw tape data from tape cache
   .ioctl_download(ioctl_download),

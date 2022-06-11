@@ -341,6 +341,18 @@ int main(int argc, char** argv, char** env) {
 		ImGui::Text("ps2_key          0x%010X", top->top__DOT__ps2_key);			
 		ImGui::End();
 
+
+		// TAP debug
+		ImGui::Begin("TAP Debug");
+		ImGui::Text("ioctl_addr         0x%04X", top->top__DOT__cassette__DOT__ioctl_addr);
+		ImGui::Text("loadpoint          0x%04X", top->top__DOT__loadpoint);		
+		ImGui::Text("start_addr         0x%04X", top->top__DOT__cassette__DOT__start_addr);
+		ImGui::Text("end_addr           0x%04X", top->top__DOT__cassette__DOT__end_addr);
+		ImGui::Text("fileType           0x%04X", top->top__DOT__cassette__DOT__fileType);	
+		ImGui::Text("autorun            0x%04X", top->top__DOT__cassette__DOT__autorun);			
+		ImGui::Text("programlength      0x%04X", top->top__DOT__cassette__DOT__programlength);			
+		ImGui::End();
+
 		// Trace/VCD window
 		ImGui::Begin(windowTitle_Trace);
 		ImGui::SetWindowPos(windowTitle_Trace, ImVec2(0, 870), ImGuiCond_Once);

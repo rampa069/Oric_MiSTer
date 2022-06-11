@@ -25,6 +25,7 @@
 
 module cassettecached(
   input              clk,
+  input              tape_clk,
 
   input              ioctl_download,
   input              ioctl_wr,
@@ -64,17 +65,16 @@ reg	[15:0]	start_addr;
 reg	[15:0]	end_addr;
 reg [15:0]  state = SM_SYNC;
 
-reg [7:0] fileType;
-reg [7:0] autorun;
-
-reg [7:0] endAddressHIGH;
-reg [7:0] endAddressLOW;
-reg [7:0] startAddressHIGH;
-reg [7:0] startAddressLOW;
+reg [7:0]   fileType;
+reg [7:0]   autorun;
+reg [7:0]   endAddressHIGH;
+reg [7:0]   endAddressLOW;
+reg [7:0]   startAddressHIGH;
+reg [7:0]   startAddressLOW;
 
 reg unused;
 
-reg	    [15:0]	cache_addr = 'd00; // = 'd06;
+reg	    [15:0]	cache_addr = 'd00;
 wire	[7:0]	cache_dout;
 reg             cache_cs;
 
@@ -96,43 +96,55 @@ reg         ioctl_downlD;
 reg [24:0]  tape_size;
 
 always @(posedge clk) begin
-    // fill the cache
 	ioctl_downlD <= ioctl_download;
 	if(ioctl_downlD & ~ioctl_download) tapecache_loaded <= 1'b1;
     if(tapecache_loaded) begin
-        $display("tapecache_loaded tape_complete %x state %x size %x", tape_complete, state, ioctl_addr); 
         cache_cs <= 1'b1;
         tape_size <= ioctl_addr;
     end
-    if(tape_complete==1'b1) tapecache_loaded <= 1'b0;
+    if(tape_complete==1'b1) begin
+        $display("tapecache_loaded tape_complete %x state %x size %x", tape_complete, state, ioctl_addr); 
+        tapecache_loaded <= 1'b0;
+    end
 end
 
+reg	    [15:0]	new_address = 'd00;
 
 // process tape header
-always @(posedge clk) begin
+always @(posedge tape_clk) begin
 
     if(tapecache_loaded==1'b1 && tape_complete==1'b0) begin
+        $display("cache_addr %x cache_dout %x----------------------------->>", cache_addr, cache_dout);              
         case (state)
+            // -------------------------------------------------------------------------------        
             SM_SYNC:
             begin
                 if (cache_dout==8'h24) begin
-                    state <= SM_FILETYPE;                       
-                end  
-                cache_addr <= cache_addr + 1'd1;                   
+                    new_address <= cache_addr + 8'd03;  
+                    $display("SM_SYNC cache_addr %x cache_dout %x new_address %x", cache_addr, cache_dout, new_address);    
+                    state <= SM_FILETYPE;                     
+                end
+                else begin
+                    cache_addr <= cache_addr + 1'd1;                   
+                end
             end
+            // -------------------------------------------------------------------------------
             SM_FILETYPE: 
             begin
-                if (cache_dout==8'h00 || cache_dout==8'h40 || cache_dout==8'h80) begin
-                    fileType <= cache_dout;
-                    state <= SM_AUTORUN;                       
-                end                
-                $display("SM_FILETYPE cache_addr %x cache_dout %x", cache_addr, cache_dout);                 
+                if(cache_addr==new_address) begin
+                    if (cache_dout==8'h00 || cache_dout==8'h40 || cache_dout==8'h80) begin
+                        fileType <= cache_dout;
+                        $display("SM_FILETYPE cache_addr %x cache_dout %x new_address %x", cache_addr, cache_dout, new_address);  
+                        state <= SM_AUTORUN;                       
+                    end   
+                end             
                 cache_addr <= cache_addr + 1'd1;   
             end
+            // -------------------------------------------------------------------------------            
             SM_AUTORUN: 
             begin
-                if(cache_addr==8'd08) begin
-                   if(cache_dout==8'h00 || cache_dout==8'h04) begin
+                //if(cache_addr==8'd07) begin
+                   if(cache_dout==8'h00 || cache_dout==8'h04 || cache_dout==8'h80) begin
                         autorun <= cache_dout;   
                         state <= SM_ENDADDRESSHIGH;       
                     end
@@ -140,47 +152,61 @@ always @(posedge clk) begin
                         autorun <= cache_dout;
                         state <= SM_ENDADDRESSHIGH;                       
                     end
-                end
+                //end
+
                 $display("SM_AUTORUN cache_addr %x cache_dout %x", cache_addr, cache_dout);                 
                 cache_addr <= cache_addr + 1'd1;   
-            end    
+            end   
+            // -------------------------------------------------------------------------------             
             SM_ENDADDRESSHIGH: 
             begin
-                if(cache_addr==8'd09) begin
+                //if(cache_addr==8'd08) begin
                     endAddressHIGH <= cache_dout;
                     state <= SM_ENDADDRESSLOW;
-                end   
+                //end 
+
+                $display("SM_ENDADDRESSHIGH cache_addr %x cache_dout %x", cache_addr, cache_dout);                   
                 cache_addr <= cache_addr + 1'd1;                
             end  
+            // -------------------------------------------------------------------------------            
             SM_ENDADDRESSLOW: 
             begin
-                if(cache_addr==8'd10) begin
+                //if(cache_addr==8'd09) begin
                     endAddressLOW <= cache_dout;
                     state <= SM_STARTADDRESSHIGH;
-                end   
+                //end   
+
                 cache_addr <= cache_addr + 1'd1;    
             end  
+            // -------------------------------------------------------------------------------            
             SM_STARTADDRESSHIGH: 
             begin
-                if(cache_addr==8'd11) begin
+                //if(cache_addr==8'd10) begin
                     end_addr <= { endAddressHIGH, endAddressLOW };                         
                     startAddressHIGH <= cache_dout;
                     state <= SM_STARTADDRESSLOW;
-                end   
+                //end   
+
+                $display("SM_STARTADDRESSHIGH cache_addr %x cache_dout %x", cache_addr, cache_dout);                     
                 cache_addr <= cache_addr + 1'd1; 
             end  
+            // -------------------------------------------------------------------------------            
             SM_STARTADDRESSLOW: 
             begin
-                if(cache_addr==8'd12) begin
+                //if(cache_addr==8'd11) begin
                     startAddressLOW <= cache_dout;
                     state <= SM_FILENAME;                                                                             
-                end   
+                //end   
+
+                $display("SM_STARTADDRESSLOW cache_addr %x cache_dout %x", cache_addr, cache_dout);                   
                 cache_addr <= cache_addr + 1'd1; 
             end   
+            // -------------------------------------------------------------------------------            
             SM_FILENAME: 
             begin
-                if(cache_addr>=8'd14) begin
+                //if(cache_addr>=8'd13) begin
                     start_addr <= { startAddressHIGH, startAddressLOW }; 
+                    programlength <= start_addr;
                     $display("cache_addr %x cache_dout %x", cache_addr, cache_dout); 
 
                     // check the byte for ASCII uppercase and h'20
@@ -191,31 +217,35 @@ always @(posedge clk) begin
                         $display("End of Filename found"); 
                         state <= SM_PROGRAMCODE;                           
                     end
-                end                                                        
+                //end   
+
+                $display("SM_FILENAME cache_addr %x cache_dout %x", cache_addr, cache_dout);                                                                       
                 cache_addr <= cache_addr + 1'd1; 
             end    
+            // -------------------------------------------------------------------------------            
             SM_PROGRAMCODE: 
             begin
                 loadpoint <= { startAddressHIGH, startAddressLOW }; 
-                // $display("cache_addr %x cache_dout %x", cache_addr, cache_dout); 
+                $display("(state SM_PROGRAMCODE %x) cache_addr %x cache_dout %x", state, cache_addr, cache_dout); 
                 tape_wr <= 1'b1;	                     
                 tape_addr <= start_addr;
                 tape_dout <= cache_dout;
-                start_addr <= start_addr + 1;                
+                programlength <= programlength + 1;                
                 cache_addr <= cache_addr + 1'd1; 
 
-                if(start_addr == tape_size)
+                if(programlength == tape_size)
                 begin
                     tape_complete <= 1'b1;                          
                     $display( "(state SM_PROGRAMCODE %x) loadpoint %x end_addr %x", state, loadpoint, end_addr); 
                     state <= SM_COMPLETE;                                                  
                 end                    
             end   
+            // -------------------------------------------------------------------------------            
             SM_COMPLETE: 
             begin
             //    $display( "(state SM_COMPLETE %x) start_addr %x end_addr %x", state, start_addr, end_addr);         
             //    state <= SM_FILETYPE;                          
-            end                                                                                        
+            end    
         endcase
         //$display("fileType %x autorun %x end_addr %x start_addr %x startAddressLOW %x", fileType, autorun, end_addr, start_addr, startAddressLOW);
     end
@@ -225,7 +255,6 @@ always @(posedge clk) begin
             //$display( "(tape_complete tape_wr) loadpoint %x ", loadpoint);              
             if(loadpoint > 16'h0505) begin
                 tape_autorun <= 1'b1; 
-                //tape_autorun <= 1'b1;      
             end                        
         end
         else begin
