@@ -18,7 +18,7 @@ module square_gen(
 //  parameter STP = 24'd13312;  
 //  parameter STP = 24'd6656;// -- this seems close
   
-parameter STP = 24'd20140; //  6666
+parameter STP = 24'd6666; //  6666
 
 	 
 //13333.28	cycles

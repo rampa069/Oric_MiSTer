@@ -627,19 +627,15 @@ always @(posedge CLK_50M) begin
 	end
 end
 
-
 wire casdout;
 wire cas_relay;
 
-
-
-//wire locked;
 wire [24:0] sdram_addr;
-wire [7:0] sdram_data;
-wire sdram_rd;
-wire load_tape = ioctl_index==1;
-reg [24:0] tape_end;
-reg tape_loaded = 1'b0;
+wire  [7:0] sdram_data;
+wire 		sdram_rd;
+wire 		load_tape = ioctl_index==1;
+reg  [24:0] tape_end;
+reg 		tape_loaded = 1'b0;
 reg         ioctl_downlD;
 
 /*
@@ -658,7 +654,7 @@ sdram sdram
 );
 */
 
-bram tapecache(
+bram tapecache (
   .clk(CLK_50M),
 
   .bram_download(ioctl_download),
@@ -681,7 +677,7 @@ always @(posedge CLK_50M) begin
 	if(ioctl_downlD & ~ioctl_download) tape_loaded <= 1'b1;
 end
 
-cassette cassette(
+cassette cassette (
   .clk(CLK_50M),
 
   .rewind(status[52] | (load_tape&ioctl_download)),
