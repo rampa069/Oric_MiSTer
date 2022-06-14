@@ -179,8 +179,7 @@ oricatmos oricatmos
 
 	.K7_TAPEIN		    (casdout),
 	.K7_TAPEOUT		    (),
-	.K7_REMOTE		    (),
-	.cas_relay			(),
+	.K7_REMOTE		    (cas_relay),
 
 	.ram_ad           (ram_ad),
 	.ram_d            (ram_d),
@@ -254,7 +253,8 @@ wire [7:0] sdram_data;
 wire sdram_rd;
 wire load_tape = ioctl_index[5:0] == 1;
 reg [24:0] tape_end;
-
+reg tape_loaded = 1'b0;
+reg         ioctl_downlD;
 
 bram tapecache(
   .clk(clk_48),
@@ -273,11 +273,16 @@ always @(posedge clk_48) begin
  if (load_tape) tape_end <= ioctl_addr;
 end
 
+always @(posedge clk_48) begin
+	ioctl_downlD <= ioctl_download;
+	if(ioctl_downlD & ~ioctl_download) tape_loaded <= 1'b1;
+end
+
 cassette cassette(
   .clk(clk_48),
 
   .rewind(1'b0),
-  .en(cas_relay), // cas_relay
+  .en(cas_relay&tape_loaded), 
   .sdram_addr(sdram_addr),
   .sdram_data(sdram_data),
   .sdram_rd(sdram_rd),

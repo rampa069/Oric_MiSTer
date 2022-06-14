@@ -50,8 +50,7 @@ module oricatmos
    input wire          K7_TAPEIN,
    output logic        K7_TAPEOUT,
    output logic        K7_REMOTE,
-   output logic        cas_relay,
-
+ 
    output logic [7:0]  PSG_OUT_A,
    output logic [7:0]  PSG_OUT_B,
    output logic [7:0]  PSG_OUT_C,

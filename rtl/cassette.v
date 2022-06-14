@@ -17,14 +17,14 @@ module cassette(
 
 
 wire [7:0] r_sdram_data;
-assign r_sdram_data[0] = sdram_data[7];
-assign r_sdram_data[1] = sdram_data[6];
-assign r_sdram_data[2] = sdram_data[5];
-assign r_sdram_data[3] = sdram_data[4];
-assign r_sdram_data[4] = sdram_data[3];
-assign r_sdram_data[5] = sdram_data[2];
-assign r_sdram_data[6] = sdram_data[1];
-assign r_sdram_data[7] = sdram_data[0];
+//assign r_sdram_data[0] = sdram_data[7];
+//assign r_sdram_data[1] = sdram_data[6];
+//assign r_sdram_data[2] = sdram_data[5];
+//assign r_sdram_data[3] = sdram_data[4];
+//assign r_sdram_data[4] = sdram_data[3];
+//assign r_sdram_data[5] = sdram_data[2];
+//assign r_sdram_data[6] = sdram_data[1];
+//assign r_sdram_data[7] = sdram_data[0];
 
 
 
@@ -57,16 +57,19 @@ always @(posedge clk) begin
     old_en <= en;
     if (old_en ^ en) begin
       state <= state == IDLE ? WAIT : IDLE;
-      hold <= 19'd001;
+      hold <= 19'd445000; //19'd001;
       seq <= 24'd0;
       $display("old_en ^ en : state %x", state);        
     end
 
     ffrewind <= rewind;
 
+    //if(state > 0)
+    //  $display("state %x", state);   
+
     case (state)
     WAIT: begin
-      $display("WAIT");       
+     // $display("WAIT");       
       ibyte <= 8'd0;
       hold <= hold - 19'd1;
       state <= hold == 0 ? NEXT : WAIT;
@@ -75,17 +78,23 @@ always @(posedge clk) begin
       $display("NEXT");       
       state <= READ1;
       sdram_rd <= 1'b0;
-      if (sdram_addr == tape_end) eof<=2'd2;
-      //if (seq == 24'h553c00) name <= 1'd1;
-      //if (seq == 24'h555555 && name) begin
+      if (sdram_addr == tape_end) begin
+        eof<=2'd2;
+        $display("sdram_addr == tape_end");         
+      end
+      //if (seq == 32'h68686824) name <= 1'd1;
+      //if (seq == 24'h161616) begin
       //  name <= 1'd0;
       //  state <= WAIT;
       //  hold <= 19'd445000; // 0.5s
-      //  sdram_addr <= sdram_addr - 25'd3;
+      //  sdram_addr <= sdram_addr - 25'd2;
       //end
-      //if (seq == 24'h000000) eof <= 2'd1;
+      if (seq == 24'h000000) eof <= 2'd1;
       //if (seq == 24'h000000 && eof == 2'd1) eof <= 2'd2;
-      if (~en) state <= IDLE;
+      if (~en) begin
+        $display("state <= IDLE");          
+        state <= IDLE;
+      end
     end
     READ1: begin
       $display("READ1");        
@@ -93,22 +102,23 @@ always @(posedge clk) begin
       state <= READ2;
     end
     READ2: begin
-      $display("READ2");          
-      ibyte <= r_sdram_data;
+      ibyte <= sdram_data;
       sdram_rd <= 1'b0;
       state <= READ3;
       sq_start <= 1'b1;
+      $display("READ2 ibyte %x", ibyte);        
     end
     READ3: begin
-      $display("READ3");            
       sq_start <= 1'b0;
       state <= done ? READ4 : READ3;
+      //$display("READ3 done %x", done);        
     end
     READ4: begin
-      $display("READ4");            
-      seq <= { seq[15:0], sdram_data };
-      sdram_addr <= sdram_addr + 25'd1;
+      seq <= { seq[15:0], sdram_data }; // 15:0
+      sdram_addr <= sdram_addr + 1'd1;
+      sdram_addr <= sdram_addr + 25'd1;      
       state <= eof == 2'd2 ? IDLE : NEXT;
+      $display("READ4 sdram_addr %x seq %x", sdram_addr, seq);  
     end
     endcase
 
