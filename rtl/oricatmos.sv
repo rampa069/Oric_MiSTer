@@ -50,6 +50,7 @@ module oricatmos
    input wire          K7_TAPEIN,
    output logic        K7_TAPEOUT,
    output logic        K7_REMOTE,
+   output logic        cas_relay,
 
    output logic [7:0]  PSG_OUT_A,
    output logic [7:0]  PSG_OUT_B,
@@ -96,7 +97,10 @@ module oricatmos
    input wire          sd_din_strobe,
 
    input wire [15:0]   tape_addr,
-   input wire          tape_complete
+   input wire          tape_complete,
+
+   output logic [6:0]  hcnt, // Horizontal counter
+   output logic [8:0]  vcnt  // Vertical counter      
    );
 
   // Gestion des resets
@@ -213,6 +217,8 @@ module oricatmos
   assign ram_we  = RESETn & ula_WE_SRAM;
   assign phi2    = ula_phi2;
 
+  assign cas_relay = via_cb1_oe_l;
+
   BASIC11A inst_rom0
     (
      .clk  (CLK_IN),
@@ -263,7 +269,9 @@ module oricatmos
      .VBLANK (VIDEO_VBLANK),
      .SYNC (VIDEO_SYNC),
      .HSYNC (VIDEO_HSYNC),
-     .VSYNC (VIDEO_VSYNC)
+     .VSYNC (VIDEO_VSYNC),
+     .hcnt(hcnt),
+     .vcnt(v_cnt)
      );
 
 

@@ -54,8 +54,9 @@ CC_OPT = -O
 
 V_SRC = \
 	sim.v \
-	$(RTL)/cassettecached.v \
-	$(RTL)/bram.v \
+	$(RTL)/cassette.v \
+	$(RTL)/square_gen.v \	
+	$(RTL)/bram.v \		
 	$(RTL)/oricatmos.sv \
 	$(RTL)/ram.sv \
 	$(RTL)/wd1793.sv \

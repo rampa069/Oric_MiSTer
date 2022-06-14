@@ -5,10 +5,11 @@ verilator \
 --converge-limit 6000 \
 -Wno-fatal \
 --top-module top sim.v \
-../rtl/cassettecached.v \
-../rtl/bram.v \
 ../rtl/oricatmos.sv \
 ../rtl/ram.sv \
+../rtl/cassette.v \
+../rtl/square_gen.v \
+../rtl/bram.v \
 ../rtl/wd1793.sv \
 ../rtl/keyboard.sv \
 ../rtl/microdisc.sv \

@@ -181,7 +181,7 @@ assign {SD_SCK, SD_MOSI, SD_CS} = 'Z;
 assign {SDRAM_DQ, SDRAM_A, SDRAM_BA, SDRAM_CLK, SDRAM_CKE, SDRAM_DQML, SDRAM_DQMH, SDRAM_nWE, SDRAM_nCAS, SDRAM_nRAS, SDRAM_nCS} = 'Z;
 assign {DDRAM_CLK, DDRAM_BURSTCNT, DDRAM_ADDR, DDRAM_DIN, DDRAM_BE, DDRAM_RD, DDRAM_WE} = '0; 
  
-assign LED_USER  = ioctl_download | led_disk | tape_adc_act;
+assign LED_USER  = ioctl_download | led_disk; // | tape_adc_act;
 assign LED_DISK  = 0;
 assign LED_POWER = 0;
 assign BUTTONS   = 0; 
@@ -213,6 +213,9 @@ localparam CONF_STR = {
 	"O3,ROM,Oric Atmos,Oric 1;",
 	"O56,FDD Controller,Auto,Off,On;",
 	"O7,Drive Write,Allow,Prohibit;",
+	"-;",
+	"O[51],Tape Input,File,ADC;",
+	"H0T[52],Stop & Rewind;",	
 	"-;",
 	"O[122:121],Aspect ratio,Original,Full Screen,[ARC1],[ARC2];",
 	"OAC,Scandoubler Fx,None,HQ2x,CRT 25%,CRT 50%;",
@@ -250,6 +253,14 @@ always @(posedge clk_sys) begin
 		reset <= 1;
 	end
 	
+end
+
+wire tape_clk;
+always @(posedge clk_sys) begin
+	if (reset)
+    	tape_clk <= 1'b0;
+	else
+    	tape_clk <= ~tape_clk;	
 end
 
 ///////////////////////////////////////////////////
@@ -409,8 +420,10 @@ cassette cassette(
 );
 */
 
+/*
 cassettecached cassette(
   .clk(clk_sys),
+  .tape_clk(tape_clk),
 
   // input raw tape data from tape cache
   .ioctl_download(ioctl_download),
@@ -430,6 +443,7 @@ cassettecached cassette(
   .tape_dout(tape_dout),
   .tape_complete(tape_complete)
 );
+*/
 
 
 oricatmos oricatmos
@@ -457,7 +471,7 @@ oricatmos oricatmos
 	.VIDEO_HBLANK	  (HBlank),
 	.VIDEO_VBLANK	  (VBlank),
 
-	.K7_TAPEIN		  (tape_adc),
+	.K7_TAPEIN		  (status[51] ? adc_cassette_bit : casdout ), // (tape_adc),
 	.K7_TAPEOUT		  (tape_out),
 	.K7_REMOTE		  (),
 
@@ -496,7 +510,10 @@ oricatmos oricatmos
 	.sd_din_strobe    (0),
 
   	.tape_addr		  (loadpoint),
-    .tape_complete	  (tape_autorun)
+    .tape_complete	  (tape_autorun),
+
+    .hcnt(h_cnt), 
+    .vcnt(v_cnt)  
 );
 
 reg fdd_ready = 0;
@@ -538,7 +555,7 @@ video_mixer #(.LINE_LENGTH(250), .HALF_DEPTH(1), .GAMMA(1)) video_mixer
 	.*,
 	.R({4{r}}),
 	.G({4{g}}),
-	.B({4{b}}),
+	.B({4{b}}),	
 	.hq2x(scale==1)
 );
 
@@ -552,8 +569,126 @@ always @ (psg_a,psg_b,psg_c,psg_out,stereo) begin
        endcase
 end
 
-///////////////////////////////////////////////////
+/////////////////////// ADC Module  //////////////////////////////
 
+
+wire [11:0] adc_data;
+wire        adc_sync;
+reg [11:0] adc_value;
+reg adc_sync_d;
+
+integer ii=0;
+reg [11:0] adc_val[0:511];
+reg [21:0] adc_total = 0;
+reg [11:0] adc_avg;
+
+reg adc_cassette_bit;
+
+
+// interface to ADC via framework
+//
+ltc2308 #(1, 48000, 50000000) adc_input		// mono, ADC_RATE = 48000, CLK_RATE = 50000000
+(
+	.reset(reset),
+	.clk(CLK_50M),
+
+	.ADC_BUS(ADC_BUS),
+	.dout(adc_data),
+	.dout_sync(adc_sync)
+);
+
+// when data arrives:
+//		- latch it in adc_value
+//		- keep track of a running average across 512 samples
+//
+//		-> this average acts as a high-pass filter above roughly 100 Hz while retaining
+//		 	while retaining very high frequency response, for possible future fast-load techniques
+//
+always @(posedge CLK_50M) begin
+
+	adc_sync_d<=adc_sync;
+	if(adc_sync_d ^ adc_sync) begin
+		adc_value <= adc_data;					// latch in current value, adc_Value
+		
+		adc_val[0] <= adc_value;				
+		adc_total  <= adc_total - adc_val[511] + adc_value;
+
+		for (ii=0; ii<511; ii=ii+1)
+			adc_val[ii+1] <= adc_val[ii];
+			
+		adc_avg <= adc_total[20:9];			// update average value every fetch
+		
+		if (adc_value < (adc_avg - 100))		// flip the cassette bit if > 0.1V from average
+			adc_cassette_bit <= 1;				// note that original CoCo reversed polarity
+
+		if (adc_value > (adc_avg + 100))
+			adc_cassette_bit <= 0;
+		
+	end
+end
+
+
+wire casdout;
+wire cas_relay;
+
+
+
+//wire locked;
+wire [24:0] sdram_addr;
+wire [7:0] sdram_data;
+wire sdram_rd;
+wire load_tape = ioctl_index==1;
+reg [24:0] tape_end;
+
+/*
+sdram sdram
+(
+	.*,
+	.init(~locked),
+	.clk(clk_sys),
+	.addr(ioctl_download ? ioctl_addr : sdram_addr),
+	.wtbt(0),
+	.dout(sdram_data),
+	.din(ioctl_dout),
+	.rd(sdram_rd),
+	.we(ioctl_wr & load_tape),
+	.ready()
+);
+*/
+
+bram tapecache(
+  .clk(clk_sys),
+
+  .bram_download(ioctl_download),
+  .bram_wr(ioctl_wr & load_tape),
+  .bram_init_address(ioctl_addr),
+  .bram_din(ioctl_dout),
+
+  .addr(sdram_addr),
+  .dout(sdram_data),
+  .cs(sdram_rd)
+);
+
+
+always @(posedge clk_sys) begin
+ if (load_tape) tape_end <= ioctl_addr;
+end
+
+cassette cassette(
+  .clk(clk_sys),
+
+  .rewind(status[52] | (load_tape&ioctl_download)),
+  .en(tape_out), // cas_relay
+  .sdram_addr(sdram_addr),
+  .sdram_data(sdram_data),
+  .sdram_rd(sdram_rd),
+
+  .tape_end(tape_end),
+  .data(casdout)
+//   .status(tape_status)
+);
+
+/* older adc
 wire tape_adc, tape_adc_act;
 ltc2308_tape ltc2308_tape
 (
@@ -562,5 +697,6 @@ ltc2308_tape ltc2308_tape
 	.dout(tape_adc),
 	.active(tape_adc_act)
 );
+*/
 
 endmodule

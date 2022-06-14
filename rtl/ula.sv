@@ -117,7 +117,10 @@ module ULA
    output logic        HBLANK,
    output logic        VBLANK,
    output logic        HSYNC,
-   output logic        VSYNC
+   output logic        VSYNC,
+
+   output logic [6:0]  hcnt, // Horizontal counter
+   output logic [8:0]  vcnt  // Vertical counter   
    );
 
   // Signal CLOCK
@@ -305,6 +308,9 @@ module ULA
   // Video timing signals generation //
   ////////////////////////////////////-
   ////////////////////////////////////-
+
+assign hcnt = lCTR_H;
+assign vcnt = lCTR_V;
 
   // Horizontal Counter
   always_ff @(posedge CLK_24, posedge RESET_INT) begin : u_CPT_H

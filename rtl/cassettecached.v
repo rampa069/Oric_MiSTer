@@ -144,11 +144,11 @@ always @(posedge tape_clk) begin
             SM_AUTORUN: 
             begin
                 //if(cache_addr==8'd07) begin
-                   if(cache_dout==8'h00 || cache_dout==8'h04 || cache_dout==8'h80) begin
+                   if(cache_dout==8'h00) begin
                         autorun <= cache_dout;   
                         state <= SM_ENDADDRESSHIGH;       
                     end
-                    else if (cache_dout==8'hC7) begin
+                    else begin
                         autorun <= cache_dout;
                         state <= SM_ENDADDRESSHIGH;                       
                     end
@@ -204,7 +204,7 @@ always @(posedge tape_clk) begin
             // -------------------------------------------------------------------------------            
             SM_FILENAME: 
             begin
-                //if(cache_addr>=8'd13) begin
+                if(cache_addr>=8'd13) begin
                     start_addr <= { startAddressHIGH, startAddressLOW }; 
                     programlength <= start_addr;
                     $display("cache_addr %x cache_dout %x", cache_addr, cache_dout); 
@@ -217,7 +217,7 @@ always @(posedge tape_clk) begin
                         $display("End of Filename found"); 
                         state <= SM_PROGRAMCODE;                           
                     end
-                //end   
+                end   
 
                 $display("SM_FILENAME cache_addr %x cache_dout %x", cache_addr, cache_dout);                                                                       
                 cache_addr <= cache_addr + 1'd1; 
@@ -227,10 +227,13 @@ always @(posedge tape_clk) begin
             begin
                 loadpoint <= { startAddressHIGH, startAddressLOW }; 
                 $display("(state SM_PROGRAMCODE %x) cache_addr %x cache_dout %x", state, cache_addr, cache_dout); 
+
                 tape_wr <= 1'b1;	                     
                 tape_addr <= start_addr;
                 tape_dout <= cache_dout;
-                programlength <= programlength + 1;                
+
+                programlength <= programlength + 1; 
+                start_addr <= start_addr + 1;                               
                 cache_addr <= cache_addr + 1'd1; 
 
                 if(programlength == tape_size)
@@ -253,9 +256,9 @@ always @(posedge tape_clk) begin
         if(tape_wr) begin
  		    tape_wr <= 1'b0;  
             //$display( "(tape_complete tape_wr) loadpoint %x ", loadpoint);              
-            if(loadpoint > 16'h0505) begin
+            //if(loadpoint < 16'h0500 || loadpoint > 16'h0505) begin
                 tape_autorun <= 1'b1; 
-            end                        
+            //end                        
         end
         else begin
             tape_autorun <= 1'b0;  

@@ -88,11 +88,12 @@ wire 		tape_request;
 reg [15:0]  tape_read_addr;
 reg [15:0]  tape_read_dout;
 
+wire tape_out;
+
 /*
 always @(posedge clk_48) 
     begin
       if(tape_wr)
-        ram[tape_addr] <= tape_dout;      
         $display( "(TOP) tape_addr %x tape_wr %x tape_dout %x tape_complete %x tape_autorun %x loadpoint %x", tape_addr, tape_wr, tape_dout, tape_complete, tape_autorun, loadpoint);   
     end
 */
@@ -114,7 +115,7 @@ dpram #(.AW(16)) ram (
 	.a2(tape_addr)
 );
 
-
+/*
 cassettecached cassette(
   .clk(clk_48),
   .tape_clk(clk_24),
@@ -136,6 +137,7 @@ cassettecached cassette(
   .tape_dout(tape_dout),
   .tape_complete(tape_complete)
 );
+*/
 
 reg key_strobe;
 //wire key_strobe = old_keystb ^ ps2_key[10];
@@ -149,7 +151,7 @@ always @(posedge clk_48) begin
 		key_strobe <= 0;
 end
 
-/*
+
 oricatmos oricatmos
 (
 	.CLK_IN           (clk_48),
@@ -175,9 +177,10 @@ oricatmos oricatmos
 	.VIDEO_HBLANK	    (VGA_HB),
 	.VIDEO_VBLANK	    (VGA_VB),
 
-	.K7_TAPEIN		    (tape_adc),
-	.K7_TAPEOUT		    (tape_out),
+	.K7_TAPEIN		    (casdout),
+	.K7_TAPEOUT		    (),
 	.K7_REMOTE		    (),
+	.cas_relay			(),
 
 	.ram_ad           (ram_ad),
 	.ram_d            (ram_d),
@@ -198,12 +201,12 @@ oricatmos oricatmos
 	.phi2             (),
 	.pll_locked       (~reset),
 	.disk_enable      (1'b1),
-	.rom			        (1),
+	.rom			  (1),
 
 	.img_mounted      (img_mounted), // signaling that new image has been mounted
 	.img_size         (img_size), // size of image in bytes
 	.img_wp           (img_readonly), // write protect
-  	.sd_lba         (sd_lba),
+  	.sd_lba           (sd_lba),
 	.sd_rd            (sd_rd),
 	.sd_wr            (sd_wr),
 	.sd_ack           (sd_ack),
@@ -214,7 +217,7 @@ oricatmos oricatmos
 	.sd_din_strobe    (0),
 
   	.tape_addr		  (loadpoint),
-  	.tape_complete	(tape_autorun)
+  	.tape_complete	  (tape_autorun)
 );
 
 wire   r, g, b; 
@@ -236,13 +239,51 @@ always @(posedge clk_24) begin
 	end	
 end
 
-
 assign	VGA_R = {8{r}};
 assign	VGA_G = {8{g}};
 assign 	VGA_B = {8{b}};
 
 reg fdd_ready = 0;
 always @(posedge clk_48) if(img_mounted) fdd_ready <= |img_size;
-*/
+
+wire casdout;
+wire cas_relay;
+
+wire [24:0] sdram_addr;
+wire [7:0] sdram_data;
+wire sdram_rd;
+wire load_tape = ioctl_index[5:0] == 1;
+reg [24:0] tape_end;
+
+
+bram tapecache(
+  .clk(clk_48),
+
+  .bram_download(ioctl_download),
+  .bram_wr(ioctl_wr & load_tape),
+  .bram_init_address(ioctl_addr),
+  .bram_din(ioctl_dout),
+
+  .addr(sdram_addr),
+  .dout(sdram_data),
+  .cs(sdram_rd)
+);
+
+always @(posedge clk_48) begin
+ if (load_tape) tape_end <= ioctl_addr;
+end
+
+cassette cassette(
+  .clk(clk_48),
+
+  .rewind(1'b0),
+  .en(cas_relay), // cas_relay
+  .sdram_addr(sdram_addr),
+  .sdram_data(sdram_data),
+  .sdram_rd(sdram_rd),
+
+  .tape_end(tape_end),
+  .data(casdout)
+);
 
 endmodule

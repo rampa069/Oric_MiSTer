@@ -316,7 +316,8 @@ int main(int argc, char** argv, char** env) {
 
 		// Memory debug
 		ImGui::Begin("Tape Cache");
-		mem_edit.DrawContents(&top->top__DOT__cassette__DOT__tapecache__DOT__memory, 65536, 0);
+		mem_edit.DrawContents(&top->top__DOT__tapecache__DOT__memory, 65536, 0);
+		//mem_edit.DrawContents(&top->top__DOT__cassette__DOT__tapecache__DOT__memory, 65536, 0);		
 		ImGui::End();
 		ImGui::Begin("ORIC RAM");
 		mem_edit.DrawContents(&top->top__DOT__ram__DOT__d, 65536, 0);
@@ -344,13 +345,13 @@ int main(int argc, char** argv, char** env) {
 
 		// TAP debug
 		ImGui::Begin("TAP Debug");
-		ImGui::Text("ioctl_addr         0x%04X", top->top__DOT__cassette__DOT__ioctl_addr);
-		ImGui::Text("loadpoint          0x%04X", top->top__DOT__loadpoint);		
-		ImGui::Text("start_addr         0x%04X", top->top__DOT__cassette__DOT__start_addr);
-		ImGui::Text("end_addr           0x%04X", top->top__DOT__cassette__DOT__end_addr);
-		ImGui::Text("fileType           0x%04X", top->top__DOT__cassette__DOT__fileType);	
-		ImGui::Text("autorun            0x%04X", top->top__DOT__cassette__DOT__autorun);			
-		ImGui::Text("programlength      0x%04X", top->top__DOT__cassette__DOT__programlength);			
+		//ImGui::Text("ioctl_addr         0x%04X", top->top__DOT__cassette__DOT__ioctl_addr);
+		//ImGui::Text("loadpoint          0x%04X", top->top__DOT__loadpoint);		
+		//ImGui::Text("start_addr         0x%04X", top->top__DOT__cassette__DOT__start_addr);
+		//ImGui::Text("end_addr           0x%04X", top->top__DOT__cassette__DOT__end_addr);
+		//ImGui::Text("fileType           0x%04X", top->top__DOT__cassette__DOT__fileType);	
+		//ImGui::Text("autorun            0x%04X", top->top__DOT__cassette__DOT__autorun);			
+		//ImGui::Text("programlength      0x%04X", top->top__DOT__cassette__DOT__programlength);			
 		ImGui::End();
 
 		// Trace/VCD window
