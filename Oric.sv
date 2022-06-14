@@ -639,6 +639,8 @@ wire [7:0] sdram_data;
 wire sdram_rd;
 wire load_tape = ioctl_index==1;
 reg [24:0] tape_end;
+reg tape_loaded = 1'b0;
+reg         ioctl_downlD;
 
 /*
 sdram sdram
@@ -674,11 +676,16 @@ always @(posedge CLK_50M) begin
  if (load_tape) tape_end <= ioctl_addr;
 end
 
+always @(posedge CLK_50M) begin
+	ioctl_downlD <= ioctl_download;
+	if(ioctl_downlD & ~ioctl_download) tape_loaded <= 1'b1;
+end
+
 cassette cassette(
   .clk(CLK_50M),
 
   .rewind(status[52] | (load_tape&ioctl_download)),
-  .en(cas_relay), 
+  .en(cas_relay&tape_loaded), 
   .sdram_addr(sdram_addr),
   .sdram_data(sdram_data),
   .sdram_rd(sdram_rd),
