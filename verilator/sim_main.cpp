@@ -339,12 +339,18 @@ int main(int argc, char** argv, char** env) {
 		//ImGui::Text("ROM_ATMOS_DO     0x%04X", top->top__DOT__oricatmos__DOT__ROM_ATMOS_DO);		
 		//ImGui::Text("ula_LATCH_SRAM   0x%04X", top->top__DOT__oricatmos__DOT__ula_LATCH_SRAM);
 		//ImGui::Text("SRAM_DO          0x%04X", top->top__DOT__oricatmos__DOT__SRAM_DO);	
-		ImGui::Text("ps2_key          0x%010X", top->top__DOT__ps2_key);			
+		//ImGui::Text("ps2_key          0x%010X", top->top__DOT__ps2_key);	
+		ImGui::Text("casdout          0x%04X", top->top__DOT__casdout);	
+		ImGui::Text("cas_relay        0x%04X", top->top__DOT__cas_relay);		
+		ImGui::Text("tape_status      0x%04X", top->top__DOT__tape_status);			
+		ImGui::Text("I_CB1      	  0x%04X", top->top__DOT__oricatmos__DOT__inst_via__DOT__I_CB1);		
+		ImGui::Text("K7_TAPEIN        0x%04X", top->top__DOT__oricatmos__DOT__K7_TAPEIN);		
+		ImGui::Text("done sq          0x%04X", top->top__DOT__cassette__DOT__sq__DOT__done);		
+		ImGui::Text("done cas         0x%04X", top->top__DOT__cassette__DOT__done);																	
 		ImGui::End();
 
-
 		// TAP debug
-		ImGui::Begin("TAP Debug");
+		//ImGui::Begin("TAP Debug");
 		//ImGui::Text("ioctl_addr         0x%04X", top->top__DOT__cassette__DOT__ioctl_addr);
 		//ImGui::Text("loadpoint          0x%04X", top->top__DOT__loadpoint);		
 		//ImGui::Text("start_addr         0x%04X", top->top__DOT__cassette__DOT__start_addr);
@@ -352,7 +358,7 @@ int main(int argc, char** argv, char** env) {
 		//ImGui::Text("fileType           0x%04X", top->top__DOT__cassette__DOT__fileType);	
 		//ImGui::Text("autorun            0x%04X", top->top__DOT__cassette__DOT__autorun);			
 		//ImGui::Text("programlength      0x%04X", top->top__DOT__cassette__DOT__programlength);			
-		ImGui::End();
+		//ImGui::End();
 
 		// Trace/VCD window
 		ImGui::Begin(windowTitle_Trace);

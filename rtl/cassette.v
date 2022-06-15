@@ -11,7 +11,7 @@ module cassette(
 
   input [24:0] tape_end,
   output data,
-  output [2:0] status
+  output reg [2:0] state
 
 );
 
@@ -25,19 +25,19 @@ assign r_sdram_data[5] = sdram_data[2];
 assign r_sdram_data[6] = sdram_data[1];
 assign r_sdram_data[7] = sdram_data[0];
 
-assign status = state;
+//assign status = state;
 
 reg old_en;
 reg ffrewind;
 
 reg [23:0] seq;
 reg [7:0] ibyte;
-reg [2:0] state;
+//reg [2:0] state;
 reg sq_start;
 reg [1:0] eof;
 reg name;
 wire done;
-reg [18:0] hold;
+//reg [18:0] hold;
 
 parameter
   IDLE      = 3'h0,
@@ -54,19 +54,20 @@ always @(posedge clk) begin
     old_en <= en;
     if (old_en ^ en) begin
       state <= state == IDLE ? WAIT : IDLE;
-      hold <= 19'd001; 
+      //hold <= 19'd001; 
       seq <= 24'd0;
-      $display("old_en ^ en : state %x", state);        
+      //$display("old_en ^ en : state %x", state);        
     end
 
     ffrewind <= rewind;
 
     case (state)
     WAIT: begin
-     // $display("WAIT");       
-      ibyte <= 8'd0;
-      hold <= hold - 19'd1;
-      state <= hold == 0 ? NEXT : WAIT;
+      // $display("WAIT");       
+      //ibyte <= 8'd0;
+      //hold <= hold - 19'd1;
+      state <= NEXT;
+      //state <= hold == 0 ? NEXT : WAIT;      
     end
     NEXT: begin
       $display("NEXT");       
@@ -100,8 +101,8 @@ always @(posedge clk) begin
     end
     READ4: begin
       seq <= { seq[15:0], sdram_data };
-      //sdram_addr <= sdram_addr + 1'd1;
-      sdram_addr <= sdram_addr + 25'd1;      
+      sdram_addr <= sdram_addr + 1'd1;
+      //sdram_addr <= sdram_addr + 25'd1;      
       state <= eof == 2'd2 ? IDLE : NEXT;
       $display("READ4 sdram_addr %x seq %x", sdram_addr, seq);  
     end

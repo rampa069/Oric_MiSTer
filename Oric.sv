@@ -471,7 +471,7 @@ oricatmos oricatmos
 	.VIDEO_HBLANK	  (HBlank),
 	.VIDEO_VBLANK	  (VBlank),
 
-	.K7_TAPEIN		  (status[51] ? adc_cassette_bit : casdout ), // (tape_adc),
+	.K7_TAPEIN		  (status[51] ? adc_cassette_bit : casdout ), //(tape_status != 3'h0 ? casdout : 1'b0)), // casdout ), // (tape_adc),
 	.K7_TAPEOUT		  (tape_out),
 	.K7_REMOTE		  (cas_relay),
 
@@ -637,6 +637,7 @@ wire 		load_tape = ioctl_index==1;
 reg  [24:0] tape_end;
 reg 		tape_loaded = 1'b0;
 reg         ioctl_downlD;
+reg   [2:0] tape_status;
 
 /*
 sdram sdram
@@ -655,7 +656,7 @@ sdram sdram
 */
 
 bram tapecache (
-  .clk(CLK_50M),
+  .clk(clk_sys),
 
   .bram_download(ioctl_download),
   .bram_wr(ioctl_wr & load_tape),
@@ -668,17 +669,17 @@ bram tapecache (
 );
 
 
-always @(posedge CLK_50M) begin
+always @(posedge clk_sys) begin
  if (load_tape) tape_end <= ioctl_addr;
 end
 
-always @(posedge CLK_50M) begin
+always @(posedge clk_sys) begin
 	ioctl_downlD <= ioctl_download;
 	if(ioctl_downlD & ~ioctl_download) tape_loaded <= 1'b1;
 end
 
 cassette cassette (
-  .clk(CLK_50M),
+  .clk(clk_sys),
 
   .rewind(status[52] | (load_tape&ioctl_download)),
   .en(cas_relay&tape_loaded), 
@@ -687,8 +688,8 @@ cassette cassette (
   .sdram_rd(sdram_rd),
 
   .tape_end(tape_end),
-  .data(casdout)
-//   .status(tape_status)
+  .data(casdout),
+  .state(tape_status)
 );
 
 /* older adc

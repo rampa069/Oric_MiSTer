@@ -177,7 +177,7 @@ oricatmos oricatmos
 	.VIDEO_HBLANK	    (VGA_HB),
 	.VIDEO_VBLANK	    (VGA_VB),
 
-	.K7_TAPEIN		    (casdout),
+	.K7_TAPEIN		    ((tape_status != 3'h0 ? casdout : 1'b0)),
 	.K7_TAPEOUT		    (),
 	.K7_REMOTE		    (cas_relay),
 
@@ -249,12 +249,13 @@ wire casdout;
 wire cas_relay;
 
 wire [24:0] sdram_addr;
-wire [7:0] sdram_data;
-wire sdram_rd;
-wire load_tape = ioctl_index[5:0] == 1;
-reg [24:0] tape_end;
-reg tape_loaded = 1'b0;
+wire  [7:0] sdram_data;
+wire 		sdram_rd;
+wire 		load_tape = ioctl_index[5:0] == 1;
+reg  [24:0] tape_end;
+reg 		tape_loaded = 1'b0;
 reg         ioctl_downlD;
+reg   [2:0] tape_status;
 
 bram tapecache(
   .clk(clk_48),
@@ -288,7 +289,8 @@ cassette cassette(
   .sdram_rd(sdram_rd),
 
   .tape_end(tape_end),
-  .data(casdout)
+  .data(casdout),
+  .state(tape_status)  
 );
 
 endmodule
