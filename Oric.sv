@@ -181,14 +181,15 @@ assign {SD_SCK, SD_MOSI, SD_CS} = 'Z;
 assign {SDRAM_DQ, SDRAM_A, SDRAM_BA, SDRAM_CLK, SDRAM_CKE, SDRAM_DQML, SDRAM_DQMH, SDRAM_nWE, SDRAM_nCAS, SDRAM_nRAS, SDRAM_nCS} = 'Z;
 assign {DDRAM_CLK, DDRAM_BURSTCNT, DDRAM_ADDR, DDRAM_DIN, DDRAM_BE, DDRAM_RD, DDRAM_WE} = '0; 
  
-assign LED_USER  = ioctl_download | led_disk; // | tape_adc_act;
-assign LED_DISK  = 0;
-assign LED_POWER = 0;
-assign BUTTONS   = 0; 
-assign VGA_SCALER= 0;
+assign LED_USER    = ioctl_download | led_disk; // | tape_adc_act;
+assign LED_DISK    = 0;
+assign LED_POWER   = 0;
+assign BUTTONS     = 0; 
+assign VGA_SCALER  = 0;
+assign HDMI_FREEZE = 0;
 
-assign AUDIO_S   = 0;
-assign AUDIO_MIX = 0;
+assign AUDIO_S     = 0;
+assign AUDIO_MIX   = 0;
 
 wire [1:0] ar = status[122:121];
 video_freak video_freak
@@ -214,8 +215,10 @@ localparam CONF_STR = {
 	"O56,FDD Controller,Auto,Off,On;",
 	"O7,Drive Write,Allow,Prohibit;",
 	"-;",
-	"O[51],Tape Input,File,ADC;",
-	"H0T[52],Stop & Rewind;",	
+	"O[51:50],Tape Audio,Mute,Low,High;",
+	"O[52],Tape Input,File,ADC;",
+	"h0T[53],Rewind;",
+//	"H0T[54],Eject;",
 	"-;",
 	"O[122:121],Aspect ratio,Original,Full Screen,[ARC1],[ARC2];",
 	"OAC,Scandoubler Fx,None,HQ2x,CRT 25%,CRT 50%;",
@@ -227,6 +230,10 @@ localparam CONF_STR = {
 	"V,v",`BUILD_DATE
 };
 
+wire [1:0] tapeVolume  = status[51:50];
+wire       tapeUseADC = status[52];
+wire       tapeRewind = status[53];
+//wire tapeEject  = status[54]; - Flandango - Not Yet Implemented(tm)
 ///////////////////////////////////////////////////
 
 wire locked;
@@ -265,37 +272,38 @@ end
 
 ///////////////////////////////////////////////////
 
-wire [10:0] ps2_key;
+wire  [10:0] ps2_key;
 
-wire [15:0]  joy;
-wire  [1:0]  buttons;
+wire  [15:0] joy;
+wire   [1:0] buttons;
 wire         forced_scandoubler;
 wire [127:0] status;
-wire 		 freeze_sync;
+wire         freeze_sync;
 
-wire [31:0] sd_lba;
-reg   [1:0] sd_rd;
-reg   [1:0] sd_wr;
-wire  [1:0] sd_ack;
-wire  [8:0] sd_buff_addr;
-wire  [7:0] sd_buff_dout;
-wire  [7:0] sd_buff_din;
-wire        sd_buff_wr;
+wire  [31:0] sd_lba[1];
+reg    [1:0] sd_rd;
+reg    [1:0] sd_wr;
+wire   [1:0] sd_ack;
+wire   [8:0] sd_buff_addr;
+wire   [7:0] sd_buff_dout;
+wire   [7:0] sd_buff_din[1];
+wire         sd_buff_wr;
 
-wire        img_mounted;
-wire [31:0] img_size;
-wire        img_readonly;
+wire         img_mounted;
+wire  [31:0] img_size;
+wire         img_readonly;
 
-wire        ioctl_wr;
-wire [24:0] ioctl_addr;
-wire  [7:0] ioctl_dout;
-wire        ioctl_download;
-wire  [7:0] ioctl_index;
+wire         ioctl_wr;
+wire  [24:0] ioctl_addr;
+wire   [7:0] ioctl_dout;
+wire         ioctl_download;
+wire   [7:0] ioctl_index;
 
-reg         status_set;
-reg  [31:0] status_out;
+reg          status_set;
+reg   [31:0] status_out;
 
-wire [21:0] gamma_bus;
+wire  [21:0] gamma_bus;
+wire  [15:0] status_mask = {15'd0, tape_loaded & ~tapeUseADC & ~cas_relay};
 
 hps_io #(.CONF_STR(CONF_STR)) hps_io
 (
@@ -308,14 +316,15 @@ hps_io #(.CONF_STR(CONF_STR)) hps_io
 	.buttons(buttons),
 	.forced_scandoubler(forced_scandoubler),
 	.status(status),
+	.status_menumask(status_mask),
 
-	.sd_lba('{sd_lba}),
+	.sd_lba(sd_lba),
 	.sd_rd(sd_rd),
 	.sd_wr(sd_wr),
 	.sd_ack(sd_ack),
 	.sd_buff_addr(sd_buff_addr),
 	.sd_buff_dout(sd_buff_dout),
-	.sd_buff_din('{sd_buff_din}),
+	.sd_buff_din(sd_buff_din),
 	.sd_buff_wr(sd_buff_wr),
 	.img_mounted(img_mounted),
 	.img_size(img_size),
@@ -352,98 +361,35 @@ wire [15:0] ram_ad;
 wire [15:0] ram_ad_temp;
 wire  [7:0] ram_d;
 wire  [7:0] ram_d_temp;
-wire        ram_we,ram_cs;
-wire        ram_we_temp,ram_cs_temp;
+wire        ram_we;//,ram_cs;
+wire        ram_we_temp;//,ram_cs_temp;
 reg   [7:0] ram_q;
 
 always @(posedge clk_sys) begin
 	if(reset) begin
 		ram_d_temp <= 1;
 		ram_ad_temp <= clr_addr[15:0];
-		ram_cs_temp <= 1'b1;
+//		ram_cs_temp <= 1'b1;
 		ram_we_temp <= 1'b1;
 	end
 	else begin
 		ram_d_temp <= ram_d;
 		ram_ad_temp <= ram_ad;
-		ram_cs_temp <= ram_cs;
-		ram_we_temp <= ram_we;		
+//		ram_cs_temp <= ram_cs;
+		ram_we_temp <= ram_we;
 	end
 end
 
-dpram #(.addr_width_g(16)) ram (
-	.clk_sys(clk_sys),
+spram #(.address_width(16)) ram (
+  .clock(clk_sys),
 
-	.ram_cs(ram_cs_temp),
-	.ram_we(ram_we_temp),
-	.ram_d(ram_d_temp),
-	.ram_q(ram_q),
-	.ram_ad(ram_ad_temp),
-
-	.ram_cs_b(1'b1),
-	.ram_we_b(tape_wr),
-	.ram_d_b(tape_dout),
-	.ram_q_b(),
-	.ram_ad_b(tape_addr)
+  .address(ram_ad_temp),
+  .data(ram_d_temp),
+  .wren(ram_we_temp),
+  .q(ram_q)
 );
 
 wire        led_disk;
-
-reg [15:0]  loadpoint;
-reg [15:0]  tape_addr;
-reg         tape_wr;
-reg [7:0]   tape_dout;
-wire        tape_complete;
-
-reg 		tape_autorun = 0;
-
-/*
-cassette cassette(
-  .clk(clk_sys),
-
-  .ioctl_download(ioctl_download),
-  .ioctl_wr(ioctl_wr),
-  .ioctl_addr(ioctl_addr),
-  .ioctl_dout(ioctl_dout),
-
-  .reset_n(~reset),
-
-  .autostart(),
-
-  .tape_autorun(tape_autorun),
-
-  .loadpoint(loadpoint),
-  .tape_addr(tape_addr),
-  .tape_wr(tape_wr),
-  .tape_dout(tape_dout),
-  .tape_complete(tape_complete)
-);
-*/
-
-/*
-cassettecached cassette(
-  .clk(clk_sys),
-  .tape_clk(tape_clk),
-
-  // input raw tape data from tape cache
-  .ioctl_download(ioctl_download),
-  .ioctl_wr(ioctl_wr),
-  .ioctl_addr(ioctl_addr),
-  .ioctl_dout(ioctl_dout),
-
-  .reset_n(~reset),
-  //.tape_request(tape_request),
-
-  // output processed tape data to ram
-  .autostart(),
-  .tape_autorun(tape_autorun),
-  .loadpoint(loadpoint),
-  .tape_addr(tape_addr),
-  .tape_wr(tape_wr),
-  .tape_dout(tape_dout),
-  .tape_complete(tape_complete)
-);
-*/
 
 
 oricatmos oricatmos
@@ -455,30 +401,29 @@ oricatmos oricatmos
 	.key_code         (ps2_key[7:0]),
 	.key_extended     (ps2_key[8]),
 	.key_strobe       (key_strobe),
-	//.PSG_OUT_L			(psg_l),
-	//.PSG_OUT_R			(psg_r),
 	.PSG_OUT_A        (psg_a),
 	.PSG_OUT_B        (psg_b),
 	.PSG_OUT_C        (psg_c),
 	.PSG_OUT          (psg_out),
 
-	.VIDEO_CLK		  (clk_pix),
-	.VIDEO_R		  (r),
-	.VIDEO_G		  (g),
-	.VIDEO_B		  (b),
-	.VIDEO_HSYNC	  (hs),
-	.VIDEO_VSYNC	  (vs),
-	.VIDEO_HBLANK	  (HBlank),
-	.VIDEO_VBLANK	  (VBlank),
+	.VIDEO_CLK        (clk_pix),
+	.VIDEO_R          (r),
+	.VIDEO_G          (g),
+	.VIDEO_B          (b),
+	.VIDEO_HSYNC      (hs),
+	.VIDEO_VSYNC      (vs),
+	.VIDEO_HBLANK     (HBlank),
+	.VIDEO_VBLANK     (VBlank),
 
-	.K7_TAPEIN		  (status[51] ? adc_cassette_bit : casdout ), //(tape_status != 3'h0 ? casdout : 1'b0)), // casdout ), // (tape_adc),
-	.K7_TAPEOUT		  (tape_out),
-	.K7_REMOTE		  (cas_relay),
+	.K7_TAPEIN        (tape_in ),
+	.K7_TAPEOUT       (tape_out),
+	.K7_REMOTE        (cas_relay),
 
 	.ram_ad           (ram_ad),
 	.ram_d            (ram_d),
 	.ram_q            (ram_q),
-	.ram_cs           (ram_cs),
+//	.ram_cs           (ram_cs),
+	.ram_cs           (),
 	.ram_oe           (),
 	.ram_we           (ram_we),
 
@@ -494,12 +439,12 @@ oricatmos oricatmos
 	.phi2             (),
 	.pll_locked       (~reset),
 	.disk_enable      ((!status[6:5]) ? ~fdd_ready : status[5]),
-	.rom			  (rom),
+	.rom              (rom),
 
 	.img_mounted      (img_mounted), // signaling that new image has been mounted
 	.img_size         (img_size), // size of image in bytes
 	.img_wp           (status[7] | img_readonly), // write protect
-    .sd_lba           (sd_lba[0]),
+	.sd_lba           (sd_lba[0]),
 	.sd_rd            (sd_rd),
 	.sd_wr            (sd_wr),
 	.sd_ack           (sd_ack),
@@ -509,11 +454,8 @@ oricatmos oricatmos
 	.sd_dout_strobe   (sd_buff_wr),
 	.sd_din_strobe    (0),
 
-  	.tape_addr		  (loadpoint),
-    .tape_complete	  (tape_autorun),
-
-    .hcnt(h_cnt), 
-    .vcnt(v_cnt)  
+	.hcnt(h_cnt), 
+	.vcnt(v_cnt)  
 );
 
 reg fdd_ready = 0;
@@ -561,116 +503,43 @@ video_mixer #(.LINE_LENGTH(250), .HALF_DEPTH(1), .GAMMA(1)) video_mixer
 
 ///////////////////////////////////////////////////
 
-always @ (psg_a,psg_b,psg_c,psg_out,stereo) begin
-		case (stereo)
-			2'b01  : {AUDIO_L,AUDIO_R} <= {{{2'b0,psg_a} + {2'b0,psg_b}},6'b0,{{2'b0,psg_c} + {2'b0,psg_b}},6'b0};
-			2'b10  : {AUDIO_L,AUDIO_R} <= {{{2'b0,psg_a} + {2'b0,psg_c}},6'b0,{{2'b0,psg_c} + {2'b0,psg_b}},6'b0};
-			default: {AUDIO_L,AUDIO_R} <= {psg_out,6'b0,psg_out,6'b0};
-       endcase
-end
+wire [7:0] tapeAudio;
+assign tapeAudio = {|tapeVolume ? (tapeVolume == 2'd1 ? {1'b0,tape_in} : {tape_in,1'b0} ) : 2'b00,6'b00};
 
-/////////////////////// ADC Module  //////////////////////////////
-
-
-wire [11:0] adc_data;
-wire        adc_sync;
-reg [11:0] adc_value;
-reg adc_sync_d;
-
-integer ii=0;
-reg [11:0] adc_val[0:511];
-reg [21:0] adc_total = 0;
-reg [11:0] adc_avg;
-
-reg adc_cassette_bit;
-
-
-// interface to ADC via framework
-//
-ltc2308 #(1, 48000, 50000000) adc_input		// mono, ADC_RATE = 48000, CLK_RATE = 50000000
-(
-	.reset(reset),
-	.clk(CLK_50M),
-
-	.ADC_BUS(ADC_BUS),
-	.dout(adc_data),
-	.dout_sync(adc_sync)
-);
-
-// when data arrives:
-//		- latch it in adc_value
-//		- keep track of a running average across 512 samples
-//
-//		-> this average acts as a high-pass filter above roughly 100 Hz while retaining
-//		 	while retaining very high frequency response, for possible future fast-load techniques
-//
-always @(posedge CLK_50M) begin
-
-	adc_sync_d<=adc_sync;
-	if(adc_sync_d ^ adc_sync) begin
-		adc_value <= adc_data;					// latch in current value, adc_Value
-		
-		adc_val[0] <= adc_value;				
-		adc_total  <= adc_total - adc_val[511] + adc_value;
-
-		for (ii=0; ii<511; ii=ii+1)
-			adc_val[ii+1] <= adc_val[ii];
-			
-		adc_avg <= adc_total[20:9];			// update average value every fetch
-		
-		if (adc_value < (adc_avg - 100))		// flip the cassette bit if > 0.1V from average
-			adc_cassette_bit <= 1;				// note that original CoCo reversed polarity
-
-		if (adc_value > (adc_avg + 100))
-			adc_cassette_bit <= 0;
-		
-	end
-end
+assign {AUDIO_L,AUDIO_R} = stereo == 2'b01 ? {{{2'b0,psg_a + tapeAudio} + {2'b0,psg_b}},6'b0,{{2'b0,psg_c + tapeAudio} + {2'b0,psg_b}},6'b0} :
+                           stereo == 2'b10 ? {{{2'b0,psg_a + tapeAudio} + {2'b0,psg_c}},6'b0,{{2'b0,psg_c + tapeAudio} + {2'b0,psg_b}},6'b0} :
+                                             {psg_out + tapeAudio,6'b0,psg_out + tapeAudio,6'b0};
 
 wire casdout;
 wire cas_relay;
 
-wire [24:0] sdram_addr;
-wire  [7:0] sdram_data;
-wire 		sdram_rd;
-wire 		load_tape = ioctl_index==1;
-reg  [24:0] tape_end;
-reg 		tape_loaded = 1'b0;
+wire        load_tape = ioctl_index==1;
+reg  [15:0] tape_end;
+reg         tape_loaded = 1'b0;
 reg         ioctl_downlD;
-reg   [2:0] tape_status;
 
-/*
-sdram sdram
-(
-	.*,
-	.init(~locked),
-	.clk(clk_sys),
-	.addr(ioctl_download ? ioctl_addr : sdram_addr),
-	.wtbt(0),
-	.dout(sdram_data),
-	.din(ioctl_dout),
-	.rd(sdram_rd),
-	.we(ioctl_wr & load_tape),
-	.ready()
-);
-*/
+//Tape Writting - Not Implemented ATM - Flandango
+//reg         tape_wr;
+//reg [7:0]   tape_dout;
 
-bram tapecache (
-  .clk(clk_sys),
 
-  .bram_download(ioctl_download),
-  .bram_wr(ioctl_wr & load_tape),
-  .bram_init_address(ioctl_addr),
-  .bram_din(ioctl_dout),
+wire [15:0] tape_addr;
+wire [7:0]  tape_data;
+wire [6:0]  h_cnt;		//For overlay - Not Implemented Yet - Flandango
+wire [8:0]  v_cnt;		//For overlay - Not Implemented Yet - Flandango
 
-  .addr(sdram_addr),
-  .dout(sdram_data),
-  .cs(sdram_rd)
+spram #(.address_width(16)) tapecache (
+  .clock(clk_sys),
+
+  .address((ioctl_index == 1 && ioctl_download) ? ioctl_addr: tape_addr),
+  .data(ioctl_dout),
+  .wren(ioctl_wr && load_tape),
+  .q(tape_data)
 );
 
 
 always @(posedge clk_sys) begin
- if (load_tape) tape_end <= ioctl_addr;
+ if (load_tape) tape_end <= ioctl_addr[15:0];
 end
 
 always @(posedge clk_sys) begin
@@ -680,19 +549,16 @@ end
 
 cassette cassette (
   .clk(clk_sys),
-
-  .rewind(status[52] | (load_tape&ioctl_download)),
-  .en(cas_relay&tape_loaded), 
-  .sdram_addr(sdram_addr),
-  .sdram_data(sdram_data),
-  .sdram_rd(sdram_rd),
+  .reset(reset),
+  .rewind(tapeRewind | (load_tape && ioctl_download)),
+  .en(cas_relay && tape_loaded && ~tapeUseADC), 
+  .tape_addr(tape_addr),
+  .tape_data(tape_data),
 
   .tape_end(tape_end),
-  .data(casdout),
-  .state(tape_status)
+  .data(casdout)
 );
 
-/* older adc
 wire tape_adc, tape_adc_act;
 ltc2308_tape ltc2308_tape
 (
@@ -701,6 +567,7 @@ ltc2308_tape ltc2308_tape
 	.dout(tape_adc),
 	.active(tape_adc_act)
 );
-*/
+
+assign tape_in = tapeUseADC ? tape_adc : casdout;
 
 endmodule

@@ -206,7 +206,7 @@ module T65_ALU(
             ADC_Z = 1'b0;
         
         if (AL[5:1] > 9 & P_In[Flag_D] == 1'b1)
-            AL[6:1] = AL[6:1] + 6;
+            AL[6:1] = AL[6:1] + 6'd6;
         
         C = AL[6] | AL[5];
         AH = {BusA[7:4], C} + {BusB[7:4], 1'b1};
@@ -221,7 +221,7 @@ module T65_ALU(
         // pragma translate_on
         
         if (AH[5:1] > 9 & P_In[Flag_D] == 1'b1)
-            AH[6:1] = AH[6:1] + 6;
+            AH[6:1] = AH[6:1] + 6'd6;
         
         ADC_C = AH[6] | AH[5];
         
@@ -273,10 +273,10 @@ module T65_ALU(
         if (P_In[Flag_D] == 1'b1)
         begin
             if (AL[5] == 1'b1)
-                AL[5:1] = AL[5:1] - 6;
+                AL[5:1] = AL[5:1] - 5'd6;
             AH = {BusA[7:4], 1'b0} - {BusB[7:4], AL[6]};
             if (AH[5] == 1'b1)
-                AH[5:1] = AH[5:1] - 6;
+                AH[5:1] = AH[5:1] - 5'd6;
         end
         
         SBC_Q = ({AH[4:1], AL[4:1]});
@@ -361,9 +361,9 @@ module T65_ALU(
             T_ALU_OP_ALU_OP_BIT :
                 P_Out[Flag_V] = BusB[6];
             T_ALU_OP_ALU_OP_DEC :
-                Q_t = (BusA - 1);
+                Q_t = (BusA - 1'b1);
             T_ALU_OP_ALU_OP_INC :
-                Q_t = (BusA + 1);
+                Q_t = (BusA + 1'b1);
             default :
                 ;
         endcase

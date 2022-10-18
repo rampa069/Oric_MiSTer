@@ -1,70 +1,85 @@
 module square_gen(
   input clk,
+  input reset,
   input start,
+  input gap,
   input [7:0] din,
   output reg done,
-  output dout,
-  input [23:0] stp
+  output dout
 );
 
-// 4Mhz/0.0024=1666 2^24/1666=10070
-// 16MHZ -- * 4?
-// 16mhz/0.0128=1250 2^ 
-//parameter STP = 24'd20140;
 
-// 16mhz is 4x clock, so we 1/4 the rate
-//  parameter STP = 24'd5035;
-  
-//  parameter STP = 24'd13312;  
-//  parameter STP = 24'd6656;// -- this seems close
-  
-parameter STP = 24'd3356; //  6666
+//At 24Mhz, pulse sizes for each bit is as follows:
+//0: 6000 Low, 9500 High
+//1: 3500 Low, 5000 High
 
-	 
-//13333.28	cycles
-//6666.64	50%
+reg [13:0] div;
+reg [3:0] nbit;
+reg [3:0] parity;
+reg [13:0] data;
+reg [7:0] gap_bit_cnt;
+reg en, tape_bit;
+wire emit_bit;
 
-//parameter STP = 24'd53684;
-
-//parameter STP = 24'd161000;
-
-reg [23:0] div;
-reg [2:0] nbit;
-reg [7:0] data;
-reg [1:0] cnt;
-reg en, pulse;
+wire pulse;
 
 initial begin
   en = 0;
   nbit = 0;
-  cnt = 0;
   div = 0;
 end
 
-assign dout = data[0] ? ~cnt[0] : ~cnt[1];
 
-always @(posedge clk or posedge start)
-  if (start) div <= 24'd0;
-  else if (en) { pulse, div } <= div + STP;
+assign dout = en ? (data[0] ? (div >=0 && div < 4354  ? 1'b0 : 1'b1) : (div >=0 && div < 6530 ? 1'b0 : 1'b1)) : 1'b0;
 
-always @(posedge pulse or posedge start) begin
-  if (start) begin
-    en <= 1'b1;
-    done <= 1'b0;
-    data <= din;
-  end
-  else if (en) begin
-    cnt <= cnt + 2'd1;
-    if (2'd3 == cnt)  begin
-      cnt <= 2'd0;
-      nbit <= nbit + 3'd1;
-      data <= { 1'b0, data[7:1] };
-      if (nbit == 3'd7) begin
-        en <= 1'b0;
-        done <= 1'b1;
-      end
-    end
-  end
+assign emit_bit = (nbit == 4'd9 && ~gap) ? parity[0] : data[0];
+
+always @(posedge clk or posedge start) begin
+	if (start) div <= 14'd0;
+	else if (en) begin
+		if((emit_bit && div == 8707) || (~emit_bit && div == 15238)) div <= 14'd0;
+		else div <= div + 1'b1;
+	end
+end
+
+always @(posedge clk or posedge start or posedge reset) begin
+	if(reset) begin
+		en <= 1'b0;
+		done <= 1'b0;
+		parity <= 4'd1;
+		parity <= 4'd1;
+		nbit <= 4'd0;
+		data <= 14'd0;
+		gap_bit_cnt <= 8'h00;
+	end
+	
+	else begin
+		if(start) begin
+			en <= 1'b1;
+			done <= 1'b0;
+			parity <= 4'd1;
+			nbit <= 4'd0;
+			data <= gap ? 14'h3FFF : { 5'b11111, din, 1'b0};
+			gap_bit_cnt <= 8'h00;
+		end
+		else if (en) begin
+			if((emit_bit && div == 8707) || (~emit_bit && div == 15238)) begin
+				if(gap) begin
+					gap_bit_cnt <= gap_bit_cnt + 1'b1;
+					data[0] <= 1'b1;
+				end
+				else begin
+					nbit <= nbit + 4'd1;
+					if(nbit >= 4'd1 && nbit <= 4'd8) parity <= parity + data[0];
+					data <= { 1'b0, data[13:1] };
+				end
+				if (nbit == 4'd13 || (gap_bit_cnt == 8'd100)) begin
+				  en <= 1'b0;
+				  done <= 1'b1;
+				end
+			end
+		end
+	end
 end
 
 endmodule

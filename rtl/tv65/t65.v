@@ -155,11 +155,8 @@ module T65(
     DEBUG_Y,
     DEBUG_S,
     DEBUG_P,
-    NMI_ack,
-    PRINT,
-
-    tape_addr,
-    tape_complete
+    NMI_ack//,
+//    PRINT
 );
     // begin code from package t65_pack
     
@@ -293,11 +290,8 @@ module T65(
     output [7:0]  DEBUG_P;
     output        NMI_ack;
     
-    output reg PRINT; 
+//    output reg PRINT; 
     
-    input [15:0] tape_addr;
-    input [7:0] tape_complete;
-
     // Registers
     reg [15:0]    ABC;
     reg [15:0]    X;
@@ -422,7 +416,7 @@ module T65(
 	    end
     end
  */   
-    
+
     T65_MCode mcode(
 
         //inputs
@@ -507,13 +501,7 @@ module T65(
             MF_i <= 1'b1;
             XF_i <= 1'b1;
         end
-        else if (tape_complete) begin
-		    $display("(T65) PC %x tape_addr %x tape_complete  %x", PC, tape_addr, tape_complete);   
-            if(tape_addr < 16'h0505)    
-                PC <= 16'he8e9;
-            else           
-                PC <= tape_addr;
-        end
+        
         else 
         begin
             if (Enable == 1'b1)
@@ -539,7 +527,7 @@ module T65(
                         Mode_r <= Mode;
                         
                         if (IRQCycle == 1'b0 & NMICycle == 1'b0)
-                            PC <= PC + 1;
+                            PC <= PC + 1'b1;
                         
                         if (IRQCycle == 1'b1 | NMICycle == 1'b1)
                             IR <= 8'b00000000;
@@ -558,18 +546,18 @@ module T65(
                         Set_Addr_To_r <= Set_Addr_To;
                     
                     if (Inc_S == 1'b1)
-                        S <= S + 1;
+                        S <= S + 1'b1;
                     if (Dec_S == 1'b1 & RstCycle == 1'b0)
-                        S <= S - 1;
+                        S <= S - 1'b1;
                     
                     if (IR == 8'b00000000 & MCycle == 3'b001 & IRQCycle == 1'b0 & NMICycle == 1'b0)
-                        PC <= PC + 1;
+                        PC <= PC + 1'b1;
                     //
                     // jump control logic
                     //
                     case (Jump)
                         2'b01 :
-                            PC <= PC + 1;
+                            PC <= PC + 1'b1;
                         2'b10 :
                             PC <= ({DI, DL});
                         2'b11 :
@@ -577,9 +565,9 @@ module T65(
                                 if (PCAdder[8] == 1'b1)
                                 begin
                                     if (DL[7] == 1'b0)
-                                        PC[15:8] <= PC[15:8] + 1;
+                                        PC[15:8] <= PC[15:8] + 1'b1;
                                     else
-                                        PC[15:8] <= PC[15:8] - 1;
+                                        PC[15:8] <= PC[15:8] - 1'b1;
                                 end
                                 PC[7:0] <= PCAdder[7:0];
                             end
@@ -698,14 +686,14 @@ module T65(
                     
                     // not really nice, but no better way found yet !
                     if (Set_Addr_To_r == T_Set_Addr_To_Set_Addr_To_PBR | Set_Addr_To_r == T_Set_Addr_To_Set_Addr_To_ZPG)
-                        BusB_r <= ((DI[7:0]) + 1);		// required for SHA
+                        BusB_r <= ((DI[7:0]) + 1'b1);		// required for SHA
                     
                     case (BAAdd)
                         2'b01 :
                             begin
                                 // BA Inc
-                                AD <= (AD + 1);
-                                BAL <= (BAL + 1);
+                                AD <= (AD + 1'b1);
+                                BAL <= (BAL + 1'b1);
                             end
                         2'b10 :
                             // BA Add
@@ -716,9 +704,9 @@ module T65(
                                 // Handle quirks with some undocumented opcodes crossing page boundary
                                 case (BAQuirk)
                                     2'b00 :		// no quirk
-                                        BAH <= (BAH + 1);
+                                        BAH <= (BAH + 1'b1);
                                     2'b01 :
-                                        BAH <= (BAH + 1) & DO_r;
+                                        BAH <= (BAH + 1'b1) & DO_r;
                                     2'b10 :
                                         BAH <= DO_r;
                                     default :
@@ -781,12 +769,12 @@ module T65(
                   (Set_BusA_To == T_Set_BusA_To_Set_BusA_To_DAO) ? (ABC[7:0] | 8'hee) & DI : 		//ee for OAL instruction. constant may be different on other platforms.TODO:Move to generics
                   (Set_BusA_To == T_Set_BusA_To_Set_BusA_To_DAX) ? (ABC[7:0] | 8'hee) & DI & X[7:0] : 		//XAA, ee for OAL instruction. constant may be different on other platforms.TODO:Move to generics
                   (Set_BusA_To == T_Set_BusA_To_Set_BusA_To_AAX) ? ABC[7:0] & X[7:0] : 		//SAX, SHA
-                  (Set_BusA_To == T_Set_BusA_To_Set_BusA_To_DONTCARE) ? 1'bx : 	0;	//Can probably remove this
+                  (Set_BusA_To == T_Set_BusA_To_Set_BusA_To_DONTCARE) ? 1'bx : 	8'h0;	//Can probably remove this
     
     assign A = (Set_Addr_To_r == T_Set_Addr_To_Set_Addr_To_SP) ? {16'b0000000000000001, (S[7:0])} : 
                (Set_Addr_To_r == T_Set_Addr_To_Set_Addr_To_ZPG) ? {DBR, 8'b00000000, AD} : 
                (Set_Addr_To_r == T_Set_Addr_To_Set_Addr_To_BA) ? {8'b00000000, BAH, BAL[7:0]} : 
-               (Set_Addr_To_r == T_Set_Addr_To_Set_Addr_To_PBR) ? {PBR, (PC[15:8]), (PCAdder[7:0])}  : 0;
+               (Set_Addr_To_r == T_Set_Addr_To_Set_Addr_To_PBR) ? {PBR, (PC[15:8]), (PCAdder[7:0])}  : 24'd0;
     
     // This is the P that gets pushed on stack with correct B flag. I'm not sure if NMI also clears B, but I guess it does.
     assign PwithB = ((IRQCycle == 1'b1 | NMICycle == 1'b1)) ? (P & 8'hef) : 
@@ -806,7 +794,7 @@ module T65(
                   (Write_Data_r == T_Write_Data_Write_Data_AXB) ? ABC[7:0] & X[7:0] & BusB_r[7:0] : 		// no better way found yet...
                   (Write_Data_r == T_Write_Data_Write_Data_XB) ? X[7:0] & BusB_r[7:0] : 		// no better way found yet...
                   (Write_Data_r == T_Write_Data_Write_Data_YB) ? Y[7:0] & BusB_r[7:0] : 		// no better way found yet...
-                  (Write_Data_r == T_Write_Data_Write_Data_DONTCARE) ? {8{1'bx}} : 0; 		//Can probably remove this
+                  (Write_Data_r == T_Write_Data_Write_Data_DONTCARE) ? {8{1'bx}} : 8'h0; 		//Can probably remove this
     
     //-----------------------------------------------------------------------
     //
@@ -845,7 +833,7 @@ module T65(
                             IRQCycle <= 1'b1;
                     end
                     else
-                        MCycle <= (MCycle + 1);
+                        MCycle <= (MCycle + 1'b1);
                 end
                 //detect NMI even if not rdy    
                 if (NMI_n_o == 1'b1 & (NMI_n == 1'b0 & (IR[4:0] != 5'b10000 | Jump != 2'b01)))		// branches have influence on NMI start (not best way yet, though - but works...)

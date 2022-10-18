@@ -96,7 +96,6 @@ module oricatmos
    input wire          sd_din_strobe,
 
    input wire [15:0]   tape_addr,
-   input wire          tape_complete,
 
    output logic [6:0]  hcnt, // Horizontal counter
    output logic [8:0]  vcnt  // Vertical counter      
@@ -105,8 +104,8 @@ module oricatmos
   // Gestion des resets
   logic                RESETn;
   logic                reset_dll_h;
-  logic [7:0]          delay_count = '0;
-  logic [2:0]          clk_cnt = '0;
+//  logic [7:0]          delay_count = '0;
+//  logic [2:0]          clk_cnt = '0;
 
   // cpu
   logic [23:0]         cpu_ad;
@@ -121,7 +120,7 @@ module oricatmos
   logic [7:0]          via_pa_out;
   logic [7:0]          via_pa_in_from_psg;
   logic                via_cb1_out;
-  logic                via_cb1_oe_l;
+//  logic                via_cb1_oe_l;
   logic                via_cb2_out;
   logic                via_cb2_oe_l;
   logic [7:0]          via_pb_in;
@@ -202,10 +201,7 @@ module oricatmos
      .R_W_n         (cpu_rw),
      .A             (cpu_ad),
      .DI            (cpu_di),
-     .DO            (cpu_do),
-
-     .tape_addr     (tape_addr),
-     .tape_complete (tape_complete)
+     .DO            (cpu_do)
      );
 
   assign ram_ad  = ~ula_phi2 ? ula_AD_SRAM : cpu_ad[15:0];
@@ -216,7 +212,7 @@ module oricatmos
   assign ram_we  = RESETn & ula_WE_SRAM;
   assign phi2    = ula_phi2;
 
-  assign cas_relay = via_cb1_oe_l;
+//  assign cas_relay = via_cb1_oe_l;
 
   BASIC11A inst_rom0
     (
@@ -270,7 +266,7 @@ module oricatmos
      .HSYNC (VIDEO_HSYNC),
      .VSYNC (VIDEO_VSYNC),
      .hcnt(hcnt),
-     .vcnt(v_cnt)
+     .vcnt(vcnt)
      );
 
 
@@ -289,7 +285,7 @@ module oricatmos
      .I_CA1 ('1), // PRT_ACK
      .I_CA2 ('1), // psg_bdir
      .O_CA2 (psg_bdir),
-     .O_CA2_OE_L (OPEN),
+     .O_CA2_OE_L (),
 
      .I_PA (via_pa_in),
      .O_PA (via_pa_out),
@@ -298,7 +294,8 @@ module oricatmos
      // PORT B
      .I_CB1 (K7_TAPEIN),
      .O_CB1 (via_cb1_out),
-     .O_CB1_OE_L (via_cb1_oe_l),
+//     .O_CB1_OE_L (via_cb1_oe_l),
+     .O_CB1_OE_L (),
 
      .I_CB2 ('1),
      .O_CB2 (via_cb2_out),
@@ -312,6 +309,9 @@ module oricatmos
      .CLK (CLK_IN)
      );
 
+//logic [9:0] PSG_OUT2;
+//assign PSG_OUT = {PSG_OUT2[9],K7_TAPEIN|PSG_OUT2[8],PSG_OUT[7:0]};
+
   jt49_bus inst_psg
     (
      .clk (CLK_IN),
@@ -323,6 +323,7 @@ module oricatmos
      .din (via_pa_out),
      .dout (via_pa_in_from_psg),
      .sample (psg_sample_ok),
+//     .sound (PSG_OUT2),
      .sound (PSG_OUT),
      .A (PSG_OUT_A),
      .B (PSG_OUT_B),
@@ -397,6 +398,7 @@ module oricatmos
      .fdd_layout (fdd_layout),
      .fd_led (fd_led)
      );
+
 
 
   assign via_pa_in = (via_pa_out & ~via_pa_out_oe) |

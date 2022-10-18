@@ -318,7 +318,7 @@ assign vcnt = lCTR_V;
       lCTR_H  <= '0;
     end else if (CLK_1_EN) begin
       if (lCTR_H < 63)
-        lCTR_H <= lCTR_H + 1;
+        lCTR_H <= lCTR_H + 1'b1;
       else
         lCTR_H <= '0;
     end
@@ -334,11 +334,11 @@ assign vcnt = lCTR_V;
         // 50Hz = 312 lines, 60Hz = 260 lines
         if (((lCTR_V < 312) &&  lFREQ_SEL) ||
             ((lCTR_V < 260) && ~lFREQ_SEL)) begin
-          lCTR_V <= lCTR_V + 1;
+          lCTR_V <= lCTR_V + 1'b1;
         end else begin
           lCTR_V <= '0;
           // increment flash counter every frame
-          lCTR_FLASH <= lCTR_FLASH + 1;
+          lCTR_FLASH <= lCTR_FLASH + 1'b1;
         end
       end // if (lCTR_H == 63)
     end // if (CLK_1_EN)
