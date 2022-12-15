@@ -273,44 +273,6 @@ module oricatmos
      );
 
 
-//  M6522 inst_via
-//    (
-//     .I_RS (cpu_ad[3:0]),
-//     .I_DATA (cpu_do[7:0]),
-//     .O_DATA (VIA_DO),
-//     .I_RW_L (cpu_rw),
-//     .I_CS1 (cont_IOCONTROLn),
-//     .I_CS2_L (ula_CSIOn),
-//
-//     .O_IRQ_L (cpu_irq),
-//
-//     //PORT A
-//     .I_CA1 ('1), // PRT_ACK
-//     .I_CA2 ('1), // psg_bdir
-//     .O_CA2 (psg_bdir),
-//     .O_CA2_OE_L (),
-//
-//     .I_PA (via_pa_in),
-//     .O_PA (via_pa_out),
-//     .O_PA_OE_L (via_pa_out_oe),
-//
-//     // PORT B
-//     .I_CB1 (K7_TAPEIN),
-//     .O_CB1 (via_cb1_out),
-////     .O_CB1_OE_L (via_cb1_oe_l),
-//     .O_CB1_OE_L (),
-//
-//     .I_CB2 ('1),
-//     .O_CB2 (via_cb2_out),
-//     .O_CB2_OE_L (via_cb2_oe_l),
-//
-//     .I_PB (via_pb_in),
-//     .O_PB (via_pb_out),
-//     .RESET_L (RESETn),
-//     .I_P2_H (ula_phi2),
-//     .ENA_4 (ula_CLK_4_en),
-//     .CLK (CLK_IN)
-//     );
 
 via6522 inst_via6522
 	(
@@ -350,29 +312,6 @@ via6522 inst_via6522
 		.irq             (via_irq)
 	);
 
-//logic [9:0] PSG_OUT2;
-//assign PSG_OUT = {PSG_OUT2[9],K7_TAPEIN|PSG_OUT2[8],PSG_OUT[7:0]};
-
-//  jt49_bus inst_psg
-//    (
-//     .clk (CLK_IN),
-//     .clk_en (ENA_1MHZ),
-//     .sel ('1),
-//     .rst_n (RESETn & KEYB_RESETn),
-//     .bc1 (psg_bdir),
-//     .bdir (via_cb2_out),
-//     .din (via_pa_out),
-//     .dout (via_pa_in_from_psg),
-//     .sample (psg_sample_ok),
-////     .sound (PSG_OUT2),
-//     .sound (PSG_OUT),
-//     .A (PSG_OUT_A),
-//     .B (PSG_OUT_B),
-//     .C (PSG_OUT_C),
-//     .IOA_in ('0),
-//     .IOA_out (ym_o_ioa),
-//     .IOB_in ('0)
-//     );
 
   psg inst_psg
     (
