@@ -83,7 +83,8 @@ module ULA
 
    input wire          CLK, // 24 MHz                       // pin 07
    output logic        PHI2, // 1 MHz CPU & system           // pin 14
-   output logic        PHI2_EN, // 1 MHz clock enable pulse
+   output logic        PHI2_EN,   // 1 MHz clock enable pulse
+	output logic        PHI2_EN_N, //
    input wire          RW, // R/W from CPU                 // pin 27
    input wire          MAPn, // MAP                          // pin 26
    input wire [7:0]    DB, // DATA BUS                     // pin 18,34,5,13,12,11,17,8
@@ -217,6 +218,8 @@ module ULA
   // output assignments
   assign PHI2         = CLK_1_INT;
   assign PHI2_EN      = CLK_1_EN;
+  assign PHI2_EN_N    = c[23];
+  
   //	assign AD_RAM       = AD_RAM_INT[15:8];
   assign CSIOn        = CSIOn_INT;
   assign CSROMn       = CSROMn_INT;

@@ -345,10 +345,10 @@ wire key_strobe = old_keystb ^ ps2_key[10];
 reg old_keystb = 0;
 always @(posedge clk_sys) old_keystb <= ps2_key[10];
 
-wire  [7:0] psg_a;
-wire  [7:0] psg_b;
-wire  [7:0] psg_c;
-wire  [9:0] psg_out;
+wire  [11:0] psg_a;
+wire  [11:0] psg_b;
+wire  [11:0] psg_c;
+wire  [13:0] psg_out;
 
 wire  [1:0] stereo = status [9:8];
 
@@ -503,12 +503,28 @@ video_mixer #(.LINE_LENGTH(250), .HALF_DEPTH(1), .GAMMA(1)) video_mixer
 
 ///////////////////////////////////////////////////
 
+wire [15:0] psg_l;
+wire [15:0] psg_r;
+reg [12:0] psg_ab;
+reg [12:0] psg_ac;
+reg [12:0] psg_bc;
 wire [7:0] tapeAudio;
+
+
 assign tapeAudio = {|tapeVolume ? (tapeVolume == 2'd1 ? {1'b0,tape_in} : {tape_in,1'b0} ) : 2'b00,6'b00};
 
-assign {AUDIO_L,AUDIO_R} = stereo == 2'b01 ? {{{2'b0,psg_a + tapeAudio} + {2'b0,psg_b}},6'b0,{{2'b0,psg_c + tapeAudio} + {2'b0,psg_b}},6'b0} :
-                           stereo == 2'b10 ? {{{2'b0,psg_a + tapeAudio} + {2'b0,psg_c}},6'b0,{{2'b0,psg_c + tapeAudio} + {2'b0,psg_b}},6'b0} :
-                                             {psg_out + tapeAudio,6'b0,psg_out + tapeAudio,6'b0};
+always @ (clk_sys) begin
+ psg_ab <= {{1'b0,psg_a} + {1'b0,psg_b}};
+ psg_ac <= {{1'b0,psg_a} + {1'b0,psg_c}};
+ psg_bc <= {{1'b0,psg_b} + {1'b0,psg_c}};
+end
+
+assign psg_l = (stereo == 2'b00) ? {psg_out,2'b0} : (stereo == 2'b01) ? {psg_ab,3'b0}: {psg_ac,3'b0};
+assign psg_r = (stereo == 2'b00) ? {psg_out,2'b0} : (stereo == 2'b01) ? {psg_bc,3'b0}: {psg_bc,3'b0};
+
+assign AUDIO_L = psg_l + tapeAudio;
+assign AUDIO_R = psg_r + tapeAudio;
+
 
 wire casdout;
 wire cas_relay;

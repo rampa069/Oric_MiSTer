@@ -1,4 +1,4 @@
-set_global_assignment -name QIP_FILE rtl/jt49/hdl/jt49.qip
+set_global_assignment -name VERILOG_FILE       rtl/psg.v
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/wd1793.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/keyboard.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/microdisc.sv
@@ -6,7 +6,7 @@ set_global_assignment -name SYSTEMVERILOG_FILE rtl/rom/MICRODIS.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/rom/BASIC10.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/rom/BASIC11A.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/ula.sv
-set_global_assignment -name SYSTEMVERILOG_FILE rtl/m6522.sv
+set_global_assignment -name VHDL_FILE rtl/via6522.vhd
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/oricatmos.sv
 set_global_assignment -name SYSTEMVERILOG_FILE "Oric.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/ram.sv
@@ -15,7 +15,6 @@ set_global_assignment -name VERILOG_FILE rtl/tv65/t65_mcode.v
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/tv65/t65_pack.sv
 set_global_assignment -name VERILOG_FILE rtl/tv65/t65_alu.v
 set_global_assignment -name VHDL_FILE rtl/dpram.vhd
-#set_global_assignment -name VERILOG_FILE rtl/bram.v
 set_global_assignment -name VERILOG_FILE rtl/cassette.v
 set_global_assignment -name VERILOG_FILE rtl/square_gen.v
 set_global_assignment -name VERILOG_FILE rtl/spram.v

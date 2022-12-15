@@ -38,7 +38,7 @@
 // Email seilebost@free.fr
 //
 //
-
+`default_nettype none
 module oricatmos
   (
    input wire          CLK_IN,
@@ -51,10 +51,10 @@ module oricatmos
    output logic        K7_TAPEOUT,
    output logic        K7_REMOTE,
  
-   output logic [7:0]  PSG_OUT_A,
-   output logic [7:0]  PSG_OUT_B,
-   output logic [7:0]  PSG_OUT_C,
-   output logic [9:0]  PSG_OUT,
+   output logic [11:0]  PSG_OUT_A,
+   output logic [11:0]  PSG_OUT_B,
+   output logic [11:0]  PSG_OUT_C,
+   output logic [13:0]  PSG_OUT,
 
    output logic        VIDEO_CLK,
    output logic        VIDEO_R,
@@ -123,10 +123,14 @@ module oricatmos
 //  logic                via_cb1_oe_l;
   logic                via_cb2_out;
   logic                via_cb2_oe_l;
+  logic                via_ca2_out;
+  logic                via_irq;
   logic [7:0]          via_pb_in;
   logic [7:0]          via_pb_out;
   logic [7:0]          via_pb_oe_l;
   logic [7:0]          VIA_DO;
+  
+  
   // Clavier : émulation par port PS2
   logic [7:0]          KEY_ROW;
   logic                KEYB_RESETn;
@@ -147,8 +151,6 @@ module oricatmos
   logic                ula_OE_SRAM;
   logic                ula_WE_SRAM;
   logic                ula_LATCH_SRAM;
-  logic                ula_CLK_4;
-  logic                ula_CLK_4_en;
   logic                ula_MUX;
   logic                ula_RW_RAM;
   logic                ula_VIDEO_R;
@@ -156,6 +158,8 @@ module oricatmos
   logic                ula_VIDEO_B;
   //	 signal lSRAM_D            : std_logic_vector(7 downto 0);
   logic                ENA_1MHZ;
+  logic                ENA_1MHZ_N;
+  
   logic [7:0]          ROM_ATMOS_DO;
   logic [7:0]          ROM_1_DO;
   logic [7:0]          ROM_MD_DO;
@@ -186,16 +190,16 @@ module oricatmos
   logic [4:0]          PH2_cntr;
 
   assign RESETn = (~RESET & KEYB_RESETn);
-
+  assign cpu_irq = ~via_irq & cont_irq;
   T65 inst_cpu
     (
      .Mode          ('0),
      .Res_n         (cont_RESETn),
-     .Enable        (ENA_1MHZ),
+     .Enable        (ENA_1MHZ_N),
      .Clk           (CLK_IN),
      .Rdy           ('1),
      .Abort_n       ('1),
-     .IRQ_n         (cpu_irq & cont_irq), // Via and disk controller
+     .IRQ_n         (cpu_irq), 
      .NMI_n         (KEYB_NMIn),
      .SO_n          ('1),
      .R_W_n         (cpu_rw),
@@ -238,101 +242,156 @@ module oricatmos
   ULA inst_ula
     (
      .CLK (CLK_IN),
-     .PHI2 (ula_phi2),
-     .PHI2_EN (ENA_1MHZ),
-     .CLK_4 (ula_CLK_4),
-     .CLK_4_EN (ula_CLK_4_en),
-     .RW (cpu_rw),
-     .RESETn (pll_locked), //RESETn),
-     //.RESETn (RESETn),
-     .MAPn (cont_MAPn),
-     .DB (SRAM_DO),
-     .ADDR (cpu_ad[15:0]),
-     .SRAM_AD (ula_AD_SRAM),
-     .SRAM_OE (ula_OE_SRAM),
-     .SRAM_CE (ula_CE_SRAM),
-     .SRAM_WE (ula_WE_SRAM),
-     .LATCH_SRAM (ula_LATCH_SRAM),
-     .CSIOn (ula_CSIOn),
-     .CSROMn (ula_CSROMn),
-     .CSRAMn (ula_CSRAMn),
-     .R (VIDEO_R),
-     .G (VIDEO_G),
-     .B (VIDEO_B),
-     .CLK_PIX (VIDEO_CLK),
-     .HBLANK (VIDEO_HBLANK),
-     .VBLANK (VIDEO_VBLANK),
-     .SYNC (VIDEO_SYNC),
-     .HSYNC (VIDEO_HSYNC),
-     .VSYNC (VIDEO_VSYNC),
-     .hcnt(hcnt),
-     .vcnt(vcnt)
+     .PHI2      (ula_phi2),
+     .PHI2_EN   (ENA_1MHZ),
+	  .PHI2_EN_N (ENA_1MHZ_N),
+     .RW        (cpu_rw),
+     .RESETn    (pll_locked), //RESETn),
+     //.RESETn  (RESETn),
+     .MAPn      (cont_MAPn),
+     .DB        (SRAM_DO),
+     .ADDR      (cpu_ad[15:0]),
+     .SRAM_AD   (ula_AD_SRAM),
+     .SRAM_OE   (ula_OE_SRAM),
+     .SRAM_CE   (ula_CE_SRAM),
+     .SRAM_WE   (ula_WE_SRAM),
+     .LATCH_SRAM(ula_LATCH_SRAM),
+     .CSIOn     (ula_CSIOn),
+     .CSROMn    (ula_CSROMn),
+     .CSRAMn    (ula_CSRAMn),
+     .R         (VIDEO_R),
+     .G         (VIDEO_G),
+     .B         (VIDEO_B),
+     .CLK_PIX   (VIDEO_CLK),
+     .HBLANK    (VIDEO_HBLANK),
+     .VBLANK    (VIDEO_VBLANK),
+     .SYNC      (VIDEO_SYNC),
+     .HSYNC     (VIDEO_HSYNC),
+     .VSYNC     (VIDEO_VSYNC),
+     .hcnt      (hcnt),
+     .vcnt      (vcnt)
      );
 
 
-  M6522 inst_via
-    (
-     .I_RS (cpu_ad[3:0]),
-     .I_DATA (cpu_do[7:0]),
-     .O_DATA (VIA_DO),
-     .I_RW_L (cpu_rw),
-     .I_CS1 (cont_IOCONTROLn),
-     .I_CS2_L (ula_CSIOn),
+//  M6522 inst_via
+//    (
+//     .I_RS (cpu_ad[3:0]),
+//     .I_DATA (cpu_do[7:0]),
+//     .O_DATA (VIA_DO),
+//     .I_RW_L (cpu_rw),
+//     .I_CS1 (cont_IOCONTROLn),
+//     .I_CS2_L (ula_CSIOn),
+//
+//     .O_IRQ_L (cpu_irq),
+//
+//     //PORT A
+//     .I_CA1 ('1), // PRT_ACK
+//     .I_CA2 ('1), // psg_bdir
+//     .O_CA2 (psg_bdir),
+//     .O_CA2_OE_L (),
+//
+//     .I_PA (via_pa_in),
+//     .O_PA (via_pa_out),
+//     .O_PA_OE_L (via_pa_out_oe),
+//
+//     // PORT B
+//     .I_CB1 (K7_TAPEIN),
+//     .O_CB1 (via_cb1_out),
+////     .O_CB1_OE_L (via_cb1_oe_l),
+//     .O_CB1_OE_L (),
+//
+//     .I_CB2 ('1),
+//     .O_CB2 (via_cb2_out),
+//     .O_CB2_OE_L (via_cb2_oe_l),
+//
+//     .I_PB (via_pb_in),
+//     .O_PB (via_pb_out),
+//     .RESET_L (RESETn),
+//     .I_P2_H (ula_phi2),
+//     .ENA_4 (ula_CLK_4_en),
+//     .CLK (CLK_IN)
+//     );
 
-     .O_IRQ_L (cpu_irq),
+via6522 inst_via6522
+	(
+		.clock           (CLK_IN),
+		.rising          (ENA_1MHZ),
+		.falling         (ENA_1MHZ_N),
+		.reset           (~RESETn),
 
-     //PORT A
-     .I_CA1 ('1), // PRT_ACK
-     .I_CA2 ('1), // psg_bdir
-     .O_CA2 (psg_bdir),
-     .O_CA2_OE_L (),
+		.addr            (cpu_ad[3:0]),
+		.wen             (~cpu_rw & cont_IOCONTROLn & ~ula_CSIOn),
+		.ren             ( cpu_rw & cont_IOCONTROLn & ~ula_CSIOn),
+		.data_in         (cpu_do),
+		.data_out        (VIA_DO),
 
-     .I_PA (via_pa_in),
-     .O_PA (via_pa_out),
-     .O_PA_OE_L (via_pa_out_oe),
+		.port_a_i        (via_pa_in),
+		.port_a_o        (via_pa_out),
+		.port_a_t        (via_pa_out_oe),
 
-     // PORT B
-     .I_CB1 (K7_TAPEIN),
-     .O_CB1 (via_cb1_out),
-//     .O_CB1_OE_L (via_cb1_oe_l),
-     .O_CB1_OE_L (),
+		.port_b_i        (via_pb_in),
+		.port_b_o        (via_pb_out),
+		.port_b_t        (),
 
-     .I_CB2 ('1),
-     .O_CB2 (via_cb2_out),
-     .O_CB2_OE_L (via_cb2_oe_l),
+		.ca1_i           (1'b1),
 
-     .I_PB (via_pb_in),
-     .O_PB (via_pb_out),
-     .RESET_L (RESETn),
-     .I_P2_H (ula_phi2),
-     .ENA_4 (ula_CLK_4_en),
-     .CLK (CLK_IN)
-     );
+		.ca2_o           (via_ca2_out),
+		.ca2_i           (1'b1),
+		.ca2_t           (),
+
+		.cb1_i           (K7_TAPEIN),
+		.cb1_o           (via_cb1_out),
+		.cb1_t           (),
+
+		.cb2_i           (1'b1),
+		.cb2_o           (via_cb2_out),
+		.cb2_t           (),
+
+		.irq             (via_irq)
+	);
 
 //logic [9:0] PSG_OUT2;
 //assign PSG_OUT = {PSG_OUT2[9],K7_TAPEIN|PSG_OUT2[8],PSG_OUT[7:0]};
 
-  jt49_bus inst_psg
-    (
-     .clk (CLK_IN),
-     .clk_en (ENA_1MHZ),
-     .sel ('1),
-     .rst_n (RESETn & KEYB_RESETn),
-     .bc1 (psg_bdir),
-     .bdir (via_cb2_out),
-     .din (via_pa_out),
-     .dout (via_pa_in_from_psg),
-     .sample (psg_sample_ok),
-//     .sound (PSG_OUT2),
-     .sound (PSG_OUT),
-     .A (PSG_OUT_A),
-     .B (PSG_OUT_B),
-     .C (PSG_OUT_C),
-     .IOA_in ('0),
-     .IOA_out (ym_o_ioa),
-     .IOB_in ('0)
-     );
+//  jt49_bus inst_psg
+//    (
+//     .clk (CLK_IN),
+//     .clk_en (ENA_1MHZ),
+//     .sel ('1),
+//     .rst_n (RESETn & KEYB_RESETn),
+//     .bc1 (psg_bdir),
+//     .bdir (via_cb2_out),
+//     .din (via_pa_out),
+//     .dout (via_pa_in_from_psg),
+//     .sample (psg_sample_ok),
+////     .sound (PSG_OUT2),
+//     .sound (PSG_OUT),
+//     .A (PSG_OUT_A),
+//     .B (PSG_OUT_B),
+//     .C (PSG_OUT_C),
+//     .IOA_in ('0),
+//     .IOA_out (ym_o_ioa),
+//     .IOB_in ('0)
+//     );
 
+  psg inst_psg
+    (
+     .clock (CLK_IN),
+     .ce    (ENA_1MHZ),
+     .sel   ('1),
+     .reset (RESETn & KEYB_RESETn),
+     .bc1   (via_ca2_out),
+     .bdir  (via_cb2_out),
+     .d     (via_pa_out),
+     .q     (via_pa_in_from_psg),
+     .mix   (PSG_OUT),
+     .a (PSG_OUT_A),
+     .b (PSG_OUT_B),
+     .c (PSG_OUT_C),
+     .ioad ('Z),
+     .ioaq (ym_o_ioa),
+     .iobd ('Z)
+     );
 
   keyboard inst_key
     (
